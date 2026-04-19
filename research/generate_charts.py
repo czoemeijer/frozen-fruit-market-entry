@@ -61,8 +61,10 @@ import json
 from pathlib import Path
 
 # ─── Configuration ───────────────────────────────────────────────────
+DATA_DIR = Path(__file__).parent / "data"
 OUTPUT_DIR = Path(__file__).parent / "output"
 THESIS_IMG = Path(__file__).parent.parent / "thesis" / "images"
+DATA_DIR.mkdir(exist_ok=True)
 OUTPUT_DIR.mkdir(exist_ok=True)
 THESIS_IMG.mkdir(exist_ok=True)
 
@@ -325,17 +327,13 @@ def chart_psm_analysis():
 #   2018–2023 values from published time series
 # =====================================================================
 def chart_chocolate_consumption():
-    data = {
-        'Rok': [2018, 2019, 2020, 2021, 2022, 2023],
-        'Čokoláda (kg)': [6.3, 6.4, 7.0, 6.8, 6.5, 6.2],
-    }
-    df = pd.DataFrame(data)
+    df = pd.read_csv(DATA_DIR / 'czso_food_consumption.csv')
 
     fig, ax = plt.subplots(figsize=(9, 5))
-    bars = ax.bar(df['Rok'], df['Čokoláda (kg)'],
+    bars = ax.bar(df['year'], df['chocolate_confectionery_kg'],
                   color='#5B3A29', alpha=0.85, width=0.55, edgecolor='white')
 
-    for bar, val in zip(bars, df['Čokoláda (kg)']):
+    for bar, val in zip(bars, df['chocolate_confectionery_kg']):
         ax.text(bar.get_x() + bar.get_width()/2, bar.get_height() + 0.08,
                 f"{val:.1f}", ha='center', fontsize=10, fontweight='bold')
 
@@ -345,8 +343,8 @@ def chart_chocolate_consumption():
                 arrowprops=dict(arrowstyle='->', color='#c0392b'))
 
     ax.set_xlabel("Rok")
-    ax.set_ylabel("Spotřeba čokolády a čokol. cukrovinek (kg/os./rok)")
-    ax.set_title("Spotřeba čokolády na osobu v ČR (2018–2023)",
+    ax.set_ylabel("Spotreba cokolady a cokol. cukrovinek (kg/os./rok)")
+    ax.set_title("Spotreba cokolady na osobu v CR (2018\u20132023)",
                  fontweight='bold', pad=12)
     ax.set_ylim(0, 8.5)
 
@@ -357,6 +355,55 @@ def chart_chocolate_consumption():
     sns.despine()
     fig.tight_layout()
     save(fig, "chocolate_consumption_cz")
+
+
+# =====================================================================
+# 6. ICE CREAM CONSUMPTION IN CZECH REPUBLIC
+#
+# DATA CONTEXT (multiple sources):
+#   - Average consumption: ~4-5 liters/person/year
+#   - 2018 production peak: ~50.9 million liters (Eurostat)
+#   - 2020-2021 pandemic drop: ~37 million liters avg production
+#   - 2024: +15% production increase YoY (Eurostat)
+#   Sources: Eurostat, Potravinarska komora CR, expats.cz, kurzy.cz
+#
+# NOTE: CSU does not track ice cream as a standalone consumption item.
+#       Values here are ESTIMATES based on production/import data and
+#       media reports. Clearly labeled in chart.
+# =====================================================================
+def chart_ice_cream_consumption():
+    df = pd.read_csv(DATA_DIR / 'czso_food_consumption.csv')
+
+    fig, ax = plt.subplots(figsize=(9, 5))
+    bars = ax.bar(df['year'], df['ice_cream_liters'],
+                  color='#85C1E9', alpha=0.85, width=0.55, edgecolor='white')
+
+    for bar, val in zip(bars, df['ice_cream_liters']):
+        ax.text(bar.get_x() + bar.get_width()/2, bar.get_height() + 0.06,
+                f"{val:.1f}", ha='center', fontsize=10, fontweight='bold')
+
+    # Pandemic annotation
+    ax.annotate('Pandemie\n(pokles prodeje)', xy=(2020, 3.7), xytext=(2021.5, 3.0),
+                fontsize=9, color='#c0392b', fontweight='bold',
+                arrowprops=dict(arrowstyle='->', color='#c0392b'))
+
+    # EU average context
+    ax.axhline(y=6.2, color='#E74C3C', linestyle='--', linewidth=1.2, alpha=0.6)
+    ax.text(2023.3, 6.35, 'Prumer EU (~6,2 l)', fontsize=8, color='#E74C3C')
+
+    ax.set_xlabel("Rok")
+    ax.set_ylabel("Odhad spotreby zmrzliny (l/os./rok)")
+    ax.set_title("Spotreba zmrzliny na osobu v CR (2018\u20132023, odhad)",
+                 fontweight='bold', pad=12)
+    ax.set_ylim(0, 7.5)
+
+    ax.annotate('Odhad na zaklade dat Eurostatu a medialnich zprav',
+                xy=(0.99, 0.01), xycoords='axes fraction',
+                fontsize=7, color='gray', ha='right', va='bottom')
+
+    sns.despine()
+    fig.tight_layout()
+    save(fig, "ice_cream_consumption_cz")
 
 
 # =====================================================================
@@ -487,30 +534,34 @@ if __name__ == "__main__":
     print("=" * 60)
     print("  THESIS RESEARCH – Chart Generation (AUDITED)")
     print("  Diplomová práce: Značka Berrie")
+    print("  Data source: research/data/*.csv")
     print("=" * 60)
 
-    print("\n[1/8] Market size – Eastern Europe (VERIFIED)...")
+    print("\n[1/9] Market size – Eastern Europe (VERIFIED)...")
     chart_market_size()
 
-    print("[2/8] Fruit consumption – Czech Republic (VERIFIED ČSÚ)...")
+    print("[2/9] Fruit consumption – Czech Republic (VERIFIED ČSÚ)...")
     chart_fruit_consumption()
 
-    print("[3/8] Price comparison (VERIFIED Rohlík.cz)...")
+    print("[3/9] Price comparison (VERIFIED Rohlík.cz)...")
     chart_price_comparison()
 
-    print("[4/8] PSM analysis – SIMULATION...")
+    print("[4/9] PSM analysis – SIMULATION...")
     chart_psm_analysis()
 
-    print("[5/8] Chocolate consumption – Czech Republic (VERIFIED ČSÚ)...")
+    print("[5/9] Chocolate consumption – Czech Republic (VERIFIED ČSÚ)...")
     chart_chocolate_consumption()
 
-    print("[6/8] Segmentation radar (SUBJECTIVE)...")
+    print("[6/9] Ice cream consumption – Czech Republic (ESTIMATE)...")
+    chart_ice_cream_consumption()
+
+    print("[7/9] Segmentation radar (SUBJECTIVE)...")
     chart_segmentation()
 
-    print("[7/8] Per capita spending EE vs WE (VERIFIED)...")
+    print("[8/9] Per capita spending EE vs WE (VERIFIED)...")
     chart_percapita_comparison()
 
-    print("[8/8] Marketing mix 4P (SUBJECTIVE)...")
+    print("[9/9] Marketing mix 4P (SUBJECTIVE)...")
     chart_marketing_mix()
 
     print("\n" + "=" * 60)

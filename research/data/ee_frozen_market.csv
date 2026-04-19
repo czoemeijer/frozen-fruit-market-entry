@@ -1,0 +1,7 @@
+year,market_size_usd_bn,yoy_growth_pct,source_status
+2020,1.98,,derived_estimate
+2021,2.10,,derived_estimate
+2022,2.22,,derived_estimate
+2023,2.36,7.4,verified
+2024,2.53,7.4,verified
+2025,2.64,4.4,forecast
