@@ -1,6 +1,6 @@
 import sqlite3
 import json
-from http.server import BaseHTTPRequestHandler, HTTPServer
+from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 import urllib.parse
 import os
 
@@ -143,7 +143,7 @@ class SurveyHandler(BaseHTTPRequestHandler):
                 self.end_headers()
                 self.wfile.write(json.dumps({'status': 'error', 'message': str(e)}).encode())
 
-def run(server_class=HTTPServer, handler_class=SurveyHandler, port=8000):
+def run(server_class=ThreadingHTTPServer, handler_class=SurveyHandler, port=8000):
     init_db()
     server_address = ('', port)
     httpd = server_class(server_address, handler_class)
