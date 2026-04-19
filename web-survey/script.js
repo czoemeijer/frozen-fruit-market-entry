@@ -127,21 +127,32 @@ document.addEventListener('DOMContentLoaded', () => {
         const currentGroup = document.getElementById(`step-${stepIndex}`);
         if (!currentGroup) return true;
 
-        const inputs = currentGroup.querySelectorAll('input[required]');
+        // Get all required inputs, and ALL radio buttons in this group
+        const requiredInputs = currentGroup.querySelectorAll('input[required]');
+        const allRadios = currentGroup.querySelectorAll('input[type="radio"]');
         let isValid = true;
         const radioGroups = {};
         
-        inputs.forEach(input => {
+        // Find which radio groups actually have a required attribute
+        const requiredRadioNames = new Set();
+        requiredInputs.forEach(input => {
             if (input.type === 'radio') {
-                if (!radioGroups[input.name]) {
-                    radioGroups[input.name] = [];
-                }
-                radioGroups[input.name].push(input);
+                requiredRadioNames.add(input.name);
             } else if (!input.value.trim()) {
                 isValid = false;
                 input.style.borderColor = 'red';
             } else {
                 input.style.borderColor = '';
+            }
+        });
+
+        // Group all radios by name, but only if they are in a required group
+        allRadios.forEach(radio => {
+            if (requiredRadioNames.has(radio.name)) {
+                if (!radioGroups[radio.name]) {
+                    radioGroups[radio.name] = [];
+                }
+                radioGroups[radio.name].push(radio);
             }
         });
 
