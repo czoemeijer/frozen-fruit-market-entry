@@ -1,0 +1,8 @@
+name = "berrie-survey-api"
+main = "worker.js"
+compatibility_date = "2026-04-20"
+
+[[d1_databases]]
+binding = "SURVEY_DB"
+database_name = "berrie-survey-db"
+database_id = "REPLACE_WITH_YOUR_D1_DATABASE_ID"

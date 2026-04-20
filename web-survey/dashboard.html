@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Survey Quality Dashboard</title>
+  <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+  <main class="container">
+    <h1>Survey Quality Dashboard</h1>
+    <p class="subtitle">Pilot + production monitoring (lightweight)</p>
+
+    <section class="cards" id="overview-cards"></section>
+
+    <section class="panel">
+      <h2>Step Drop-off</h2>
+      <div id="dropoff-table"></div>
+    </section>
+
+    <section class="panel grid-2">
+      <div>
+        <h2>Language Distribution</h2>
+        <div id="lang-table"></div>
+      </div>
+      <div>
+        <h2>Source Distribution</h2>
+        <div id="source-table"></div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>Response Quality</h2>
+      <div id="quality-box"></div>
+    </section>
+  </main>
+
+  <script src="dashboard.js"></script>
+</body>
+</html>
