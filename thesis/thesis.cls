@@ -10,10 +10,10 @@
 
 % Rozložení stránky
 \if@print
-  \LoadClass[11pt,twoside,a4paper]{book}
+  \LoadClass[12pt,twoside,a4paper]{book}
   \RequirePackage[inner=3cm,outer=2cm,top=3cm,bottom=2cm]{geometry}
 \else
-  \LoadClass[11pt,oneside,a4paper]{book}
+  \LoadClass[12pt,oneside,a4paper]{book}
   \RequirePackage[margin=2cm,left=3cm,top=3cm,bottom=2cm]{geometry}
 \fi
 
@@ -26,6 +26,9 @@
 \else
   \RequirePackage{fontspec}
   \defaultfontfeatures{Ligatures=TeX}
+  \setmainfont{Libertinus Serif}
+  \setsansfont{Libertinus Sans}[Scale=MatchLowercase]
+  \setmonofont{Libertinus Mono}[Scale=MatchLowercase]
 \fi
 
 \RequirePackage{microtype}
@@ -84,43 +87,47 @@
 
 \def\@fullthesis{%
   \frontmatter
+  \thispagestyle{empty}
   \begin{center}
-    {\LARGE\bfseries
-    \University}\\[3mm]
-    {\Large\sffamily
-    \Faculty}\\[2mm]
+    {\LARGE\bfseries \University\par}
+    \vspace{3mm}
+    {\Large\sffamily \Faculty\par}
     \ifx\Department\empty\else
-      {\large\sffamily
-      \Department}\\[2mm]
+      \vspace{2mm}
+      {\large\sffamily \Department\par}
     \fi
-    \vspace{10mm}
+
+    \vspace{12mm}
     \IfFileExists{images/symbol-panevropska-univerzita-300x300.png}{%
       \includegraphics[width=45mm]{images/symbol-panevropska-univerzita-300x300.png}%
     }{}
-    \vspace{15mm}
 
-    {\LARGE\bfseries\@title}\\[8mm]
-    {\Large\sffamily \ThesisType}\\[10mm]
-    \@placeyear
-    {\large
-      Studijní program: \StudyProgram\\[3mm]
-      Vedoucí práce: \@supervisor\\
-    }
     \vfill
-    \@placeyear\\
-  \end{center}
-  \thispagestyle{empty}
+    {\Large\sffamily \ThesisType\par}
+    \vspace{10mm}
+    {\LARGE\bfseries \@title\par}
+    \vspace{16mm}
 
-  % Strana 2 – copyright
+    {\large
+    \begin{tabular}{@{}rl@{}}
+      Autor: & \@author \\
+      Studijní program: & \StudyProgram \\
+      Vedoucí práce: & \@supervisor
+    \end{tabular}\par}
+
+    \vfill
+    {\large \@placeyear\par}
+  \end{center}
   \newpage
+
+  % Strana 2 – vedoucí práce (minimalistická verze)
+  \thispagestyle{empty}
   \rule{0pt}{0pt}
   \vfill
-  \begin{description}
-    \item[Vedoucí práce:]
-    \@supervisor\\
-    \@supervisorAffiliation
-  \end{description}
+  \noindent Vedoucí práce: \@supervisor\\
+  \@supervisorAffiliation\\[1.5ex]
   Copyright {\copyright} {\@date} {\@author}
+  \newpage
 }
 
 % ============================================================================
@@ -133,6 +140,7 @@
 
 \RequirePackage[nottoc]{tocbibind}
 \RequirePackage{setspace}
+\onehalfspacing % Standardní řádkování 1.5 pro závěrečné práce
 
 % Hypertextové odkazy
 \RequirePackage{xcolor}
