@@ -66,6 +66,78 @@ Níže je uveden scénář moderátora pro skupinové diskuse. Celková délka d
 \end{itemize}
 
 % ============================================================================
+\chapter{Protokol CLT a~kontrola podmínek}
+\label{app:clt_protocol}
+
+Tato příloha obsahuje standardizovaný manuál pro realizaci \gls{clt}, jehož cílem je minimalizovat vliv rušivých proměnných na senzorické hodnocení produktu.
+
+\section*{A. Kontrolní proměnné prostředí}
+\begin{table}[H]
+\centering
+\caption{Kontrolní proměnné CLT}
+\label{tab:clt_controls}
+\begin{tabularx}{\textwidth}{lX}
+\toprule
+\textbf{Proměnná} & \textbf{Standard} \\
+\midrule
+Teplota místnosti & $21 \pm 1\,^{\circ}\mathrm{C}$ \\
+Relativní vlhkost & 45--55\,\% \\
+Osvětlení & neutrální bílé světlo, 500--700 lux \\
+Hluk & max. 40 dB (bez hudby, bez rušivých podnětů) \\
+Podávání vzorků & kódované kelímky, randomizované pořadí \\
+Teplota vzorku při podání & standardizovaná podle protokolu (intervaly 5 / 10 / 15 min od vyjmutí) \\
+Neutralizace chuti & voda pokojové teploty + neslaný cracker mezi vzorky \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\section*{B. Operační postup testovacího sezení}
+\begin{enumerate}
+  \item \textbf{Příprava (T--30 min):} kontrola prostředí, kalibrace času podávání, kontrola alergenových informací.
+  \item \textbf{Instruktáž respondentů (T--10 min):} vysvětlení škály hodnocení, pravidla anonymního posuzování, zákaz vzájemné komunikace během hodnocení.
+  \item \textbf{Podání vzorků (T0):} první vzorek podán dle randomizační tabulky; druhý vzorek po neutralizaci chuti.
+  \item \textbf{Hodnocení atributů:} chuť, textura, vzhled, vůně, celkový dojem na 9bodové hedonické škále.
+  \item \textbf{Záznam otevřených komentářů:} krátké kvalitativní poznámky bez moderátorského navádění.
+\end{enumerate}
+
+\section*{C. Randomizační schéma}
+
+Pro omezení pořadového efektu se používá bloková randomizace ve dvou sekvencích:
+\begin{itemize}
+  \item Sekvence A: Berrie $\rightarrow$ Franui
+  \item Sekvence B: Franui $\rightarrow$ Berrie
+\end{itemize}
+
+Respondenti jsou přiřazováni střídavě (A/B) v~poměru 1:1.
+
+\section*{D. Formulář záznamu CLT (zkrácený vzor)}
+\begin{table}[H]
+\centering
+\caption{Vzor hodnoticího archu CLT}
+\label{tab:clt_form}
+\begin{tabularx}{\textwidth}{lcc}
+\toprule
+\textbf{Atribut} & \textbf{Berrie (1--9)} & \textbf{Franui (1--9)} \\
+\midrule
+Chuť & & \\
+Textura & & \\
+Vzhled & & \\
+Vůně & & \\
+Celkový dojem & & \\
+\midrule
+Otevřený komentář & \multicolumn{2}{X}{\vspace{1.2cm}} \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\section*{E. Plán statistického vyhodnocení}
+\begin{itemize}
+  \item párový t-test pro porovnání průměrů Berrie vs. Franui v~hlavních atributech,
+  \item kontrola normality reziduí (Shapiro--Wilk) a~případně neparametrická alternativa (Wilcoxonův test),
+  \item ANOVA s~opakovanými měřeními pro analýzu efektu času (5 / 10 / 15 min) na texturu.
+\end{itemize}
+
+% ============================================================================
 \chapter{Rozpočet výzkumu}
 \label{app:budget}
 

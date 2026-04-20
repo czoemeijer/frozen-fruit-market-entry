@@ -101,7 +101,7 @@
 
     {\LARGE\bfseries\@title}\\[8mm]
     {\Large\sffamily \ThesisType}\\[10mm]
-    {\Large\emph{\@author}}\\[40mm]
+    \@placeyear
     {\large
       Studijní program: \StudyProgram\\[3mm]
       Vedoucí práce: \@supervisor\\
@@ -116,7 +116,7 @@
   \rule{0pt}{0pt}
   \vfill
   \begin{description}
-    \item[Vedoucí práce:] ~\\
+    \item[Vedoucí práce:]
     \@supervisor\\
     \@supervisorAffiliation
   \end{description}
@@ -137,7 +137,13 @@
 % Hypertextové odkazy
 \RequirePackage{xcolor}
 \RequirePackage{hyperref}
-\hypersetup{colorlinks=true,citecolor=blue!60!black,linkcolor=black,urlcolor=blue!60!black}
+\hypersetup{%
+  colorlinks=true,
+  citecolor=blue!60!black,
+  linkcolor=black,
+  urlcolor=blue!60!black,
+  hypertexnames=false
+}
 
 % PDF metadata
 \makeatletter

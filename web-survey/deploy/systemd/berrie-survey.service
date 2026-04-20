@@ -1,0 +1,17 @@
+[Unit]
+Description=Berrie Survey Backend
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=__WORKDIR__
+ExecStart=/usr/bin/env bash __WORKDIR__/scripts/start_backend.sh
+Restart=always
+RestartSec=3
+User=www-data
+Group=www-data
+Environment=SURVEY_PORT=8000
+Environment=SURVEY_DB_PATH=__WORKDIR__/survey_data.db
+
+[Install]
+WantedBy=multi-user.target

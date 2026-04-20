@@ -41,12 +41,17 @@
         <header>
             <h1 data-i18n="title">Spotřebitelský výzkum (CAWI)</h1>
             <p data-i18n="subtitle">Akademický výzkum pro diplomovou práci na téma vstupu značky prémiových potravin na trh.</p>
+            <p class="section-hint" data-i18n="header_hint">Odpovědi pomohou určit cílový segment, cenové rozpětí a distribuční strategii pro vstup značky na trh.</p>
         </header>
 
         <form id="survey-form" novalidate>
             <!-- ANTI-SPAM HONEYPOT (Hidden from real users) -->
             <input type="text" name="website_url" class="honeypot" tabindex="-1" autocomplete="off" style="display:none;">
             <input type="hidden" name="lang" id="lang-input" value="cs">
+            <input type="hidden" name="session_id" id="session-id-input" value="">
+            <input type="hidden" name="utm_source" id="utm-source-input" value="">
+            <input type="hidden" name="utm_medium" id="utm-medium-input" value="">
+            <input type="hidden" name="utm_campaign" id="utm-campaign-input" value="">
 
             <!-- PŘIVÍTÁNÍ -->
             <div class="question-group active" id="step-0">
@@ -80,6 +85,16 @@
                     </div>
                 </div>
 
+                <div class="form-group">
+                    <label data-i18n="q1_frequency">Jak často kupujete mražené ovoce nebo zdravé sladké snacky?</label>
+                    <div class="radio-options">
+                        <label class="radio-card"><input type="radio" name="purchase_frequency" value="weekly" required> <span data-i18n="freq_weekly">1x týdně nebo častěji</span></label>
+                        <label class="radio-card"><input type="radio" name="purchase_frequency" value="monthly"> <span data-i18n="freq_monthly">2–3x měsíčně</span></label>
+                        <label class="radio-card"><input type="radio" name="purchase_frequency" value="rarely"> <span data-i18n="freq_rarely">1x za 1–2 měsíce</span></label>
+                        <label class="radio-card"><input type="radio" name="purchase_frequency" value="never"> <span data-i18n="freq_never">Téměř nikdy</span></label>
+                    </div>
+                </div>
+
                 <div class="nav-buttons">
                     <button type="button" class="btn btn-secondary prev-btn" data-target="0" data-i18n="back">Zpět</button>
                     <button type="button" class="btn btn-primary next-btn" data-target="2" data-i18n="next">Další</button>
@@ -110,7 +125,7 @@
                 <div class="comparison-grid">
                     <!-- Franui Column -->
                     <div class="competitor-card">
-                        <h3>Franui (Argentina)</h3>
+                        <h3 data-i18n="franui_label">Franui (Argentina)</h3>
                         <div class="form-group">
                             <label data-i18n="visual_appeal">Vizuální atraktivita</label>
                             <input type="range" name="franui_visual" min="0" max="10" value="5" class="slider">
@@ -130,7 +145,7 @@
 
                     <!-- Berrie Column -->
                     <div class="competitor-card berrie-card">
-                        <h3>Berrie (Česká republika)</h3>
+                        <h3 data-i18n="berrie_label">Berrie (Česká republika)</h3>
                         <div class="form-group">
                             <label data-i18n="visual_appeal">Vizuální atraktivita</label>
                             <input type="range" name="berrie_visual" min="0" max="10" value="5" class="slider">
@@ -232,6 +247,26 @@
                         <label class="radio-card"><input type="radio" name="premium_wtp" value="up_to_10"> <span data-i18n="premium_10">Ano, max do +10 %</span></label>
                         <label class="radio-card"><input type="radio" name="premium_wtp" value="10_to_25"> <span data-i18n="premium_25">Ano, +10 % až +25 %</span></label>
                         <label class="radio-card"><input type="radio" name="premium_wtp" value="over_25"> <span data-i18n="premium_more">Ano, i o více než 25 %</span></label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label data-i18n="q4_channel">Kde byste tento typ produktu nejspíše nakoupili?</label>
+                    <div class="radio-options">
+                        <label class="radio-card"><input type="radio" name="preference" value="supermarket" required> <span data-i18n="channel_supermarket">Supermarket / hypermarket</span></label>
+                        <label class="radio-card"><input type="radio" name="preference" value="convenience"> <span data-i18n="channel_convenience">Menší večerka / convenience</span></label>
+                        <label class="radio-card"><input type="radio" name="preference" value="ecommerce"> <span data-i18n="channel_ecommerce">Online obchod / rozvoz</span></label>
+                        <label class="radio-card"><input type="radio" name="preference" value="specialty"> <span data-i18n="channel_specialty">Specializovaná prodejna</span></label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label data-i18n="q4_barrier">Co by bylo největší překážkou nákupu?</label>
+                    <div class="radio-options">
+                        <label class="radio-card"><input type="radio" name="main_barrier" value="price" required> <span data-i18n="barrier_price">Příliš vysoká cena</span></label>
+                        <label class="radio-card"><input type="radio" name="main_barrier" value="sugar"> <span data-i18n="barrier_sugar">Obava z obsahu cukru / kalorií</span></label>
+                        <label class="radio-card"><input type="radio" name="main_barrier" value="availability"> <span data-i18n="barrier_availability">Nedostupnost v běžných obchodech</span></label>
+                        <label class="radio-card"><input type="radio" name="main_barrier" value="unknown_brand"> <span data-i18n="barrier_brand">Neznámá značka</span></label>
                     </div>
                 </div>
 

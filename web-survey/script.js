@@ -9,6 +9,11 @@ const translations = {
         q1_title: "1. Demografické údaje",
         q1_age: "Do jaké věkové kategorie spadáte?",
         q1_children: "Máte v domácnosti děti mladší 15 let?",
+        q1_frequency: "Jak často kupujete mražené ovoce nebo zdravé sladké snacky?",
+        freq_weekly: "1x týdně nebo častěji",
+        freq_monthly: "2–3x měsíčně",
+        freq_rarely: "1x za 1–2 měsíce",
+        freq_never: "Téměř nikdy",
         yes: "Ano",
         no: "Ne",
         back: "Zpět",
@@ -42,6 +47,24 @@ const translations = {
         premium_10: "Ano, max do +10 %",
         premium_25: "Ano, +10 % až +25 %",
         premium_more: "Ano, i o více než 25 %",
+        q4_channel: "Kde byste tento typ produktu nejspíše nakoupili?",
+        channel_supermarket: "Supermarket / hypermarket",
+        channel_convenience: "Menší večerka / convenience",
+        channel_ecommerce: "Online obchod / rozvoz",
+        channel_specialty: "Specializovaná prodejna",
+        q4_barrier: "Co by bylo největší překážkou nákupu?",
+        barrier_price: "Příliš vysoká cena",
+        barrier_sugar: "Obava z obsahu cukru / kalorií",
+        barrier_availability: "Nedostupnost v běžných obchodech",
+        barrier_brand: "Neznámá značka",
+        header_hint: "Odpovědi pomohou určit cílový segment, cenové rozpětí a distribuční strategii pro vstup značky na trh.",
+        franui_label: "Franui (Argentina)",
+        berrie_label: "Berrie (Česká republika)",
+        error_required: "Prosím vyplňte všechny povinné otázky.",
+        error_psm_order: "U cen prosím dodržte logické pořadí: příliš levný < výhodný < drahý < příliš drahý.",
+        submit_loading: "Odesílání...",
+        submit_error: "Při ukládání dat došlo k chybě. Zkuste to prosím znovu.",
+        connection_error: "Chyba připojení.",
         submit: "Odeslat dotazník",
         success_title: "Děkujeme za vyplnění!",
         success_text: "Vaše odpovědi byly úspěšně odeslány do akademické databáze."
@@ -56,6 +79,11 @@ const translations = {
         q1_title: "1. Demographics",
         q1_age: "What is your age category?",
         q1_children: "Do you have children under 15 in your household?",
+        q1_frequency: "How often do you buy frozen fruit or healthy sweet snacks?",
+        freq_weekly: "Once a week or more",
+        freq_monthly: "2–3 times per month",
+        freq_rarely: "Once every 1–2 months",
+        freq_never: "Almost never",
         yes: "Yes",
         no: "No",
         back: "Back",
@@ -89,6 +117,24 @@ const translations = {
         premium_10: "Yes, up to +10%",
         premium_25: "Yes, +10% to +25%",
         premium_more: "Yes, over 25%",
+        q4_channel: "Where would you most likely buy this type of product?",
+        channel_supermarket: "Supermarket / hypermarket",
+        channel_convenience: "Convenience store",
+        channel_ecommerce: "Online grocery / delivery",
+        channel_specialty: "Specialty food store",
+        q4_barrier: "What would be your main purchase barrier?",
+        barrier_price: "Price is too high",
+        barrier_sugar: "Concern about sugar / calories",
+        barrier_availability: "Not easily available in regular stores",
+        barrier_brand: "Unfamiliar brand",
+        header_hint: "Your answers help define target segments, price corridor, and go-to-market distribution strategy.",
+        franui_label: "Franui (Argentina)",
+        berrie_label: "Berrie (Czech Republic)",
+        error_required: "Please fill in all required questions.",
+        error_psm_order: "Please keep price logic in order: too cheap < bargain < expensive < too expensive.",
+        submit_loading: "Submitting...",
+        submit_error: "Error saving data. Please try again.",
+        connection_error: "Connection error.",
         submit: "Submit Survey",
         success_title: "Thank you!",
         success_text: "Your responses have been securely submitted to the academic database."
@@ -941,15 +987,491 @@ const translations = {
     }
 };
 
+const completionTranslations = {
+    sk: {
+        q1_frequency: "Ako často kupujete mrazené ovocie alebo zdravé sladké snacky?",
+        freq_weekly: "1x týždenne alebo častejšie",
+        freq_monthly: "2–3x mesačne",
+        freq_rarely: "1x za 1–2 mesiace",
+        freq_never: "Takmer nikdy",
+        q4_channel: "Kde by ste tento typ produktu najskôr kúpili?",
+        channel_supermarket: "Supermarket / hypermarket",
+        channel_convenience: "Menšia večierka / convenience",
+        channel_ecommerce: "Online obchod / rozvoz",
+        channel_specialty: "Špecializovaná predajňa",
+        q4_barrier: "Čo by bola najväčšia prekážka nákupu?",
+        barrier_price: "Príliš vysoká cena",
+        barrier_sugar: "Obava z obsahu cukru / kalórií",
+        barrier_availability: "Nedostupnosť v bežných obchodoch",
+        barrier_brand: "Neznáma značka",
+        header_hint: "Vaše odpovede pomôžu určiť cieľový segment, cenové rozpätie a distribučnú stratégiu vstupu značky na trh.",
+        franui_label: "Franui (Argentína)",
+        berrie_label: "Berrie (Česká republika)",
+        error_required: "Prosím vyplňte všetky povinné otázky.",
+        error_psm_order: "Pri cenách prosím dodržte logické poradie: príliš lacný < výhodný < drahý < príliš drahý.",
+        submit_loading: "Odosielanie...",
+        submit_error: "Pri ukladaní dát nastala chyba. Skúste to znova.",
+        connection_error: "Chyba pripojenia."
+    },
+    uk: {
+        q1_frequency: "Як часто ви купуєте заморожені фрукти або корисні солодкі снеки?",
+        freq_weekly: "1 раз на тиждень або частіше",
+        freq_monthly: "2–3 рази на місяць",
+        freq_rarely: "1 раз на 1–2 місяці",
+        freq_never: "Майже ніколи",
+        q4_channel: "Де ви найімовірніше купили б такий продукт?",
+        channel_supermarket: "Супермаркет / гіпермаркет",
+        channel_convenience: "Невеликий магазин / convenience",
+        channel_ecommerce: "Онлайн-магазин / доставка",
+        channel_specialty: "Спеціалізований магазин",
+        q4_barrier: "Що було б найбільшою перешкодою для покупки?",
+        barrier_price: "Занадто висока ціна",
+        barrier_sugar: "Побоювання щодо цукру / калорій",
+        barrier_availability: "Недоступність у звичайних магазинах",
+        barrier_brand: "Невідомий бренд",
+        header_hint: "Ваші відповіді допоможуть визначити цільові сегменти, ціновий коридор і стратегію дистрибуції для виходу бренду на ринок.",
+        franui_label: "Franui (Аргентина)",
+        berrie_label: "Berrie (Чехія)",
+        error_required: "Будь ласка, заповніть усі обов’язкові питання.",
+        error_psm_order: "Будь ласка, дотримуйтеся логічного порядку цін: занадто дешево < вигідно < дорого < занадто дорого.",
+        submit_loading: "Надсилання...",
+        submit_error: "Помилка збереження даних. Спробуйте ще раз.",
+        connection_error: "Помилка з’єднання."
+    },
+    vi: {
+        q1_frequency: "Bạn mua trái cây đông lạnh hoặc đồ ăn ngọt lành mạnh bao lâu một lần?",
+        freq_weekly: "1 lần/tuần hoặc thường xuyên hơn",
+        freq_monthly: "2–3 lần/tháng",
+        freq_rarely: "1 lần mỗi 1–2 tháng",
+        freq_never: "Hầu như không bao giờ",
+        q4_channel: "Bạn có khả năng mua loại sản phẩm này ở đâu nhất?",
+        channel_supermarket: "Siêu thị / đại siêu thị",
+        channel_convenience: "Cửa hàng tiện lợi",
+        channel_ecommerce: "Mua online / giao hàng",
+        channel_specialty: "Cửa hàng chuyên biệt",
+        q4_barrier: "Rào cản lớn nhất khi mua sẽ là gì?",
+        barrier_price: "Giá quá cao",
+        barrier_sugar: "Lo ngại về đường / calo",
+        barrier_availability: "Khó tìm ở cửa hàng thông thường",
+        barrier_brand: "Thương hiệu còn lạ",
+        header_hint: "Câu trả lời của bạn giúp xác định phân khúc mục tiêu, khoảng giá và chiến lược phân phối khi gia nhập thị trường.",
+        franui_label: "Franui (Argentina)",
+        berrie_label: "Berrie (Cộng hòa Séc)",
+        error_required: "Vui lòng trả lời tất cả câu hỏi bắt buộc.",
+        error_psm_order: "Vui lòng giữ đúng thứ tự giá: quá rẻ < hời < đắt < quá đắt.",
+        submit_loading: "Đang gửi...",
+        submit_error: "Lỗi lưu dữ liệu. Vui lòng thử lại.",
+        connection_error: "Lỗi kết nối."
+    },
+    ru: {
+        q1_frequency: "Как часто вы покупаете замороженные фрукты или полезные сладкие снеки?",
+        freq_weekly: "1 раз в неделю или чаще",
+        freq_monthly: "2–3 раза в месяц",
+        freq_rarely: "1 раз в 1–2 месяца",
+        freq_never: "Почти никогда",
+        q4_channel: "Где вы, скорее всего, купили бы такой продукт?",
+        channel_supermarket: "Супермаркет / гипермаркет",
+        channel_convenience: "Небольшой магазин / convenience",
+        channel_ecommerce: "Онлайн-магазин / доставка",
+        channel_specialty: "Специализированный магазин",
+        q4_barrier: "Что было бы главным барьером для покупки?",
+        barrier_price: "Слишком высокая цена",
+        barrier_sugar: "Опасения по поводу сахара / калорий",
+        barrier_availability: "Недоступность в обычных магазинах",
+        barrier_brand: "Незнакомый бренд",
+        header_hint: "Ваши ответы помогут определить целевые сегменты, ценовой коридор и стратегию дистрибуции для выхода бренда на рынок.",
+        franui_label: "Franui (Аргентина)",
+        berrie_label: "Berrie (Чехия)",
+        error_required: "Пожалуйста, заполните все обязательные вопросы.",
+        error_psm_order: "Пожалуйста, соблюдайте логический порядок цен: слишком дешево < выгодно < дорого < слишком дорого.",
+        submit_loading: "Отправка...",
+        submit_error: "Ошибка сохранения данных. Пожалуйста, попробуйте снова.",
+        connection_error: "Ошибка соединения."
+    },
+    zh: {
+        q1_frequency: "您多久会购买一次冷冻水果或健康甜味零食？",
+        freq_weekly: "每周1次或更频繁",
+        freq_monthly: "每月2–3次",
+        freq_rarely: "每1–2个月1次",
+        freq_never: "几乎从不",
+        q4_channel: "您最可能在哪里购买这类产品？",
+        channel_supermarket: "超市 / 大卖场",
+        channel_convenience: "便利店",
+        channel_ecommerce: "线上商店 / 配送",
+        channel_specialty: "专业门店",
+        q4_barrier: "购买时最大的障碍会是什么？",
+        barrier_price: "价格过高",
+        barrier_sugar: "担心糖分 / 热量",
+        barrier_availability: "在普通商店不易买到",
+        barrier_brand: "品牌不熟悉",
+        header_hint: "您的回答将帮助我们确定目标细分、价格区间和品牌入市分销策略。",
+        franui_label: "Franui（阿根廷）",
+        berrie_label: "Berrie（捷克共和国）",
+        error_required: "请填写所有必填问题。",
+        error_psm_order: "请保持价格逻辑顺序：太便宜 < 划算 < 偏贵 < 太贵。",
+        submit_loading: "提交中...",
+        submit_error: "保存数据时出错，请重试。",
+        connection_error: "连接错误。"
+    },
+    de: {
+        q1_frequency: "Wie oft kaufen Sie gefrorenes Obst oder gesunde süße Snacks?",
+        freq_weekly: "1x pro Woche oder öfter",
+        freq_monthly: "2–3x pro Monat",
+        freq_rarely: "1x in 1–2 Monaten",
+        freq_never: "Fast nie",
+        q4_channel: "Wo würden Sie dieses Produkt am ehesten kaufen?",
+        channel_supermarket: "Supermarkt / Hypermarkt",
+        channel_convenience: "Kleiner Laden / Convenience",
+        channel_ecommerce: "Online-Shop / Lieferung",
+        channel_specialty: "Fachgeschäft",
+        q4_barrier: "Was wäre das größte Kaufhindernis?",
+        barrier_price: "Zu hoher Preis",
+        barrier_sugar: "Sorge wegen Zucker / Kalorien",
+        barrier_availability: "Nicht in normalen Geschäften verfügbar",
+        barrier_brand: "Unbekannte Marke",
+        header_hint: "Ihre Antworten helfen, Zielsegmente, Preiskorridor und Distributionsstrategie für den Markteintritt festzulegen.",
+        franui_label: "Franui (Argentinien)",
+        berrie_label: "Berrie (Tschechische Republik)",
+        error_required: "Bitte füllen Sie alle Pflichtfragen aus.",
+        error_psm_order: "Bitte halten Sie die Preislogik ein: zu billig < günstig < teuer < zu teuer.",
+        submit_loading: "Wird gesendet...",
+        submit_error: "Fehler beim Speichern der Daten. Bitte versuchen Sie es erneut.",
+        connection_error: "Verbindungsfehler."
+    },
+    pl: {
+        q1_frequency: "Jak często kupujesz mrożone owoce lub zdrowe słodkie przekąski?",
+        freq_weekly: "1x w tygodniu lub częściej",
+        freq_monthly: "2–3x w miesiącu",
+        freq_rarely: "1x na 1–2 miesiące",
+        freq_never: "Prawie nigdy",
+        q4_channel: "Gdzie najprawdopodobniej kupił(a)byś taki produkt?",
+        channel_supermarket: "Supermarket / hipermarket",
+        channel_convenience: "Sklep osiedlowy / convenience",
+        channel_ecommerce: "Sklep online / dostawa",
+        channel_specialty: "Sklep specjalistyczny",
+        q4_barrier: "Co byłoby największą barierą zakupu?",
+        barrier_price: "Zbyt wysoka cena",
+        barrier_sugar: "Obawa o cukier / kalorie",
+        barrier_availability: "Brak dostępności w zwykłych sklepach",
+        barrier_brand: "Nieznana marka",
+        header_hint: "Twoje odpowiedzi pomogą określić segmenty docelowe, korytarz cenowy i strategię dystrybucji wejścia marki na rynek.",
+        franui_label: "Franui (Argentyna)",
+        berrie_label: "Berrie (Republika Czeska)",
+        error_required: "Proszę odpowiedzieć na wszystkie wymagane pytania.",
+        error_psm_order: "Zachowaj logiczną kolejność cen: zbyt tanio < okazja < drogo < zbyt drogo.",
+        submit_loading: "Wysyłanie...",
+        submit_error: "Błąd zapisu danych. Spróbuj ponownie.",
+        connection_error: "Błąd połączenia."
+    },
+    fr: {
+        q1_frequency: "À quelle fréquence achetez-vous des fruits surgelés ou des snacks sucrés sains ?",
+        freq_weekly: "1 fois par semaine ou plus",
+        freq_monthly: "2–3 fois par mois",
+        freq_rarely: "1 fois tous les 1–2 mois",
+        freq_never: "Presque jamais",
+        q4_channel: "Où achèteriez-vous le plus probablement ce type de produit ?",
+        channel_supermarket: "Supermarché / hypermarché",
+        channel_convenience: "Petite supérette / convenience",
+        channel_ecommerce: "Boutique en ligne / livraison",
+        channel_specialty: "Magasin spécialisé",
+        q4_barrier: "Quel serait le principal frein à l'achat ?",
+        barrier_price: "Prix trop élevé",
+        barrier_sugar: "Crainte liée au sucre / calories",
+        barrier_availability: "Indisponible dans les magasins habituels",
+        barrier_brand: "Marque inconnue",
+        header_hint: "Vos réponses aideront à définir les segments cibles, le corridor de prix et la stratégie de distribution pour l’entrée sur le marché.",
+        franui_label: "Franui (Argentine)",
+        berrie_label: "Berrie (République tchèque)",
+        error_required: "Veuillez remplir toutes les questions obligatoires.",
+        error_psm_order: "Veuillez respecter l’ordre logique des prix : trop bon marché < bonne affaire < cher < trop cher.",
+        submit_loading: "Envoi en cours...",
+        submit_error: "Erreur lors de l'enregistrement des données. Veuillez réessayer.",
+        connection_error: "Erreur de connexion."
+    },
+    it: {
+        q1_frequency: "Con quale frequenza acquisti frutta surgelata o snack dolci salutari?",
+        freq_weekly: "1 volta a settimana o più",
+        freq_monthly: "2–3 volte al mese",
+        freq_rarely: "1 volta ogni 1–2 mesi",
+        freq_never: "Quasi mai",
+        q4_channel: "Dove compreresti più probabilmente questo tipo di prodotto?",
+        channel_supermarket: "Supermercato / ipermercato",
+        channel_convenience: "Minimarket / convenience",
+        channel_ecommerce: "Negozio online / consegna",
+        channel_specialty: "Negozio specializzato",
+        q4_barrier: "Quale sarebbe il principale ostacolo all'acquisto?",
+        barrier_price: "Prezzo troppo alto",
+        barrier_sugar: "Preoccupazione per zucchero / calorie",
+        barrier_availability: "Non disponibile nei negozi comuni",
+        barrier_brand: "Marchio poco conosciuto",
+        header_hint: "Le tue risposte aiutano a definire segmenti target, corridoio di prezzo e strategia distributiva per l'ingresso nel mercato.",
+        franui_label: "Franui (Argentina)",
+        berrie_label: "Berrie (Repubblica Ceca)",
+        error_required: "Compila tutte le domande obbligatorie.",
+        error_psm_order: "Mantieni l'ordine logico dei prezzi: troppo economico < conveniente < caro < troppo caro.",
+        submit_loading: "Invio in corso...",
+        submit_error: "Errore durante il salvataggio dei dati. Riprova.",
+        connection_error: "Errore di connessione."
+    },
+    es: {
+        q1_frequency: "¿Con qué frecuencia compras fruta congelada o snacks dulces saludables?",
+        freq_weekly: "1 vez por semana o más",
+        freq_monthly: "2–3 veces al mes",
+        freq_rarely: "1 vez cada 1–2 meses",
+        freq_never: "Casi nunca",
+        q4_channel: "¿Dónde comprarías más probablemente este tipo de producto?",
+        channel_supermarket: "Supermercado / hipermercado",
+        channel_convenience: "Tienda de conveniencia",
+        channel_ecommerce: "Tienda online / entrega",
+        channel_specialty: "Tienda especializada",
+        q4_barrier: "¿Cuál sería la mayor barrera de compra?",
+        barrier_price: "Precio demasiado alto",
+        barrier_sugar: "Preocupación por azúcar / calorías",
+        barrier_availability: "No disponible en tiendas habituales",
+        barrier_brand: "Marca desconocida",
+        header_hint: "Tus respuestas ayudarán a definir segmentos objetivo, rango de precios y estrategia de distribución para la entrada al mercado.",
+        franui_label: "Franui (Argentina)",
+        berrie_label: "Berrie (República Checa)",
+        error_required: "Por favor, completa todas las preguntas obligatorias.",
+        error_psm_order: "Mantén el orden lógico de precios: demasiado barato < ganga < caro < demasiado caro.",
+        submit_loading: "Enviando...",
+        submit_error: "Error al guardar los datos. Por favor, inténtalo de nuevo.",
+        connection_error: "Error de conexión."
+    },
+    hu: {
+        q1_frequency: "Milyen gyakran vásárol fagyasztott gyümölcsöt vagy egészséges édes snackeket?",
+        freq_weekly: "Hetente 1x vagy gyakrabban",
+        freq_monthly: "Havonta 2–3x",
+        freq_rarely: "1x 1–2 havonta",
+        freq_never: "Szinte soha",
+        q4_channel: "Hol vásárolná meg leginkább ezt a terméktípust?",
+        channel_supermarket: "Szupermarket / hipermarket",
+        channel_convenience: "Kisbolt / convenience",
+        channel_ecommerce: "Online bolt / kiszállítás",
+        channel_specialty: "Szaküzlet",
+        q4_barrier: "Mi lenne a legnagyobb vásárlási akadály?",
+        barrier_price: "Túl magas ár",
+        barrier_sugar: "Aggodalom a cukor / kalória miatt",
+        barrier_availability: "Nem elérhető a szokásos boltokban",
+        barrier_brand: "Ismeretlen márka",
+        header_hint: "Válaszai segítenek meghatározni a célcsoportokat, az ársávot és a piacra lépés disztribúciós stratégiáját.",
+        franui_label: "Franui (Argentína)",
+        berrie_label: "Berrie (Csehország)",
+        error_required: "Kérjük, töltsön ki minden kötelező kérdést.",
+        error_psm_order: "Kérjük, tartsa a logikus ársorrendet: túl olcsó < kedvező < drága < túl drága.",
+        submit_loading: "Beküldés...",
+        submit_error: "Hiba történt az adatok mentésekor. Kérjük, próbálja újra.",
+        connection_error: "Kapcsolódási hiba."
+    },
+    ro: {
+        q1_frequency: "Cât de des cumpărați fructe congelate sau gustări dulci sănătoase?",
+        freq_weekly: "1 dată pe săptămână sau mai des",
+        freq_monthly: "2–3 ori pe lună",
+        freq_rarely: "1 dată la 1–2 luni",
+        freq_never: "Aproape niciodată",
+        q4_channel: "De unde ați cumpăra cel mai probabil acest tip de produs?",
+        channel_supermarket: "Supermarket / hipermarket",
+        channel_convenience: "Magazin de proximitate",
+        channel_ecommerce: "Magazin online / livrare",
+        channel_specialty: "Magazin specializat",
+        q4_barrier: "Care ar fi cea mai mare barieră la cumpărare?",
+        barrier_price: "Preț prea mare",
+        barrier_sugar: "Îngrijorare privind zahărul / caloriile",
+        barrier_availability: "Lipsa disponibilității în magazinele obișnuite",
+        barrier_brand: "Marcă necunoscută",
+        header_hint: "Răspunsurile dvs. ajută la definirea segmentelor țintă, a coridorului de preț și a strategiei de distribuție pentru intrarea pe piață.",
+        franui_label: "Franui (Argentina)",
+        berrie_label: "Berrie (Republica Cehă)",
+        error_required: "Vă rugăm să completați toate întrebările obligatorii.",
+        error_psm_order: "Vă rugăm să păstrați ordinea logică a prețurilor: prea ieftin < avantajos < scump < prea scump.",
+        submit_loading: "Se trimite...",
+        submit_error: "Eroare la salvarea datelor. Vă rugăm să încercați din nou.",
+        connection_error: "Eroare de conexiune."
+    },
+    nl: {
+        q1_frequency: "Hoe vaak koopt u bevroren fruit of gezonde zoete snacks?",
+        freq_weekly: "1x per week of vaker",
+        freq_monthly: "2–3x per maand",
+        freq_rarely: "1x per 1–2 maanden",
+        freq_never: "Bijna nooit",
+        q4_channel: "Waar zou u dit type product het meest waarschijnlijk kopen?",
+        channel_supermarket: "Supermarkt / hypermarkt",
+        channel_convenience: "Buurtwinkel / convenience",
+        channel_ecommerce: "Online winkel / bezorging",
+        channel_specialty: "Speciaalzaak",
+        q4_barrier: "Wat zou de grootste aankoopdrempel zijn?",
+        barrier_price: "Te hoge prijs",
+        barrier_sugar: "Zorgen over suiker / calorieën",
+        barrier_availability: "Niet beschikbaar in gewone winkels",
+        barrier_brand: "Onbekend merk",
+        header_hint: "Uw antwoorden helpen bij het bepalen van doelsegmenten, prijscorridor en distributiestrategie voor marktintroductie.",
+        franui_label: "Franui (Argentinië)",
+        berrie_label: "Berrie (Tsjechië)",
+        error_required: "Vul alle verplichte vragen in.",
+        error_psm_order: "Houd de logische prijsvolgorde aan: te goedkoop < koopje < duur < te duur.",
+        submit_loading: "Verzenden...",
+        submit_error: "Fout bij het opslaan van gegevens. Probeer het opnieuw.",
+        connection_error: "Verbindingsfout."
+    },
+    pt: {
+        q1_frequency: "Com que frequência compra fruta congelada ou snacks doces saudáveis?",
+        freq_weekly: "1x por semana ou mais",
+        freq_monthly: "2–3x por mês",
+        freq_rarely: "1x a cada 1–2 meses",
+        freq_never: "Quase nunca",
+        q4_channel: "Onde compraria mais provavelmente este tipo de produto?",
+        channel_supermarket: "Supermercado / hipermercado",
+        channel_convenience: "Loja de conveniência",
+        channel_ecommerce: "Loja online / entrega",
+        channel_specialty: "Loja especializada",
+        q4_barrier: "Qual seria a maior barreira à compra?",
+        barrier_price: "Preço demasiado alto",
+        barrier_sugar: "Preocupação com açúcar / calorias",
+        barrier_availability: "Indisponível em lojas habituais",
+        barrier_brand: "Marca desconhecida",
+        header_hint: "As suas respostas ajudam a definir segmentos-alvo, corredor de preço e estratégia de distribuição para entrada no mercado.",
+        franui_label: "Franui (Argentina)",
+        berrie_label: "Berrie (República Checa)",
+        error_required: "Por favor, preencha todas as perguntas obrigatórias.",
+        error_psm_order: "Mantenha a ordem lógica dos preços: demasiado barato < vantajoso < caro < demasiado caro.",
+        submit_loading: "A enviar...",
+        submit_error: "Erro ao guardar os dados. Tente novamente.",
+        connection_error: "Erro de ligação."
+    },
+    el: {
+        q1_frequency: "Πόσο συχνά αγοράζετε κατεψυγμένα φρούτα ή υγιεινά γλυκά σνακ;",
+        freq_weekly: "1 φορά την εβδομάδα ή συχνότερα",
+        freq_monthly: "2–3 φορές τον μήνα",
+        freq_rarely: "1 φορά κάθε 1–2 μήνες",
+        freq_never: "Σχεδόν ποτέ",
+        q4_channel: "Πού θα αγοράζατε πιθανότερα αυτό το προϊόν;",
+        channel_supermarket: "Σούπερ μάρκετ / υπεραγορά",
+        channel_convenience: "Μικρό κατάστημα / convenience",
+        channel_ecommerce: "Ηλεκτρονικό κατάστημα / διανομή",
+        channel_specialty: "Εξειδικευμένο κατάστημα",
+        q4_barrier: "Ποιο θα ήταν το μεγαλύτερο εμπόδιο αγοράς;",
+        barrier_price: "Πολύ υψηλή τιμή",
+        barrier_sugar: "Ανησυχία για ζάχαρη / θερμίδες",
+        barrier_availability: "Μη διαθεσιμότητα σε συνηθισμένα καταστήματα",
+        barrier_brand: "Άγνωστη μάρκα",
+        header_hint: "Οι απαντήσεις σας βοηθούν να καθορίσουμε τα τμήματα-στόχους, το εύρος τιμής και τη στρατηγική διανομής για την είσοδο στην αγορά.",
+        franui_label: "Franui (Αργεντινή)",
+        berrie_label: "Berrie (Τσεχική Δημοκρατία)",
+        error_required: "Παρακαλώ συμπληρώστε όλες τις υποχρεωτικές ερωτήσεις.",
+        error_psm_order: "Παρακαλώ τηρήστε τη λογική σειρά τιμής: πολύ φθηνό < συμφέρον < ακριβό < πολύ ακριβό.",
+        submit_loading: "Υποβολή...",
+        submit_error: "Σφάλμα αποθήκευσης δεδομένων. Παρακαλώ δοκιμάστε ξανά.",
+        connection_error: "Σφάλμα σύνδεσης."
+    },
+    sv: {
+        q1_frequency: "Hur ofta köper du fryst frukt eller hälsosamma söta snacks?",
+        freq_weekly: "1 gång i veckan eller oftare",
+        freq_monthly: "2–3 gånger per månad",
+        freq_rarely: "1 gång var 1–2 månad",
+        freq_never: "Nästan aldrig",
+        q4_channel: "Var skulle du troligast köpa den här typen av produkt?",
+        channel_supermarket: "Supermarket / hypermarket",
+        channel_convenience: "Närbutik / convenience",
+        channel_ecommerce: "Onlinebutik / leverans",
+        channel_specialty: "Specialbutik",
+        q4_barrier: "Vad skulle vara det största köphindret?",
+        barrier_price: "För högt pris",
+        barrier_sugar: "Oro för socker / kalorier",
+        barrier_availability: "Inte tillgänglig i vanliga butiker",
+        barrier_brand: "Okänt varumärke",
+        header_hint: "Dina svar hjälper till att definiera målsegment, priskorridor och distributionsstrategi för marknadsinträde.",
+        franui_label: "Franui (Argentina)",
+        berrie_label: "Berrie (Tjeckien)",
+        error_required: "Fyll i alla obligatoriska frågor.",
+        error_psm_order: "Behåll den logiska prisordningen: för billigt < fyndpris < dyrt < för dyrt.",
+        submit_loading: "Skickar...",
+        submit_error: "Fel vid sparande av data. Försök igen.",
+        connection_error: "Anslutningsfel."
+    },
+    da: {
+        q1_frequency: "Hvor ofte køber du frossen frugt eller sunde søde snacks?",
+        freq_weekly: "1 gang om ugen eller oftere",
+        freq_monthly: "2–3 gange om måneden",
+        freq_rarely: "1 gang hver 1–2 måned",
+        freq_never: "Næsten aldrig",
+        q4_channel: "Hvor ville du mest sandsynligt købe denne type produkt?",
+        channel_supermarket: "Supermarked / hypermarked",
+        channel_convenience: "Mindre butik / convenience",
+        channel_ecommerce: "Onlinebutik / levering",
+        channel_specialty: "Specialbutik",
+        q4_barrier: "Hvad ville være den største købsbarriere?",
+        barrier_price: "For høj pris",
+        barrier_sugar: "Bekymring om sukker / kalorier",
+        barrier_availability: "Ikke tilgængelig i almindelige butikker",
+        barrier_brand: "Ukendt brand",
+        header_hint: "Dine svar hjælper med at definere målsegmenter, priskorridor og distributionsstrategi for markedsindtræden.",
+        franui_label: "Franui (Argentina)",
+        berrie_label: "Berrie (Tjekkiet)",
+        error_required: "Udfyld venligst alle obligatoriske spørgsmål.",
+        error_psm_order: "Bevar den logiske prisrækkefølge: for billig < godt køb < dyr < for dyr.",
+        submit_loading: "Sender...",
+        submit_error: "Fejl ved lagring af data. Prøv igen.",
+        connection_error: "Forbindelsesfejl."
+    },
+    fi: {
+        q1_frequency: "Kuinka usein ostat pakastettuja hedelmiä tai terveellisiä makeita välipaloja?",
+        freq_weekly: "1x viikossa tai useammin",
+        freq_monthly: "2–3x kuukaudessa",
+        freq_rarely: "1x 1–2 kuukaudessa",
+        freq_never: "Lähes koskaan",
+        q4_channel: "Mistä ostaisit tämän tuotetyypin todennäköisimmin?",
+        channel_supermarket: "Supermarket / hypermarket",
+        channel_convenience: "Lähikauppa / convenience",
+        channel_ecommerce: "Verkkokauppa / toimitus",
+        channel_specialty: "Erikoisliike",
+        q4_barrier: "Mikä olisi suurin oston este?",
+        barrier_price: "Liian korkea hinta",
+        barrier_sugar: "Huoli sokerista / kaloreista",
+        barrier_availability: "Ei saatavilla tavallisissa kaupoissa",
+        barrier_brand: "Tuntematon brändi",
+        header_hint: "Vastauksesi auttavat määrittämään kohdesegmentit, hintakäytävän ja jakelustrategian markkinoille tuloon.",
+        franui_label: "Franui (Argentiina)",
+        berrie_label: "Berrie (Tšekin tasavalta)",
+        error_required: "Täytä kaikki pakolliset kysymykset.",
+        error_psm_order: "Pidä hintalogiikka järjestyksessä: liian halpa < edullinen < kallis < liian kallis.",
+        submit_loading: "Lähetetään...",
+        submit_error: "Virhe tietojen tallennuksessa. Yritä uudelleen.",
+        connection_error: "Yhteysvirhe."
+    }
+};
+
+Object.keys(completionTranslations).forEach((lang) => {
+    translations[lang] = {
+        ...translations[lang],
+        ...completionTranslations[lang]
+    };
+});
+
 document.addEventListener('DOMContentLoaded', () => {
     // --- LANGUAGE SWITCHER ---
     let currentLang = 'cs';
+    const fallbackLang = 'en';
     const langSelect = document.getElementById('lang-select');
     const langInput = document.getElementById('lang-input');
+
+    function t(key) {
+        if (translations[currentLang] && translations[currentLang][key]) {
+            return translations[currentLang][key];
+        }
+        if (translations[fallbackLang] && translations[fallbackLang][key]) {
+            return translations[fallbackLang][key];
+        }
+        if (translations.cs && translations.cs[key]) {
+            return translations.cs[key];
+        }
+        return key;
+    }
 
     function updateLanguage(lang) {
         currentLang = lang;
         langInput.value = lang;
+        document.documentElement.lang = lang;
+        localStorage.setItem('survey_lang', lang);
         
         if (langSelect) {
             langSelect.value = lang;
@@ -957,9 +1479,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         document.querySelectorAll('[data-i18n]').forEach(el => {
             const key = el.dataset.i18n;
-            if (translations[lang] && translations[lang][key]) {
-                el.innerHTML = translations[lang][key];
-            }
+            el.innerHTML = t(key);
         });
     }
 
@@ -967,8 +1487,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const browserLang = navigator.language || navigator.userLanguage;
     const supportedLangs = Object.keys(translations);
     const detectedLang = browserLang ? browserLang.split('-')[0].toLowerCase() : 'cs';
+    const persistedLang = localStorage.getItem('survey_lang');
     
-    if (supportedLangs.includes(detectedLang)) {
+    if (persistedLang && supportedLangs.includes(persistedLang)) {
+        updateLanguage(persistedLang);
+    } else if (supportedLangs.includes(detectedLang)) {
         updateLanguage(detectedLang);
     } else {
         updateLanguage('cs');
@@ -985,6 +1508,80 @@ document.addEventListener('DOMContentLoaded', () => {
     const progressBar = document.getElementById('progress');
     const form = document.getElementById('survey-form');
     const totalSteps = groups.length - 1; 
+    const submitEndpoint = window.SURVEY_SUBMIT_ENDPOINT || '/submit';
+    const trackingEndpoint = window.SURVEY_TRACK_ENDPOINT || '/track';
+
+    const sessionInput = document.getElementById('session-id-input');
+    const utmSourceInput = document.getElementById('utm-source-input');
+    const utmMediumInput = document.getElementById('utm-medium-input');
+    const utmCampaignInput = document.getElementById('utm-campaign-input');
+
+    function generateSessionId() {
+        if (window.crypto && crypto.randomUUID) {
+            return crypto.randomUUID();
+        }
+        return `sid_${Date.now()}_${Math.random().toString(16).slice(2)}`;
+    }
+
+    function getOrCreateSessionId() {
+        const storageKey = 'survey_session_id';
+        const existing = sessionStorage.getItem(storageKey);
+        if (existing) return existing;
+        const created = generateSessionId();
+        sessionStorage.setItem(storageKey, created);
+        return created;
+    }
+
+    function getUrlParam(paramName) {
+        const params = new URLSearchParams(window.location.search);
+        return params.get(paramName) || '';
+    }
+
+    const trackingContext = {
+        session_id: getOrCreateSessionId(),
+        utm_source: getUrlParam('utm_source'),
+        utm_medium: getUrlParam('utm_medium'),
+        utm_campaign: getUrlParam('utm_campaign')
+    };
+
+    if (sessionInput) sessionInput.value = trackingContext.session_id;
+    if (utmSourceInput) utmSourceInput.value = trackingContext.utm_source;
+    if (utmMediumInput) utmMediumInput.value = trackingContext.utm_medium;
+    if (utmCampaignInput) utmCampaignInput.value = trackingContext.utm_campaign;
+
+    function sendTrackingEvent(eventType, extra = {}) {
+        const payload = {
+            ...trackingContext,
+            event_type: eventType,
+            lang: currentLang,
+            ...extra
+        };
+
+        try {
+            fetch(trackingEndpoint, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload),
+                keepalive: true
+            }).catch(() => {});
+        } catch {
+            // no-op: tracking failures should never affect form flow
+        }
+    }
+
+    let activeStep = '0';
+    let activeStepStartedAt = Date.now();
+
+    sendTrackingEvent('survey_open', { step: activeStep });
+    sendTrackingEvent('step_view', { step: activeStep });
+
+    function parsePriceValue(rawValue) {
+        if (rawValue === undefined || rawValue === null) return null;
+        const normalized = String(rawValue).trim().replace(',', '.');
+        if (!normalized) return null;
+        const parsed = Number(normalized);
+        return Number.isFinite(parsed) ? parsed : null;
+    }
 
     function validateStep(stepIndex) {
         const currentGroup = document.getElementById(`step-${stepIndex}`);
@@ -1030,10 +1627,44 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
             }
         }
+
+        if (isValid && String(stepIndex) === '3') {
+            const tooCheapInput = currentGroup.querySelector('[name="psm_too_cheap"]');
+            const cheapInput = currentGroup.querySelector('[name="psm_cheap"]');
+            const expensiveInput = currentGroup.querySelector('[name="psm_expensive"]');
+            const tooExpensiveInput = currentGroup.querySelector('[name="psm_too_expensive"]');
+
+            const tooCheap = parsePriceValue(tooCheapInput?.value);
+            const cheap = parsePriceValue(cheapInput?.value);
+            const expensive = parsePriceValue(expensiveInput?.value);
+            const tooExpensive = parsePriceValue(tooExpensiveInput?.value);
+
+            const allPricesPresent = [tooCheap, cheap, expensive, tooExpensive].every(v => v !== null);
+            if (allPricesPresent && !(tooCheap < cheap && cheap < expensive && expensive < tooExpensive)) {
+                isValid = false;
+                [tooCheapInput, cheapInput, expensiveInput, tooExpensiveInput].forEach((input) => {
+                    if (!input) return;
+                    input.style.borderColor = 'red';
+                    setTimeout(() => { input.style.borderColor = ''; }, 2000);
+                });
+                alert(t('error_psm_order'));
+            }
+        }
+
         return isValid;
     }
 
     function goToStep(targetIndex) {
+        const targetStep = String(targetIndex);
+        const now = Date.now();
+
+        if (activeStep !== targetStep && activeStep !== 'success') {
+            sendTrackingEvent('step_time', {
+                step: activeStep,
+                duration_ms: Math.max(now - activeStepStartedAt, 0)
+            });
+        }
+
         groups.forEach(g => g.classList.remove('active'));
         document.getElementById(`step-${targetIndex}`).classList.add('active');
         
@@ -1046,6 +1677,16 @@ document.addEventListener('DOMContentLoaded', () => {
             const progress = (targetIndex / (totalSteps - 1)) * 100;
             progressBar.style.width = `${progress}%`;
         }
+
+        if (targetStep !== activeStep) {
+            if (targetStep !== 'success') {
+                sendTrackingEvent('step_view', { step: targetStep });
+            } else {
+                sendTrackingEvent('survey_complete');
+            }
+            activeStep = targetStep;
+            activeStepStartedAt = now;
+        }
     }
 
     nextBtns.forEach(btn => {
@@ -1056,7 +1697,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (currentStep === '0' || validateStep(currentStep)) {
                 goToStep(targetStep);
             } else {
-                alert(currentLang === 'cs' ? 'Prosím vyplňte všechny povinné otázky.' : 'Please fill all required questions.');
+                alert(t('error_required'));
             }
         });
     });
@@ -1089,15 +1730,16 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         
         if (validateStep(4)) { 
+            sendTrackingEvent('submit_attempt', { step: '4' });
             const submitBtn = form.querySelector('button[type="submit"]');
             submitBtn.disabled = true;
-            submitBtn.textContent = '...';
+            submitBtn.textContent = t('submit_loading');
 
             const formData = new FormData(form);
             const data = Object.fromEntries(formData.entries());
             
             try {
-                const response = await fetch('/submit', {
+                const response = await fetch(submitEndpoint, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(data)
@@ -1106,16 +1748,18 @@ document.addEventListener('DOMContentLoaded', () => {
                 if(response.ok) {
                     goToStep('success');
                 } else {
-                    alert('Error saving data. Please try again.');
+                    alert(t('submit_error'));
                     submitBtn.disabled = false;
+                    submitBtn.textContent = t('submit');
                 }
             } catch (err) {
                 console.error('Submit error:', err);
-                alert('Connection error.');
+                alert(t('connection_error'));
                 submitBtn.disabled = false;
+                submitBtn.textContent = t('submit');
             }
         } else {
-            alert(currentLang === 'cs' ? 'Prosím vyplňte všechny povinné otázky.' : 'Please fill all required questions.');
+            alert(t('error_required'));
         }
     });
 });
