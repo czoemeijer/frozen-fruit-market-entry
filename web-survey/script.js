@@ -1589,14 +1589,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Get all required inputs, and ALL radio buttons in this group
         const requiredInputs = currentGroup.querySelectorAll('input[required]');
-        const allRadios = currentGroup.querySelectorAll('input[type="radio"]');
+        const allRadios = currentGroup.querySelectorAll('input[type="radio"], input[type="checkbox"]');
         let isValid = true;
         const radioGroups = {};
         
-        // Find which radio groups actually have a required attribute
+        // Find which radio/checkbox groups actually have a required attribute
         const requiredRadioNames = new Set();
         requiredInputs.forEach(input => {
-            if (input.type === 'radio') {
+            if (input.type === 'radio' || input.type === 'checkbox') {
                 requiredRadioNames.add(input.name);
             } else if (!input.value.trim()) {
                 isValid = false;
@@ -1736,7 +1736,24 @@ document.addEventListener('DOMContentLoaded', () => {
             submitBtn.textContent = t('submit_loading');
 
             const formData = new FormData(form);
-            const data = Object.fromEntries(formData.entries());
+            const dataObj = {};
+            for (const [key, value] of formData.entries()) {
+                if (dataObj[key] !== undefined) {
+                    if (!Array.isArray(dataObj[key])) {
+                        dataObj[key] = [dataObj[key]];
+                    }
+                    dataObj[key].push(value);
+                } else {
+                    dataObj[key] = value;
+                }
+            }
+            // Convert arrays to comma separated strings
+            for (const key in dataObj) {
+                if (Array.isArray(dataObj[key])) {
+                    dataObj[key] = dataObj[key].join(', ');
+                }
+            }
+            const data = dataObj;
             
             try {
                 const response = await fetch(submitEndpoint, {
