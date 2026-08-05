@@ -1,0 +1,18 @@
+name = "krunchies-website"
+main = "worker.js"
+compatibility_date = "2024-04-01"
+
+[assets]
+directory = "."
+binding = "ASSETS"
+
+# Custom Domain Configuration for Cloudflare
+# routes = [
+#   { pattern = "krunchies.eu.org", custom_domain = true }
+# ]
+
+# D1 Database Binding for Market Survey Data
+[[d1_databases]]
+binding = "SURVEY_DB"
+database_name = "krunchies_survey_db"
+database_id = "your-d1-database-id-here"

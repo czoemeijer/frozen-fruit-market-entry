@@ -3,11 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Výzkum trhu: Prémiové mražené pochutiny | Market Research</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
+    <title>KRUNCHIES | Spotřebitelský výzkum trhu (CAWI)</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div style="max-width: 820px; margin: 10px auto -10px auto; display: flex; justify-content: space-between; align-items: center; padding: 0 10px;">
+        <a href="../index.html" style="font-family: 'Bangers', cursive; font-size: 1.4rem; color: #3E2723; text-decoration: none; background: #FFFFFF; border: 2.5px solid #000; padding: 6px 16px; border-radius: 999px; box-shadow: 3px 3px 0px #000;">🏠 ZPĚT NA HLAVNÍ STRÁNKU KRUNCHIES</a>
+    </div>
+
     <div class="lang-switcher">
         <select id="lang-select" class="lang-select">
             <option value="cs">🇨🇿 Čeština</option>
@@ -39,13 +43,13 @@
         </div>
 
         <header>
-            <h1 data-i18n="title">Spotřebitelský výzkum (CAWI)</h1>
+            <h1 data-i18n="title">KRUNCHIES Spotřebitelský výzkum (CAWI)</h1>
             <p data-i18n="subtitle">Akademický výzkum pro diplomovou práci na téma vstupu značky prémiových potravin na trh.</p>
             <p class="section-hint" data-i18n="header_hint">Odpovědi pomohou určit cílový segment, cenové rozpětí a distribuční strategii pro vstup značky na trh.</p>
         </header>
 
         <form id="survey-form" novalidate>
-            <!-- ANTI-SPAM HONEYPOT (Hidden from real users) -->
+            <!-- ANTI-SPAM HONEYPOT -->
             <input type="text" name="website_url" class="honeypot" tabindex="-1" autocomplete="off" style="display:none;">
             <input type="hidden" name="lang" id="lang-input" value="cs">
             <input type="hidden" name="session_id" id="session-id-input" value="">
@@ -56,11 +60,13 @@
             <!-- PŘIVÍTÁNÍ -->
             <div class="question-group active" id="step-0">
                 <h2 data-i18n="welcome">Vítejte ve výzkumu</h2>
-                <p data-i18n="intro_text">Tento dotazník je součástí výzkumu trhu pro uvedení nové značky "Berrie" (mražené ovoce v čokoládě). Vyplnění zabere 3-4 minuty. Odpovědi jsou plně anonymní a slouží výhradně pro akademické účely.</p>
-                <div class="privacy-note" data-i18n="privacy">
+                <p data-i18n="intro_text">Tento dotazník je součástí výzkumu trhu pro uvedení nové značky "Krunchies" (mražené ovoce v čokoládě). Vyplnění zabere 3-4 minuty. Odpovědi jsou plně anonymní a slouží výhradně pro akademické účely.</p>
+                <div class="privacy-note" style="margin-top: 15px; font-weight: bold; color: #3E2723;" data-i18n="privacy">
                     🔒 Data nebudou poskytnuta třetím stranám.
                 </div>
-                <button type="button" class="btn btn-primary next-btn" data-target="1" data-i18n="start_btn">Začít výzkum</button>
+                <div class="nav-buttons">
+                    <button type="button" class="btn btn-primary next-btn" data-target="1" data-i18n="start_btn">Začít výzkum 🚀</button>
+                </div>
             </div>
 
             <!-- DEMOGRAFIE -->
@@ -101,30 +107,30 @@
                 </div>
             </div>
 
-            <!-- SROVNÁVACÍ HODNOCENÍ (4P & Vnímání) -->
+            <!-- SROVNÁVACÍ HODNOCENÍ -->
             <div class="question-group" id="step-2">
-                <h2 data-i18n="q2_title">2. Srovnání produktů (Franui vs. Berrie)</h2>
+                <h2 data-i18n="q2_title">2. Srovnání produktů (Franui vs. Krunchies)</h2>
                 
-                <p class="psm-intro" data-i18n="q2_intro">Ohodnoťte na škále 1-10 (1 = nejhorší, 10 = nejlepší) následující parametry pro existující argentinskou značku <strong>Franui</strong> (mražené maliny v čokoládě) a náš nový český koncept <strong>Berrie</strong>.</p>
+                <p class="psm-intro" data-i18n="q2_intro">Ohodnoťte na škále 1-10 (1 = nejhorší, 10 = nejlepší) následující parametry pro existující argentinskou značku <strong>Franui</strong> (mražené maliny v čokoládě) a náš nový koncept <strong>Krunchies</strong>.</p>
 
                 <div class="concept-board">
                     <div class="concept-image">
-                        <img src="images/berrie_mockup.png" alt="Berrie Premium Packaging Mockup">
+                        <img src="../images/krunchies-banana-bites.png" alt="Krunchies Packaging Design">
                     </div>
                     <div class="concept-text">
-                        <h3 data-i18n="concept_title">Představujeme koncept Berrie</h3>
-                        <p data-i18n="concept_desc">Zcela nový koncept české zdravé pochutiny: <strong>Šokově mražené české ovoce obalené v prémiové dvojité vrstvě čokolády.</strong></p>
+                        <h3 data-i18n="concept_title">Představujeme koncept Krunchies</h3>
+                        <p data-i18n="concept_desc">Zcela nový koncept zdravé pochutiny: <strong>Lyofilizované a šokově mražené ovoce obalené v prémiové belgické čokoládě.</strong></p>
                         <ul data-i18n="concept_points">
-                            <li>✓ Pouze přírodní suroviny, žádná chemie</li>
-                            <li>✓ Křupavá čokoláda na povrchu, mražené ovoce uvnitř</li>
-                            <li>✓ Vyráběno lokálně v ČR z českého ovoce</li>
+                            <li>✓ Pouze přírodní suroviny, 100% přírodní ovoce</li>
+                            <li>✓ Křupavá belgická čokoláda na povrchu, ovocné jádro uvnitř</li>
+                            <li>✓ Unikátní 2D Pop-Art comic design</li>
                         </ul>
                     </div>
                 </div>
 
-                <div class="comparison-grid">
+                <div class="comparison-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
                     <!-- Franui Column -->
-                    <div class="competitor-card">
+                    <div class="competitor-card" style="border: 3px solid #000; padding: 16px; border-radius: 14px; background: #FFF;">
                         <h3 data-i18n="franui_label">Franui (Argentina)</h3>
                         <div class="form-group">
                             <label data-i18n="visual_appeal">Vizuální atraktivita</label>
@@ -143,9 +149,9 @@
                         </div>
                     </div>
 
-                    <!-- Berrie Column -->
-                    <div class="competitor-card berrie-card">
-                        <h3 data-i18n="berrie_label">Berrie (Česká republika)</h3>
+                    <!-- Krunchies Column -->
+                    <div class="competitor-card berrie-card" style="border: 3px solid #000; padding: 16px; border-radius: 14px; background: #FFFDE7;">
+                        <h3 data-i18n="berrie_label">Krunchies (Europe)</h3>
                         <div class="form-group">
                             <label data-i18n="visual_appeal">Vizuální atraktivita</label>
                             <input type="range" name="berrie_visual" min="0" max="10" value="5" class="slider">
@@ -165,13 +171,13 @@
                 </div>
 
                 <div class="form-group" style="margin-top: 30px;">
-                    <label data-i18n="q2_intent">Koupili byste si značku Berrie, pokud by byla dostupná ve vašem obchodě?</label>
-                    <div class="likert-scale">
-                        <label><input type="radio" name="intent" value="1" required><span data-i18n="intent_1">Určitě ne</span></label>
-                        <label><input type="radio" name="intent" value="2"><span data-i18n="intent_2">Spíše ne</span></label>
-                        <label><input type="radio" name="intent" value="3"><span data-i18n="intent_3">Nevím</span></label>
-                        <label><input type="radio" name="intent" value="4"><span data-i18n="intent_4">Spíše ano</span></label>
-                        <label><input type="radio" name="intent" value="5"><span data-i18n="intent_5">Určitě ano</span></label>
+                    <label data-i18n="q2_intent">Koupili byste si značku Krunchies, pokud by byla dostupná ve vašem obchodě?</label>
+                    <div class="radio-options">
+                        <label class="radio-card"><input type="radio" name="intent" value="1" required><span data-i18n="intent_1">Určitě ne</span></label>
+                        <label class="radio-card"><input type="radio" name="intent" value="2"><span data-i18n="intent_2">Spíše ne</span></label>
+                        <label class="radio-card"><input type="radio" name="intent" value="3"><span data-i18n="intent_3">Nevím</span></label>
+                        <label class="radio-card"><input type="radio" name="intent" value="4"><span data-i18n="intent_4">Spíše ano</span></label>
+                        <label class="radio-card"><input type="radio" name="intent" value="5"><span data-i18n="intent_5">Určitě ano</span></label>
                     </div>
                 </div>
 
@@ -183,38 +189,38 @@
 
             <!-- PRICE SENSITIVITY METER (PSM) -->
             <div class="question-group" id="step-3">
-                <h2 data-i18n="q3_title">3. Cenová citlivost (Berrie 150g)</h2>
-                <p class="psm-intro" data-i18n="q3_intro">Běžná velikost balení je 150 gramů (zhruba velikost menší bonboniéry). Na základě vašich dojmů, při jaké ceně za toto balení byste produkt považovali za:</p>
+                <h2 data-i18n="q3_title">3. Cenová citlivost (Krunchies 150g)</h2>
+                <p class="psm-intro" data-i18n="q3_intro">Běžná velikost balení je 150 gramů. Na základě vašich dojmů, při jaké ceně za toto balení byste produkt považovali za:</p>
                 
                 <div class="form-group psm-group">
                     <label data-i18n="psm_1">Příliš <strong>levný</strong> (pochybovali byste o kvalitě)</label>
-                    <div class="input-with-currency">
-                        <input type="number" name="psm_too_cheap" min="10" max="500" required>
-                        <span class="currency">Kč</span>
+                    <div class="input-with-currency" style="display: flex; gap: 8px; align-items: center;">
+                        <input type="number" name="psm_too_cheap" min="10" max="500" required style="padding: 8px 12px; border: 3px solid #000; border-radius: 8px; font-weight: bold;">
+                        <span class="currency" style="font-weight: bold;">Kč</span>
                     </div>
                 </div>
 
                 <div class="form-group psm-group">
                     <label data-i18n="psm_2"><strong>Výhodný</strong> (skvělý nákup za tuto cenu)</label>
-                    <div class="input-with-currency">
-                        <input type="number" name="psm_cheap" min="10" max="500" required>
-                        <span class="currency">Kč</span>
+                    <div class="input-with-currency" style="display: flex; gap: 8px; align-items: center;">
+                        <input type="number" name="psm_cheap" min="10" max="500" required style="padding: 8px 12px; border: 3px solid #000; border-radius: 8px; font-weight: bold;">
+                        <span class="currency" style="font-weight: bold;">Kč</span>
                     </div>
                 </div>
 
                 <div class="form-group psm-group">
                     <label data-i18n="psm_3"><strong>Drahý</strong> (stále byste zvažovali koupi)</label>
-                    <div class="input-with-currency">
-                        <input type="number" name="psm_expensive" min="10" max="500" required>
-                        <span class="currency">Kč</span>
+                    <div class="input-with-currency" style="display: flex; gap: 8px; align-items: center;">
+                        <input type="number" name="psm_expensive" min="10" max="500" required style="padding: 8px 12px; border: 3px solid #000; border-radius: 8px; font-weight: bold;">
+                        <span class="currency" style="font-weight: bold;">Kč</span>
                     </div>
                 </div>
 
                 <div class="form-group psm-group">
                     <label data-i18n="psm_4">Příliš <strong>drahý</strong> (už byste jej nekoupili)</label>
-                    <div class="input-with-currency">
-                        <input type="number" name="psm_too_expensive" min="10" max="500" required>
-                        <span class="currency">Kč</span>
+                    <div class="input-with-currency" style="display: flex; gap: 8px; align-items: center;">
+                        <input type="number" name="psm_too_expensive" min="10" max="500" required style="padding: 8px 12px; border: 3px solid #000; border-radius: 8px; font-weight: bold;">
+                        <span class="currency" style="font-weight: bold;">Kč</span>
                     </div>
                 </div>
 
@@ -224,15 +230,15 @@
                 </div>
             </div>
 
-            <!-- LOCAL PATRIOTISM -->
+            <!-- LOCAL PATRIOTISM & CHANNELS -->
             <div class="question-group" id="step-4">
-                <h2 data-i18n="q4_title">4. Postoje k lokálním potravinám</h2>
+                <h2 data-i18n="q4_title">4. Postoje k lokálním potravinám a preferencím</h2>
                 
                 <div class="form-group">
                     <label data-i18n="q4_local">Nakolik je pro vás důležité, aby potraviny byly vyrobeny lokálně?</label>
                     <div class="slider-container">
                         <input type="range" name="local_importance" min="0" max="10" value="5" class="slider">
-                        <div class="slider-labels">
+                        <div class="slider-labels" style="display: flex; justify-content: space-between; font-weight: bold; margin-top: 6px;">
                             <span data-i18n="scale_low">Vůbec (1)</span>
                             <span class="val-display">5/10</span>
                             <span data-i18n="scale_high">Zcela (10)</span>
@@ -272,16 +278,17 @@
 
                 <div class="nav-buttons">
                     <button type="button" class="btn btn-secondary prev-btn" data-target="3" data-i18n="back">Zpět</button>
-                    <button type="submit" class="btn btn-success" data-i18n="submit">Odeslat dotazník</button>
+                    <button type="submit" class="btn btn-primary" data-i18n="submit">Odeslat dotazník ✨</button>
                 </div>
             </div>
 
             <!-- SUCCESS -->
             <div class="question-group" id="step-success">
-                <div class="success-message">
-                    <div class="checkmark">✅</div>
+                <div class="success-message" style="text-align: center; padding: 20px;">
+                    <div class="checkmark" style="font-size: 4rem;">🎉</div>
                     <h2 data-i18n="success_title">Děkujeme za vyplnění!</h2>
-                    <p data-i18n="success_text">Vaše odpovědi byly úspěšně odeslány do akademické databáze.</p>
+                    <p data-i18n="success_text">Vaše odpovědi byly úspěšně odeslány do databáze značky Krunchies.</p>
+                    <a href="../index.html" class="btn btn-primary" style="display: inline-block; margin-top: 20px; text-decoration: none;">ZPĚT NA HLAVNÍ STRÁNKU KRUNCHIES</a>
                 </div>
             </div>
         </form>

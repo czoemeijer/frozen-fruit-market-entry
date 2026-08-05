@@ -1,71 +1,51 @@
-# Diplomová práce – Marketingový výzkum a vstup značky Berrie na trh
+# Diplomová práce & Krunchies Official Web Platform
 
-Tento repozitář obsahuje kompletní podklady pro diplomovou práci:
+Tento repozitář obsahuje kompletní podklady pro diplomovou práci a oficiální webovou platformu značky **Krunchies** (`krunchies.eu.org`):
 
-- text práce v LaTeXu,
-- analytický modul pro data a grafy,
-- webový CAWI dotazník s backendem,
-- podpůrné deploy šablony (persistent run + serverless).
+- **Oficiální webové stránky & výzkumný dotazník**: `website/` (Pop-Art komiksový styl, Cloudflare Workers deployment)
+- **Text práce v LaTeXu**: `thesis/`
+- **Analytický modul pro data a grafy**: `research/`
+- **Dokumentace a návrhové záznamy (Local Traceability Logs)**: `website/docs/`
 
-**Téma:** vstup nové značky mraženého ovoce v čokoládě na český trh  
-**Značka:** Berrie
-
----
-
-## Struktura
-
-- `thesis/` — LaTeX zdroj práce (viz [thesis/README.md](thesis/README.md))
-- `research/` — datové skripty a grafy (viz [research/README.md](research/README.md))
-- `web-survey/` — vícejazyčný dotazník + backend + deploy šablony (viz [web-survey/README.md](web-survey/README.md))
-- `private/` — citlivé interní podklady (necommitovat)
+**Téma:** Vstup nové značky mraženého a lyofilizovaného ovoce v čokoládě na evropský trh  
+**Značka:** Krunchies (dříve Berrie)  
+**Doména:** `krunchies.eu.org`
 
 ---
 
-## Rychlý start
+## 📁 Struktura Repozitáře
 
-### 1) Kompilace diplomky
+- `website/` — **Oficiální web Krunchies + Integrovaný výzkumný dotazník (CAWI)**
+  - `index.html` — Oficiální prezentace značky v 2D Pop-Art comic stylu.
+  - `css/style.css` — Pop-Art design systém (Bangers, Outfit, neobrutalistické stíny, bold borders).
+  - `images/` — Produktová fotodokumentace a obalový design (`krunchies-banana-bites.png`).
+  - `survey/` — Vícejazyčný CAWI výzkumný dotazník pro sběr dat (20+ jazyků).
+  - `docs/` — Lokální záznamy návrhu, značky a strategických rozhodnutí (`DESIGN_AND_STRATEGY_LOG.md`).
+  - `worker.js` & `wrangler.toml` — Konfigurace Cloudflare Worker / Pages deploymentu.
+- `thesis/` — LaTeX zdroj diplomové práce (viz [thesis/README.md](thesis/README.md)).
+- `research/` — Datové skripty a analytické grafy (viz [research/README.md](research/README.md)).
+- `private/` — Citlivé interní podklady (necommitovat).
 
+---
+
+## ⚡ Rychlý Start
+
+### 1) Lokální Zobrazení Webu
+Otevřete `website/index.html` v prohlížeči nebo použijte lokální statický server:
 ```bash
-cd thesis
-make pdf
+cd website
+python3 -m http.server 8000
+```
+Web poběží na `http://localhost:8000/` a dotazník na `http://localhost:8000/survey/`.
+
+### 2) Nasazení na Cloudflare Workers (`krunchies.eu.org`)
+```bash
+cd website
+npx wrangler deploy
 ```
 
-Výstup: `dst/Meijer_Catherine_Diplomova_Prace.pdf`
-
-### 2) Výzkumné grafy
-
-```bash
-cd research
-pip install -r requirements.txt
-python3 generate_charts.py
-```
-
-### 3) Webový dotazník
-
-```bash
-cd web-survey
-python3 backend.py
-```
-
-Frontend poběží na `http://localhost:8000/`.
-
 ---
 
-## Nasazení dotazníku
-
-Podporované varianty jsou zdokumentované v [web-survey/README.md](web-survey/README.md):
-
-- Linux persistent run: `systemd`
-- macOS persistent run: `launchd`
-- Serverless: Cloudflare Workers + D1
-- Serverless: Vercel Functions + Vercel Postgres
-
-Globální technická analýza projektu: [PROJECT_ANALYSIS.md](PROJECT_ANALYSIS.md)
-
----
-
-## Poznámky k datům
-
-- Lokální sběr dat v `web-survey` používá SQLite (`survey_data.db`).
-- Export do CSV: `python3 web-survey/export_data.py`
-- Pro serverless prostředí je doporučená managed DB (D1 / Postgres), nikoliv SQLite soubor.
+## 📝 Lokální Záznamy & Logování (Local Traceability)
+Všechny konceptuální myšlenky, designové volby, cenové matice a změny v branding z logických důvodů udržujeme lokálně zaznamenané v:
+👉 [website/docs/DESIGN_AND_STRATEGY_LOG.md](website/docs/DESIGN_AND_STRATEGY_LOG.md)
