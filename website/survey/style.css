@@ -28,6 +28,8 @@ h1, h2, h3 { font-family: var(--display); font-weight: 400; letter-spacing: 0.03
 .lang-switcher { width: min(900px, 100%); margin: 0 auto 14px; display: flex; justify-content: flex-end; }
 .lang-select { width: auto; min-width: 140px; padding: 10px 13px; border: 3px solid var(--ink); border-radius: 999px; background: var(--paper); color: var(--ink); box-shadow: var(--shadow-sm); font-size: 0.8rem; font-weight: 800; }
 .survey-container { width: min(900px, 100%); margin: 0 auto 48px; overflow: hidden; border: 4px solid var(--ink); border-radius: 24px; background: var(--paper); box-shadow: var(--shadow); }
+.survey-legal { width: min(900px, 100%); margin: -28px auto 0; padding: 0 4px 10px; display: flex; flex-wrap: wrap; gap: 5px 14px; color: var(--muted); font-size: .7rem; line-height: 1.45; }
+.survey-legal a { color: var(--ink); font-weight: 800; text-decoration: underline; text-underline-offset: 3px; }
 .progress-bar-container { height: 11px; background: var(--cyan); border-bottom: 3px solid var(--ink); }
 .progress-bar { height: 100%; width: 0; background: var(--accent); transition: width 280ms ease; }
 header { padding: 42px 54px 30px; border-bottom: 4px solid var(--ink); background: var(--accent); }

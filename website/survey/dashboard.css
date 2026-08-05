@@ -73,6 +73,8 @@ h3 { margin: 0 0 10px; font-size: 13px; color: var(--muted); text-transform: upp
 .quality-item { padding: 14px; border-radius: 14px; background: #f9f1e8; }
 .quality-item .quality-label { color: var(--muted); font-size: 12px; }
 .quality-item .quality-value { margin-top: 6px; font-size: 22px; font-weight: 800; }
+.dashboard-legal { max-width: 1180px; margin: -46px auto 0; padding: 0 22px 34px; display: flex; flex-wrap: wrap; gap: 6px 16px; color: var(--muted); font-size: 11px; line-height: 1.5; }
+.dashboard-legal a { color: var(--accent-dark); font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
 
 @media (max-width: 900px) {
   .cards { grid-template-columns: repeat(2, 1fr); }

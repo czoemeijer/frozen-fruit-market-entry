@@ -49,3 +49,10 @@ npx wrangler deploy
 ## 📝 Lokální Záznamy & Logování (Local Traceability)
 Všechny konceptuální myšlenky, designové volby, cenové matice a změny v branding z logických důvodů udržujeme lokálně zaznamenané v:
 👉 [website/docs/DESIGN_AND_STRATEGY_LOG.md](website/docs/DESIGN_AND_STRATEGY_LOG.md)
+## Copyright & Licensing
+
+This is a public repository for viewing and personal, non-commercial evaluation. The original Krunchies brand, packaging concepts, product visuals, copy, website design, research materials, and code are **not** released under an open-source license. Please see [`LICENSE.md`](LICENSE.md).
+
+Any permitted quotation or reference must credit **Original work by Catherine Zoë Meijer / Krunchies**. Commercial use, reuse in products or client work, redistribution, derivative work, and AI-training use require prior written permission and a separate paid license.
+
+> Note: a public GitHub repository can still be viewed or forked through GitHub’s platform. The license controls reuse and commercial exploitation; it cannot technically prevent a platform user from making a fork.

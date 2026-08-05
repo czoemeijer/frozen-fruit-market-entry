@@ -206,6 +206,9 @@ h1 em { color: var(--orange); font-style: normal; }
 .footer-links { display: flex; flex-wrap: wrap; gap: 15px; }
 .footer-links a:hover { color: var(--yellow); }
 .footer-note { color: var(--yellow); font-family: var(--display); font-size: 1.15rem; letter-spacing: .04em; }
+.footer-legal { grid-column: 1 / -1; display: flex; flex-wrap: wrap; gap: 8px 18px; align-items: center; margin-top: 20px; padding-top: 14px; border-top: 1px solid rgba(255,255,255,.22); color: #c9bfbc; font-size: .73rem; letter-spacing: .02em; }
+.footer-legal a { color: var(--yellow); text-decoration: underline; text-underline-offset: 3px; }
+.footer-legal a:hover { color: var(--white); }
 
 @media (max-width: 900px) {
   .main-nav { display: none; }
