@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1402 1122" role="img" aria-labelledby="title desc">
+  <title id="title">Krunchies Strawberry Blast package concept</title>
+  <desc id="desc">A comic-book style cobalt blue Krunchies strawberry and white chocolate box with thick black outlines and halftone details.</desc>
+  <defs>
+    <pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse">
+      <circle cx="3" cy="3" r="2.1" fill="#0b0b0b" opacity=".2"/>
+    </pattern>
+    <pattern id="tinyDots" width="14" height="14" patternUnits="userSpaceOnUse">
+      <circle cx="3" cy="3" r="1.7" fill="#fff7e6" opacity=".25"/>
+    </pattern>
+    <linearGradient id="board" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#e2eef9"/>
+      <stop offset="1" stop-color="#c6d9eb"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1402" height="1122" fill="url(#board)"/>
+  <rect x="38" y="38" width="1326" height="1046" rx="34" fill="#dce9f4" stroke="#0b0b0b" stroke-width="10"/>
+  <rect x="38" y="38" width="1326" height="1046" rx="34" fill="url(#dots)"/>
+  <path d="M120 944 C280 838 402 1020 572 942 S890 826 1115 936 S1290 1000 1320 918" fill="none" stroke="#0b0b0b" stroke-width="14" opacity=".24"/>
+
+  <!-- side panel -->
+  <path d="M176 176 L298 142 L298 965 L176 1000 Z" fill="#ff7b35" stroke="#0b0b0b" stroke-width="10"/>
+  <path d="M196 242 L274 220 L274 477 L196 499 Z" fill="#fff7e6" stroke="#0b0b0b" stroke-width="6"/>
+  <text x="235" y="275" text-anchor="middle" font-family="Impact, Bangers, sans-serif" font-size="30" fill="#0b0b0b">TART</text>
+  <text x="235" y="312" text-anchor="middle" font-family="Impact, Bangers, sans-serif" font-size="30" fill="#0b0b0b">OUTSIDE</text>
+  <text x="235" y="349" text-anchor="middle" font-family="Impact, Bangers, sans-serif" font-size="30" fill="#0b0b0b">BERRY</text>
+  <text x="235" y="386" text-anchor="middle" font-family="Impact, Bangers, sans-serif" font-size="30" fill="#0b0b0b">INSIDE!</text>
+  <path d="M218 600 C182 647 187 704 237 728 C286 704 292 648 254 600 C243 586 230 586 218 600 Z" fill="#f24a36" stroke="#0b0b0b" stroke-width="8"/>
+  <path d="M201 608 l18 -22 l17 18 l19 -18 l12 26" fill="none" stroke="#0b0b0b" stroke-width="7"/>
+  <text x="236" y="793" text-anchor="middle" font-family="Impact, Bangers, sans-serif" font-size="25" fill="#0b0b0b">MADE WITH</text>
+  <text x="236" y="824" text-anchor="middle" font-family="Impact, Bangers, sans-serif" font-size="25" fill="#0b0b0b">REAL BERRIES</text>
+  <path d="M205 870 q30 -34 62 0" fill="none" stroke="#0b0b0b" stroke-width="8"/>
+
+  <!-- main package front -->
+  <rect x="298" y="142" width="926" height="823" fill="#275ecb" stroke="#0b0b0b" stroke-width="10"/>
+  <rect x="298" y="142" width="926" height="823" fill="url(#tinyDots)"/>
+  <path d="M438 272 L496 206 L548 255 L628 190 L686 258 L773 208 L838 286 L928 235 L984 306 L1090 241 L1148 333 L1191 303 L1140 470 L1181 550 L1104 580 L1140 685 L1036 699 L1011 812 L908 765 L844 850 L772 780 L681 846 L625 760 L520 807 L516 697 L414 679 L464 579 L381 521 L451 453 L405 358 Z" fill="#f6c945" stroke="#0b0b0b" stroke-width="12"/>
+  <path d="M414 175 h850 v790 h-850z" fill="url(#dots)" opacity=".65"/>
+
+  <!-- fruit and chocolate bites -->
+  <g stroke="#0b0b0b" stroke-width="8">
+    <path d="M402 276 C440 230 519 229 550 275 C573 309 561 355 522 375 C470 402 408 367 402 276Z" fill="#f24a36"/>
+    <path d="M1030 240 C1060 205 1121 206 1147 243 C1167 275 1157 315 1124 329 C1081 347 1036 318 1030 240Z" fill="#fff7e6"/>
+    <path d="M373 711 C390 653 452 621 503 653 C545 679 550 734 519 772 C474 826 390 798 373 711Z" fill="#f24a36"/>
+    <path d="M1059 738 C1071 682 1122 654 1167 676 C1208 696 1215 744 1191 780 C1155 831 1070 810 1059 738Z" fill="#fff7e6"/>
+    <path d="M940 360 C981 327 1049 333 1068 379 C1085 421 1054 459 1008 462 C957 466 917 419 940 360Z" fill="#5b2c1c"/>
+    <path d="M487 592 C519 548 585 551 608 594 C631 635 599 677 553 681 C500 685 459 635 487 592Z" fill="#5b2c1c"/>
+  </g>
+  <g fill="none" stroke="#0b0b0b" stroke-width="6" stroke-linecap="round">
+    <path d="M424 293 q39 36 84 0"/><path d="M1050 262 q37 28 74 0"/><path d="M396 730 q36 34 74 0"/><path d="M1083 755 q30 28 68 0"/>
+    <path d="M456 331 l28 -22 m-13 53 l39 -16 m-112 364 l32 -22 m-5 51 l40 -14"/>
+  </g>
+
+  <!-- brand lockup -->
+  <text x="758" y="430" text-anchor="middle" font-family="Impact, Bangers, sans-serif" font-size="126" letter-spacing="2" fill="#fff7e6" stroke="#0b0b0b" stroke-width="22" paint-order="stroke">KRUNCHIES</text>
+  <text x="758" y="430" text-anchor="middle" font-family="Impact, Bangers, sans-serif" font-size="126" letter-spacing="2" fill="#fff7e6">KRUNCHIES</text>
+  <path d="M444 458 Q760 520 1088 456" fill="none" stroke="#0b0b0b" stroke-width="10"/>
+  <text x="758" y="570" text-anchor="middle" font-family="Impact, Bangers, sans-serif" font-size="58" fill="#fff7e6" stroke="#0b0b0b" stroke-width="8" paint-order="stroke">STRAWBERRY BLAST</text>
+
+  <!-- comic accents -->
+  <g fill="none" stroke="#0b0b0b" stroke-width="9" stroke-linecap="round">
+    <path d="M363 401 l-64 -22 M378 432 l-73 0 M1132 512 l66 -25 M1141 540 l73 7"/>
+    <path d="M736 222 l-18 -73 M786 225 l20 -76 M845 248 l47 -63"/>
+  </g>
+  <path d="M548 705 h420 l-32 88 H584Z" fill="#ff7b35" stroke="#0b0b0b" stroke-width="10"/>
+  <text x="758" y="753" text-anchor="middle" font-family="Impact, Bangers, sans-serif" font-size="30" fill="#0b0b0b">WHITE CHOCOLATE • FREEZE-DRIED FRUIT</text>
+  <g>
+    <rect x="455" y="860" width="230" height="58" rx="29" fill="#fff7e6" stroke="#0b0b0b" stroke-width="7"/>
+    <text x="570" y="898" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="900" fill="#0b0b0b">REAL BERRIES</text>
+    <rect x="725" y="860" width="230" height="58" rx="29" fill="#f6c945" stroke="#0b0b0b" stroke-width="7"/>
+    <text x="840" y="898" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="900" fill="#0b0b0b">WHITE COCOA</text>
+    <rect x="995" y="860" width="170" height="58" rx="29" fill="#ff7b35" stroke="#0b0b0b" stroke-width="7"/>
+    <text x="1080" y="898" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="900" fill="#0b0b0b">90 G POUCH</text>
+  </g>
+  <text x="758" y="1018" text-anchor="middle" font-family="Impact, Bangers, sans-serif" font-size="34" fill="#0b0b0b">LOUDLY BERRY • TOTALLY KRUNCHY</text>
+</svg>
