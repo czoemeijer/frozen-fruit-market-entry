@@ -15,4 +15,4 @@ binding = "ASSETS"
 [[d1_databases]]
 binding = "SURVEY_DB"
 database_name = "krunchies_survey_db"
-database_id = "your-d1-database-id-here"
+database_id = "c9b517a6-ae7e-4245-848f-40e0dc5ea2aa"
