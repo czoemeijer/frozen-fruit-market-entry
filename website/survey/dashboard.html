@@ -3,35 +3,89 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Survey Quality Dashboard</title>
+  <meta name="theme-color" content="#f6efe4">
+  <title>Survey Quality Dashboard · Krunchies</title>
   <link rel="stylesheet" href="dashboard.css">
 </head>
 <body>
   <main class="container">
-    <h1>Survey Quality Dashboard</h1>
-    <p class="subtitle">Pilot + production monitoring (lightweight)</p>
+    <header class="dashboard-header">
+      <div>
+        <p class="eyebrow">KRUNCHIES / RESEARCH OPS</p>
+        <h1>Survey Quality Dashboard</h1>
+        <p class="subtitle">A compact view of response volume, price expectations and audience signals.</p>
+      </div>
+      <div class="header-actions">
+        <span id="last-updated" class="last-updated">Waiting for data</span>
+        <button id="refresh-button" class="refresh-button" type="button">Refresh</button>
+      </div>
+    </header>
 
-    <section class="cards" id="overview-cards"></section>
+    <div id="dashboard-status" class="status" role="status" aria-live="polite"></div>
+
+    <section class="cards" id="overview-cards" aria-label="Survey overview"></section>
+
+    <section class="panel panel-highlight">
+      <div class="panel-heading">
+        <div>
+          <p class="eyebrow">PRICE SIGNAL</p>
+          <h2>Price Sensitivity Meter</h2>
+        </div>
+        <p class="panel-note">Average selected price for the 150 g pack.</p>
+      </div>
+      <div id="price-signal" class="price-signal"></div>
+    </section>
+
+    <section class="grid-2">
+      <article class="panel">
+        <div class="panel-heading"><h2>Audience mix</h2><span class="panel-note">Who answered</span></div>
+        <div id="age-table"></div>
+        <div class="subsection"><h3>Purchase frequency</h3><div id="frequency-table"></div></div>
+      </article>
+      <article class="panel">
+        <div class="panel-heading"><h2>Purchase intent</h2><span class="panel-note">5-point scale</span></div>
+        <div id="intent-table"></div>
+        <div class="subsection"><h3>Local premium willingness</h3><div id="premium-table"></div></div>
+      </article>
+    </section>
+
+    <section class="grid-2">
+      <article class="panel">
+        <div class="panel-heading"><h2>Preferred channel</h2><span class="panel-note">Where they would buy</span></div>
+        <div id="channel-table"></div>
+      </article>
+      <article class="panel">
+        <div class="panel-heading"><h2>Purchase barriers</h2><span class="panel-note">What blocks conversion</span></div>
+        <div id="barrier-table"></div>
+      </article>
+    </section>
 
     <section class="panel">
-      <h2>Step Drop-off</h2>
+      <div class="panel-heading"><h2>Funnel drop-off</h2><span class="panel-note">Tracked survey steps</span></div>
       <div id="dropoff-table"></div>
     </section>
 
-    <section class="panel grid-2">
-      <div>
-        <h2>Language Distribution</h2>
+    <section class="grid-2">
+      <article class="panel">
+        <div class="panel-heading"><h2>Language</h2><span class="panel-note">Submitted responses</span></div>
         <div id="lang-table"></div>
-      </div>
-      <div>
-        <h2>Source Distribution</h2>
+      </article>
+      <article class="panel">
+        <div class="panel-heading"><h2>Traffic source</h2><span class="panel-note">UTM source or direct</span></div>
         <div id="source-table"></div>
-      </div>
+      </article>
     </section>
 
     <section class="panel">
-      <h2>Response Quality</h2>
-      <div id="quality-box"></div>
+      <div class="panel-heading"><h2>Response quality</h2><span class="panel-note">Useful checks, not a judgement</span></div>
+      <div id="quality-box" class="quality-grid"></div>
+    </section>
+
+    <section class="panel">
+      <div class="panel-heading">
+        <div><h2>Recent responses</h2><p class="panel-note">Personal IP addresses are never shown here.</p></div>
+      </div>
+      <div id="recent-table" class="table-scroll"></div>
     </section>
   </main>
 

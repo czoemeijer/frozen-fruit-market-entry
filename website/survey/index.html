@@ -8,32 +8,33 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div style="max-width: 820px; margin: 10px auto -10px auto; display: flex; justify-content: space-between; align-items: center; padding: 0 10px;">
-        <a href="../index.html" style="font-family: 'Bangers', cursive; font-size: 1.4rem; color: #3E2723; text-decoration: none; background: #FFFFFF; border: 2.5px solid #000; padding: 6px 16px; border-radius: 999px; box-shadow: 3px 3px 0px #000;">🏠 ZPĚT NA HLAVNÍ STRÁNKU KRUNCHIES</a>
+    <div class="survey-topbar">
+        <a href="../index.html" class="survey-back">KRUNCHIES <span>Home</span></a>
+        <span class="survey-meta">Market-entry research · 3 min</span>
     </div>
 
     <div class="lang-switcher">
         <select id="lang-select" class="lang-select">
-            <option value="cs">🇨🇿 Čeština</option>
-            <option value="sk">🇸🇰 Slovenčina</option>
-            <option value="en">🇬🇧 English</option>
-            <option value="de">🇩🇪 Deutsch</option>
-            <option value="pl">🇵🇱 Polski</option>
-            <option value="fr">🇫🇷 Français</option>
-            <option value="it">🇮🇹 Italiano</option>
-            <option value="es">🇪🇸 Español</option>
-            <option value="hu">🇭🇺 Magyar</option>
-            <option value="ro">🇷🇴 Română</option>
-            <option value="nl">🇳🇱 Nederlands</option>
-            <option value="pt">🇵🇹 Português</option>
-            <option value="el">🇬🇷 Ελληνικά</option>
-            <option value="sv">🇸🇪 Svenska</option>
-            <option value="da">🇩🇰 Dansk</option>
-            <option value="fi">🇫🇮 Suomi</option>
-            <option value="uk">🇺🇦 Українська</option>
-            <option value="ru">🇷🇺 Русский</option>
-            <option value="vi">🇻🇳 Tiếng Việt</option>
-            <option value="zh">🇨🇳 中文</option>
+            <option value="cs">Čeština</option>
+            <option value="sk">Slovenčina</option>
+            <option value="en">English</option>
+            <option value="de">Deutsch</option>
+            <option value="pl">Polski</option>
+            <option value="fr">Français</option>
+            <option value="it">Italiano</option>
+            <option value="es">Español</option>
+            <option value="hu">Magyar</option>
+            <option value="ro">Română</option>
+            <option value="nl">Nederlands</option>
+            <option value="pt">Português</option>
+            <option value="el">Ελληνικά</option>
+            <option value="sv">Svenska</option>
+            <option value="da">Dansk</option>
+            <option value="fi">Suomi</option>
+            <option value="uk">Українська</option>
+            <option value="ru">Русский</option>
+            <option value="vi">Tiếng Việt</option>
+            <option value="zh">中文</option>
         </select>
     </div>
 
@@ -62,10 +63,10 @@
                 <h2 data-i18n="welcome">Vítejte ve výzkumu</h2>
                 <p data-i18n="intro_text">Tento dotazník je součástí výzkumu trhu pro uvedení nové značky "Krunchies" (mražené ovoce v čokoládě). Vyplnění zabere 3-4 minuty. Odpovědi jsou plně anonymní a slouží výhradně pro akademické účely.</p>
                 <div class="privacy-note" style="margin-top: 15px; font-weight: bold; color: #3E2723;" data-i18n="privacy">
-                    🔒 Data nebudou poskytnuta třetím stranám.
+                    Data nebudou poskytnuta třetím stranám.
                 </div>
                 <div class="nav-buttons">
-                    <button type="button" class="btn btn-primary next-btn" data-target="1" data-i18n="start_btn">Začít výzkum 🚀</button>
+                    <button type="button" class="btn btn-primary next-btn" data-target="1" data-i18n="start_btn">Začít výzkum</button>
                 </div>
             </div>
 
@@ -151,7 +152,7 @@
 
                     <!-- Krunchies Column -->
                     <div class="competitor-card berrie-card" style="border: 3px solid #000; padding: 16px; border-radius: 14px; background: #FFFDE7;">
-                        <h3 data-i18n="berrie_label">Krunchies (Europe)</h3>
+                        <h3 data-i18n="krunchies_label">Krunchies (Europe)</h3>
                         <div class="form-group">
                             <label data-i18n="visual_appeal">Vizuální atraktivita</label>
                             <input type="range" name="berrie_visual" min="0" max="10" value="5" class="slider">
@@ -189,38 +190,59 @@
 
             <!-- PRICE SENSITIVITY METER (PSM) -->
             <div class="question-group" id="step-3">
+                <div class="step-kicker">Price ladder · 150 g pack</div>
                 <h2 data-i18n="q3_title">3. Cenová citlivost (Krunchies 150g)</h2>
-                <p class="psm-intro" data-i18n="q3_intro">Běžná velikost balení je 150 gramů. Na základě vašich dojmů, při jaké ceně za toto balení byste produkt považovali za:</p>
-                
-                <div class="form-group psm-group">
-                    <label data-i18n="psm_1">Příliš <strong>levný</strong> (pochybovali byste o kvalitě)</label>
-                    <div class="input-with-currency" style="display: flex; gap: 8px; align-items: center;">
-                        <input type="number" name="psm_too_cheap" min="10" max="500" required style="padding: 8px 12px; border: 3px solid #000; border-radius: 8px; font-weight: bold;">
-                        <span class="currency" style="font-weight: bold;">Kč</span>
-                    </div>
-                </div>
+                <p class="psm-intro" data-i18n="q3_intro">Běžná velikost balení je 150 gramů (zhruba velikost menší bonboniéry). Na základě vašich dojmů, při jaké ceně za toto balení byste produkt považovali za:</p>
+                <p class="choice-hint">Klikněte na jednu cenu v každém řádku. Je to rychlejší než zadávání čísla ručně.</p>
 
-                <div class="form-group psm-group">
-                    <label data-i18n="psm_2"><strong>Výhodný</strong> (skvělý nákup za tuto cenu)</label>
-                    <div class="input-with-currency" style="display: flex; gap: 8px; align-items: center;">
-                        <input type="number" name="psm_cheap" min="10" max="500" required style="padding: 8px 12px; border: 3px solid #000; border-radius: 8px; font-weight: bold;">
-                        <span class="currency" style="font-weight: bold;">Kč</span>
+                <div class="price-ladder">
+                    <div class="form-group psm-group">
+                        <label data-i18n="psm_1">Příliš <strong>levný</strong> (pochybovali byste o kvalitě)</label>
+                        <div class="price-options" role="radiogroup" aria-label="Too cheap price">
+                            <label class="price-card"><input type="radio" name="psm_too_cheap" value="49" required><span>49 Kč</span></label>
+                            <label class="price-card"><input type="radio" name="psm_too_cheap" value="59"><span>59 Kč</span></label>
+                            <label class="price-card"><input type="radio" name="psm_too_cheap" value="69"><span>69 Kč</span></label>
+                            <label class="price-card"><input type="radio" name="psm_too_cheap" value="79"><span>79 Kč</span></label>
+                            <label class="price-card"><input type="radio" name="psm_too_cheap" value="89"><span>89 Kč</span></label>
+                            <label class="price-card"><input type="radio" name="psm_too_cheap" value="99"><span>99 Kč</span></label>
+                            <label class="price-card"><input type="radio" name="psm_too_cheap" value="119"><span>119 Kč</span></label>
+                        </div>
                     </div>
-                </div>
-
-                <div class="form-group psm-group">
-                    <label data-i18n="psm_3"><strong>Drahý</strong> (stále byste zvažovali koupi)</label>
-                    <div class="input-with-currency" style="display: flex; gap: 8px; align-items: center;">
-                        <input type="number" name="psm_expensive" min="10" max="500" required style="padding: 8px 12px; border: 3px solid #000; border-radius: 8px; font-weight: bold;">
-                        <span class="currency" style="font-weight: bold;">Kč</span>
+                    <div class="form-group psm-group">
+                        <label data-i18n="psm_2"><strong>Výhodný</strong> (skvělý nákup za tuto cenu)</label>
+                        <div class="price-options" role="radiogroup" aria-label="Good value price">
+                            <label class="price-card"><input type="radio" name="psm_cheap" value="49" required><span>49 Kč</span></label>
+                            <label class="price-card"><input type="radio" name="psm_cheap" value="59"><span>59 Kč</span></label>
+                            <label class="price-card"><input type="radio" name="psm_cheap" value="69"><span>69 Kč</span></label>
+                            <label class="price-card"><input type="radio" name="psm_cheap" value="79"><span>79 Kč</span></label>
+                            <label class="price-card"><input type="radio" name="psm_cheap" value="89"><span>89 Kč</span></label>
+                            <label class="price-card"><input type="radio" name="psm_cheap" value="99"><span>99 Kč</span></label>
+                            <label class="price-card"><input type="radio" name="psm_cheap" value="119"><span>119 Kč</span></label>
+                        </div>
                     </div>
-                </div>
-
-                <div class="form-group psm-group">
-                    <label data-i18n="psm_4">Příliš <strong>drahý</strong> (už byste jej nekoupili)</label>
-                    <div class="input-with-currency" style="display: flex; gap: 8px; align-items: center;">
-                        <input type="number" name="psm_too_expensive" min="10" max="500" required style="padding: 8px 12px; border: 3px solid #000; border-radius: 8px; font-weight: bold;">
-                        <span class="currency" style="font-weight: bold;">Kč</span>
+                    <div class="form-group psm-group">
+                        <label data-i18n="psm_3"><strong>Drahý</strong> (stále byste zvažovali koupi)</label>
+                        <div class="price-options" role="radiogroup" aria-label="Expensive price">
+                            <label class="price-card"><input type="radio" name="psm_expensive" value="49" required><span>49 Kč</span></label>
+                            <label class="price-card"><input type="radio" name="psm_expensive" value="59"><span>59 Kč</span></label>
+                            <label class="price-card"><input type="radio" name="psm_expensive" value="69"><span>69 Kč</span></label>
+                            <label class="price-card"><input type="radio" name="psm_expensive" value="79"><span>79 Kč</span></label>
+                            <label class="price-card"><input type="radio" name="psm_expensive" value="89"><span>89 Kč</span></label>
+                            <label class="price-card"><input type="radio" name="psm_expensive" value="99"><span>99 Kč</span></label>
+                            <label class="price-card"><input type="radio" name="psm_expensive" value="119"><span>119 Kč</span></label>
+                        </div>
+                    </div>
+                    <div class="form-group psm-group">
+                        <label data-i18n="psm_4">Příliš <strong>drahý</strong> (už byste jej nekoupili)</label>
+                        <div class="price-options" role="radiogroup" aria-label="Too expensive price">
+                            <label class="price-card"><input type="radio" name="psm_too_expensive" value="49" required><span>49 Kč</span></label>
+                            <label class="price-card"><input type="radio" name="psm_too_expensive" value="59"><span>59 Kč</span></label>
+                            <label class="price-card"><input type="radio" name="psm_too_expensive" value="69"><span>69 Kč</span></label>
+                            <label class="price-card"><input type="radio" name="psm_too_expensive" value="79"><span>79 Kč</span></label>
+                            <label class="price-card"><input type="radio" name="psm_too_expensive" value="89"><span>89 Kč</span></label>
+                            <label class="price-card"><input type="radio" name="psm_too_expensive" value="99"><span>99 Kč</span></label>
+                            <label class="price-card"><input type="radio" name="psm_too_expensive" value="119"><span>119 Kč</span></label>
+                        </div>
                     </div>
                 </div>
 
@@ -278,14 +300,14 @@
 
                 <div class="nav-buttons">
                     <button type="button" class="btn btn-secondary prev-btn" data-target="3" data-i18n="back">Zpět</button>
-                    <button type="submit" class="btn btn-primary" data-i18n="submit">Odeslat dotazník ✨</button>
+                    <button type="submit" class="btn btn-primary" data-i18n="submit">Odeslat dotazník</button>
                 </div>
             </div>
 
             <!-- SUCCESS -->
             <div class="question-group" id="step-success">
                 <div class="success-message" style="text-align: center; padding: 20px;">
-                    <div class="checkmark" style="font-size: 4rem;">🎉</div>
+                    <div class="checkmark" aria-hidden="true">✓</div>
                     <h2 data-i18n="success_title">Děkujeme za vyplnění!</h2>
                     <p data-i18n="success_text">Vaše odpovědi byly úspěšně odeslány do databáze značky Krunchies.</p>
                     <a href="../index.html" class="btn btn-primary" style="display: inline-block; margin-top: 20px; text-decoration: none;">ZPĚT NA HLAVNÍ STRÁNKU KRUNCHIES</a>

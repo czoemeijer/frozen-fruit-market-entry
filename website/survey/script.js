@@ -4,7 +4,7 @@ const translations = {
         subtitle: "Akademický výzkum pro diplomovou práci na téma vstupu značky prémiových potravin na trh.",
         welcome: "Vítejte ve výzkumu",
         intro_text: "Tento dotazník je součástí výzkumu trhu pro uvedení nové značky \"Krunchies\" (mražené ovoce v čokoládě). Vyplnění zabere 3-4 minuty. Odpovědi jsou plně anonymní a slouží výhradně pro akademické účely.",
-        privacy: "🔒 Data nebudou poskytnuta třetím stranám.",
+        privacy: "Data nebudou poskytnuta třetím stranám.",
         start_btn: "Začít výzkum",
         q1_title: "1. Demografické údaje",
         q1_age: "Do jaké věkové kategorie spadáte?",
@@ -74,7 +74,7 @@ const translations = {
         subtitle: "Academic market research for a master's thesis on market entry of a premium food brand.",
         welcome: "Welcome to the research",
         intro_text: "This survey is part of market research for the launch of a new brand 'Krunchies' (frozen fruit in chocolate). It takes 3-4 minutes. Responses are fully anonymous and for academic purposes only.",
-        privacy: "🔒 Data will not be shared with third parties.",
+        privacy: "Data will not be shared with third parties.",
         start_btn: "Start Survey",
         q1_title: "1. Demographics",
         q1_age: "What is your age category?",
@@ -89,7 +89,7 @@ const translations = {
         back: "Back",
         next: "Next",
         q2_title: "2. Product Comparison (Franui vs. Krunchies)",
-        q2_intro: "Rate on a scale of 1-10 (1 = worst, 10 = best) the following parameters for the existing Argentinian brand <strong>Franui</strong> (frozen raspkrunchiess in chocolate) and our new Czech concept <strong>Krunchies</strong>.",
+        q2_intro: "Rate on a scale of 1-10 (1 = worst, 10 = best) the following parameters for the existing Argentinian brand <strong>Franui</strong> (frozen raspberries in chocolate) and our new Czech concept <strong>Krunchies</strong>.",
         concept_title: "Introducing the Krunchies Concept",
         concept_desc: "A brand new concept of a Czech healthy snack: <strong>Shock-frozen Czech fruit covered in a premium double layer of chocolate.</strong>",
         concept_points: "<li>✓ Only natural ingredients, no chemicals</li><li>✓ Crunchy chocolate on the outside, frozen fruit inside</li><li>✓ Made locally in the Czech Republic from Czech fruit</li>",
@@ -144,7 +144,7 @@ const translations = {
         subtitle: "Akademický výskum pre diplomovú prácu na tému vstupu značky prémiových potravín na trh.",
         welcome: "Vitajte vo výskume",
         intro_text: "Tento dotazník je súčasťou výskumu trhu pre uvedenie novej značky \"Krunchies\" (mrazené ovocie v čokoláde). Vyplnenie zaberie 3-4 minúty. Odpovede sú plne anonymné a slúžia výhradne na akademické účely.",
-        privacy: "🔒 Dáta nebudú poskytnuté tretím stranám.",
+        privacy: "Dáta nebudú poskytnuté tretím stranám.",
         start_btn: "Začať výskum",
         q1_title: "1. Demografické údaje",
         q1_age: "Do akej vekovej kategórie patríte?",
@@ -191,7 +191,7 @@ const translations = {
         subtitle: "Академічне дослідження для магістерської роботи на тему виходу на ринок преміального харчового бренду.",
         welcome: "Ласкаво просимо до дослідження",
         intro_text: "Ця анкета є частиною дослідження ринку для запуску нового бренду «Krunchies» (заморожені фрукти в шоколаді). Заповнення займе 3-4 хвилини. Відповіді повністю анонімні та використовуються лише для академічних цілей.",
-        privacy: "🔒 Дані не будуть передані третім особам.",
+        privacy: "Дані не будуть передані третім особам.",
         start_btn: "Почати опитування",
         q1_title: "1. Демографічні дані",
         q1_age: "До якої вікової категорії ви належите?",
@@ -238,7 +238,7 @@ const translations = {
         subtitle: "Nghiên cứu học thuật cho luận văn thạc sĩ.",
         welcome: "Chào mừng bạn đến với khảo sát",
         intro_text: "Bảng câu hỏi này là một phần nghiên cứu thị trường cho sự ra mắt của thương hiệu \"Krunchies\" (trái cây đông lạnh bọc sô cô la). Khảo sát mất 3-4 phút và hoàn toàn ẩn danh.",
-        privacy: "🔒 Dữ liệu sẽ không được chia sẻ với bên thứ ba.",
+        privacy: "Dữ liệu sẽ không được chia sẻ với bên thứ ba.",
         start_btn: "Bắt đầu",
         q1_title: "1. Thông tin nhân khẩu học",
         q1_age: "Bạn thuộc nhóm tuổi nào?",
@@ -285,7 +285,7 @@ const translations = {
         subtitle: "Академическое исследование для магистерской диссертации о выводе премиального пищевого бренда на рынок.",
         welcome: "Добро пожаловать в исследование",
         intro_text: "Эта анкета является частью исследования рынка для запуска нового бренда «Krunchies» (замороженные ягоды в шоколаде). Заполнение займет 3-4 минуты. Ответы полностью анонимны и используются только в академических целях.",
-        privacy: "🔒 Данные не будут переданы третьим лицам.",
+        privacy: "Данные не будут переданы третьим лицам.",
         start_btn: "Начать опрос",
         q1_title: "1. Демографические данные",
         q1_age: "К какой возрастной категории вы относитесь?",
@@ -332,7 +332,7 @@ const translations = {
         subtitle: "关于高端食品品牌进入市场的硕士论文准学术研究。",
         welcome: "欢迎参与调研",
         intro_text: "本问卷是为推出全新品牌“Krunchies”（巧克力脆皮冰冻浆果）所做的市场调研的一部分。只需花费您 3-4 分钟的时间。您的回答完全匿名，并且仅用于学术研究目的。",
-        privacy: "🔒 数据绝对保密，不会分享给任何第三方。",
+        privacy: "数据绝对保密，不会分享给任何第三方。",
         start_btn: "开始调查",
         q1_title: "1. 人口统计信息",
         q1_age: "您的年龄段是？",
@@ -379,7 +379,7 @@ const translations = {
         subtitle: "Akademische Marktforschung für eine Masterarbeit über den Markteintritt einer Premium-Lebensmittelmarke.",
         welcome: "Willkommen zur Umfrage",
         intro_text: "Dieser Fragebogen ist Teil einer Marktforschung für die Einführung der neuen Marke \"Krunchies\" (gefrorene Früchte in Schokolade). Das Ausfüllen dauert 3-4 Minuten. Die Antworten sind anonym und dienen ausschließlich akademischen Zwecken.",
-        privacy: "🔒 Daten werden nicht an Dritte weitergegeben.",
+        privacy: "Daten werden nicht an Dritte weitergegeben.",
         start_btn: "Umfrage starten",
         q1_title: "1. Demografische Daten",
         q1_age: "In welche Altersgruppe fallen Sie?",
@@ -426,7 +426,7 @@ const translations = {
         subtitle: "Akademickie badanie rynku do pracy magisterskiej na temat wejścia na rynek marki żywności premium.",
         welcome: "Witamy w badaniu",
         intro_text: "Ten kwestionariusz jest częścią badania rynku dotyczącego wprowadzenia nowej marki „Krunchies” (mrożone owoce w czekoladzie). Wypełnienie zajmuje 3-4 minuty. Odpowiedzi są w pełni anonimowe i służą wyłącznie celom akademickim.",
-        privacy: "🔒 Dane nie będą udostępniane osobom trzecim.",
+        privacy: "Dane nie będą udostępniane osobom trzecim.",
         start_btn: "Rozpocznij badanie",
         q1_title: "1. Dane demograficzne",
         q1_age: "W jakiej grupie wiekowej się znajdujesz?",
@@ -473,7 +473,7 @@ const translations = {
         subtitle: "Étude de marché académique pour un mémoire de master sur l'entrée sur le marché d'une marque alimentaire premium.",
         welcome: "Bienvenue à l'enquête",
         intro_text: "Ce questionnaire fait partie d'une étude de marché pour le lancement de la nouvelle marque \"Krunchies\" (fruits surgelés au chocolat). Le remplissage prend 3-4 minutes. Les réponses sont anonymes et servent exclusivement à des fins académiques.",
-        privacy: "🔒 Les données ne seront pas transmises à des tiers.",
+        privacy: "Les données ne seront pas transmises à des tiers.",
         start_btn: "Commencer l'enquête",
         q1_title: "1. Données démographiques",
         q1_age: "À quelle catégorie d'âge appartenez-vous ?",
@@ -520,7 +520,7 @@ const translations = {
         subtitle: "Ricerca di mercato accademica per una tesi di master sull'ingresso nel mercato di un marchio alimentare premium.",
         welcome: "Benvenuti al sondaggio",
         intro_text: "Questo questionario fa parte di una ricerca di mercato per il lancio del nuovo marchio \"Krunchies\" (frutta surgelata al cioccolato). La compilazione richiede 3-4 minuti. Le risposte sono anonime e servono esclusivamente a scopi accademici.",
-        privacy: "🔒 I dati non saranno ceduti a terzi.",
+        privacy: "I dati non saranno ceduti a terzi.",
         start_btn: "Inizia il sondaggio",
         q1_title: "1. Dati demografici",
         q1_age: "In quale fascia d'età rientri?",
@@ -567,7 +567,7 @@ const translations = {
         subtitle: "Investigación académica para una tesis de maestría sobre la entrada en el mercado de una marca de alimentos premium.",
         welcome: "Bienvenido a la investigación",
         intro_text: "Este cuestionario forma parte de un estudio de mercado para el lanzamiento de la nueva marca \"Krunchies\" (fruta congelada en chocolate). Completarlo lleva de 3 a 4 minutos. Las respuestas son anónimas y se utilizan exclusivamente con fines académicos.",
-        privacy: "🔒 Los datos no se cederán a terceros.",
+        privacy: "Los datos no se cederán a terceros.",
         start_btn: "Comenzar la encuesta",
         q1_title: "1. Datos demográficos",
         q1_age: "¿En qué categoría de edad se encuentra?",
@@ -614,7 +614,7 @@ const translations = {
         subtitle: "Akadémiai piackutatás mesterszakos diplomamunkához egy prémium élelmiszer márka piacra lépéséről.",
         welcome: "Üdvözöljük a kutatásban",
         intro_text: "Ez a kérdőív egy piackutatás része az új „Krunchies” márka (csokoládéba mártott fagyasztott gyümölcs) bevezetéséhez. A kitöltés 3-4 percet vesz igénybe. A válaszok teljesen névtelenek és kizárólag akadémiai célokat szolgálnak.",
-        privacy: "🔒 Az adatokat nem adjuk át harmadik félnek.",
+        privacy: "Az adatokat nem adjuk át harmadik félnek.",
         start_btn: "Kutatás megkezdése",
         q1_title: "1. Demográfiai adatok",
         q1_age: "Melyik korosztályba tartozik?",
@@ -661,7 +661,7 @@ const translations = {
         subtitle: "Cercetare academică pentru o teză de masterat privind intrarea pe piață a unui brand alimentar premium.",
         welcome: "Bun venit la cercetare",
         intro_text: "Acest chestionar face parte dintr-un studiu de piață pentru lansarea noului brand „Krunchies” (fructe congelate în ciocolată). Completarea durează 3-4 minute. Răspunsurile sunt complet anonime și servesc exclusiv în scopuri academice.",
-        privacy: "🔒 Datele nu vor fi furnizate unor terțe părți.",
+        privacy: "Datele nu vor fi furnizate unor terțe părți.",
         start_btn: "Începe cercetarea",
         q1_title: "1. Date demografice",
         q1_age: "În ce categorie de vârstă vă încadrați?",
@@ -708,7 +708,7 @@ const translations = {
         subtitle: "Academisch marktonderzoek voor een masterscriptie over de markttoegang van een premium voedingsmerk.",
         welcome: "Welkom bij het onderzoek",
         intro_text: "Deze vragenlijst maakt deel uit van een marktonderzoek voor de lancering van het nieuwe merk \"Krunchies\" (bevroren fruit in chocolade). Het invullen duurt 3-4 minuten. De antwoorden zijn volledig anoniem en dienen uitsluitend voor academische doeleinden.",
-        privacy: "🔒 Gegevens worden niet aan derden verstrekt.",
+        privacy: "Gegevens worden niet aan derden verstrekt.",
         start_btn: "Start onderzoek",
         q1_title: "1. Demografische gegevens",
         q1_age: "In welke leeftijdscategorie valt u?",
@@ -755,7 +755,7 @@ const translations = {
         subtitle: "Pesquisa de mercado académica para uma tese de mestrado sobre a entrada no mercado de uma marca de alimentos premium.",
         welcome: "Bem-vindo à pesquisa",
         intro_text: "Este questionário faz parte de um estudo de mercado para o lançamento da nova marca \"Krunchies\" (fruta congelada em chocolate). O preenchimento demora 3-4 minutos. As respostas são totalmente anónimas e servem exclusivamente para fins académicos.",
-        privacy: "🔒 Os dados não serão cedidos a terceiros.",
+        privacy: "Os dados não serão cedidos a terceiros.",
         start_btn: "Iniciar pesquisa",
         q1_title: "1. Dados demográficos",
         q1_age: "Em que faixa etária se encontra?",
@@ -802,7 +802,7 @@ const translations = {
         subtitle: "Ακαδημαϊκή έρευνα αγοράς για μεταπτυχιακή εργασία σχετικά με την είσοδο στην αγορά μιας μάρκας τροφίμων premium.",
         welcome: "Καλώς ήρθατε στην έρευνα",
         intro_text: "Αυτό το ερωτηματολόγιο αποτελεί μέρος μιας έρευνας αγοράς για την κυκλοφορία της νέας μάρκας \"Krunchies\" (κατεψυγμένα φρούτα σε σοκολάτα). Η συμπλήρωση διαρκεί 3-4 λεπτά. Οι απαντήσεις είναι πλήρως ανώνυμες και χρησιμεύουν αποκλειστικά για ακαδημαϊκούς σκοπούς.",
-        privacy: "🔒 Τα δεδομένα δεν θα δοθούν σε τρίτους.",
+        privacy: "Τα δεδομένα δεν θα δοθούν σε τρίτους.",
         start_btn: "Έναρξη έρευνας",
         q1_title: "1. Δημογραφικά στοιχεία",
         q1_age: "Σε ποια ηλικιακή κατηγορία ανήκετε;",
@@ -849,7 +849,7 @@ const translations = {
         subtitle: "Akademisk marknadsundersökning för en masteruppsats om marknadsinträde för ett premiumlivsmedelsvarumärke.",
         welcome: "Välkommen till undersökningen",
         intro_text: "Detta frågeformulär är en del av en marknadsundersökning för lanseringen av det nya varumärket \"Krunchies\" (fryst frukt i choklad). Det tar 3-4 minuter att fylla i. Svaren är helt anonyma och tjänar uteslutande akademiska syften.",
-        privacy: "🔒 Uppgifterna kommer inte att lämnas ut till tredje part.",
+        privacy: "Uppgifterna kommer inte att lämnas ut till tredje part.",
         start_btn: "Starta undersökningen",
         q1_title: "1. Demografiska uppgifter",
         q1_age: "Vilken ålderskategori tillhör du?",
@@ -896,7 +896,7 @@ const translations = {
         subtitle: "Akademisk markedsundersøgelse til et speciale om markedsindtræden for et premium fødevaremærke.",
         welcome: "Velkommen til undersøgelsen",
         intro_text: "Dette spørgeskema er en del af en markedsundersøgelse til lanceringen af det nye mærke \"Krunchies\" (frossen frugt i chokolade). Det tager 3-4 minutter at udfylde. Svarene er fuldstændig anonyme og tjener udelukkende akademiske formål.",
-        privacy: "🔒 Data vil ikke blive videregivet til tredjeparter.",
+        privacy: "Data vil ikke blive videregivet til tredjeparter.",
         start_btn: "Start undersøgelse",
         q1_title: "1. Demografiske data",
         q1_age: "Hvilken alderskategori tilhører du?",
@@ -943,7 +943,7 @@ const translations = {
         subtitle: "Akateeminen markkinatutkimus pro gradu -tutkielmaa varten premium-elintarvikebrändin markkinoille tuloa varten.",
         welcome: "Tervetuloa tutkimukseen",
         intro_text: "Tämä kyselylomake on osa markkinatutkimusta uuden Krunchies-brändin (pakastetut hedelmät suklaassa) lanseerausta varten. Täyttäminen kestää 3-4 minuuttia. Vastaukset ovat täysin nimettömiä ja palvelevat ainoastaan akateemisia tarkoituksia.",
-        privacy: "🔒 Tietoja ei luovuteta kolmansille osapuolille.",
+        privacy: "Tietoja ei luovuteta kolmansille osapuolille.",
         start_btn: "Aloita tutkimus",
         q1_title: "1. Demografiset tiedot",
         q1_age: "Mihin ikäryhmään kuulut?",
@@ -1621,7 +1621,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (!isChecked) {
                 isValid = false;
                 radioGroups[groupName].forEach(radio => {
-                    const card = radio.closest('.radio-card') || radio.parentElement;
+                    const card = radio.closest('.radio-card, .price-card') || radio.parentElement;
                     card.style.outline = '1px solid red';
                     setTimeout(() => card.style.outline = '', 2000);
                 });
@@ -1629,10 +1629,10 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         if (isValid && String(stepIndex) === '3') {
-            const tooCheapInput = currentGroup.querySelector('[name="psm_too_cheap"]');
-            const cheapInput = currentGroup.querySelector('[name="psm_cheap"]');
-            const expensiveInput = currentGroup.querySelector('[name="psm_expensive"]');
-            const tooExpensiveInput = currentGroup.querySelector('[name="psm_too_expensive"]');
+            const tooCheapInput = currentGroup.querySelector('[name="psm_too_cheap"]:checked');
+            const cheapInput = currentGroup.querySelector('[name="psm_cheap"]:checked');
+            const expensiveInput = currentGroup.querySelector('[name="psm_expensive"]:checked');
+            const tooExpensiveInput = currentGroup.querySelector('[name="psm_too_expensive"]:checked');
 
             const tooCheap = parsePriceValue(tooCheapInput?.value);
             const cheap = parsePriceValue(cheapInput?.value);
@@ -1644,8 +1644,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 isValid = false;
                 [tooCheapInput, cheapInput, expensiveInput, tooExpensiveInput].forEach((input) => {
                     if (!input) return;
-                    input.style.borderColor = 'red';
-                    setTimeout(() => { input.style.borderColor = ''; }, 2000);
+                    const card = input.closest('.price-card') || input.parentElement;
+                    card.style.outline = '1px solid red';
+                    setTimeout(() => { card.style.outline = ''; }, 2000);
                 });
                 alert(t('error_psm_order'));
             }
