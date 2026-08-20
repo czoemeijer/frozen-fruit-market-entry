@@ -25,6 +25,7 @@ export default async function handler(req, res) {
         children TEXT,
         purchase_frequency TEXT,
         preference TEXT,
+        favorite_flavor TEXT,
         intent INTEGER,
         psm_too_cheap INTEGER,
         psm_cheap INTEGER,
@@ -43,9 +44,11 @@ export default async function handler(req, res) {
       )
     `;
 
+    await sql`ALTER TABLE survey_responses ADD COLUMN IF NOT EXISTS favorite_flavor TEXT`;
+
     await sql`
       INSERT INTO survey_responses (
-        language, age, children, purchase_frequency, preference, intent,
+        language, age, children, purchase_frequency, preference, favorite_flavor, intent,
         psm_too_cheap, psm_cheap, psm_expensive, psm_too_expensive,
         local_importance, premium_wtp, main_barrier,
         franui_visual, franui_quality, franui_health,
@@ -56,6 +59,7 @@ export default async function handler(req, res) {
         ${data.children || ''},
         ${data.purchase_frequency || ''},
         ${data.preference || ''},
+        ${data.favorite_flavor || ''},
         ${Number(data.intent || 0)},
         ${Number(data.psm_too_cheap || 0)},
         ${Number(data.psm_cheap || 0)},

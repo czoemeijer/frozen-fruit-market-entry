@@ -24,6 +24,7 @@ def init_db():
                   age TEXT,
                   children TEXT,
                   preference TEXT,
+                  favorite_flavor TEXT,
                   intent INTEGER,
                   psm_too_cheap INTEGER,
                   psm_cheap INTEGER,
@@ -59,6 +60,7 @@ def init_db():
                   ip_address TEXT)''')
 
     ensure_column(c, 'survey_responses', 'purchase_frequency', 'TEXT')
+    ensure_column(c, 'survey_responses', 'favorite_flavor', 'TEXT')
     ensure_column(c, 'survey_responses', 'main_barrier', 'TEXT')
     ensure_column(c, 'survey_responses', 'session_id', 'TEXT')
     ensure_column(c, 'survey_responses', 'utm_source', 'TEXT')
@@ -272,7 +274,7 @@ class SurveyHandler(BaseHTTPRequestHandler):
                 
                 # Using parameterized query to prevent SQL injection
                 c.execute('''INSERT INTO survey_responses 
-                             (language, age, children, preference, intent, 
+                             (language, age, children, preference, favorite_flavor, intent,
                               psm_too_cheap, psm_cheap, psm_expensive, psm_too_expensive,
                               local_importance, premium_wtp,
                               franui_visual, franui_quality, franui_health,
@@ -280,11 +282,12 @@ class SurveyHandler(BaseHTTPRequestHandler):
                                                             purchase_frequency, main_barrier,
                                                             session_id, utm_source, utm_medium, utm_campaign,
                                                             ip_address)
-                                                         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)''',
+                                                         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)''',
                           (data.get('lang', 'cs'),
                            data.get('age', ''),
                            data.get('children', ''),
                            data.get('preference', ''),
+                           data.get('favorite_flavor', ''),
                            data.get('intent', 0),
                            data.get('psm_too_cheap', 0),
                            data.get('psm_cheap', 0),

@@ -6,6 +6,7 @@ CREATE TABLE IF NOT EXISTS survey_responses (
   children TEXT,
   purchase_frequency TEXT,
   preference TEXT,
+  favorite_flavor TEXT,
   intent INTEGER,
   psm_too_cheap INTEGER,
   psm_cheap INTEGER,

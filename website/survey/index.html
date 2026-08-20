@@ -61,7 +61,7 @@
             <!-- PŘIVÍTÁNÍ -->
             <div class="question-group active" id="step-0">
                 <h2 data-i18n="welcome">Vítejte ve výzkumu</h2>
-                <p data-i18n="intro_text">Tento dotazník je součástí výzkumu trhu pro uvedení nové značky "Krunchies" (mražené ovoce v čokoládě). Vyplnění zabere 3-4 minuty. Odpovědi jsou plně anonymní a slouží výhradně pro akademické účely.</p>
+                <p data-i18n="intro_text">Tento dotazník je součástí výzkumu trhu pro uvedení Krunchies – křupavých ovocných bites v čokoládě ve třech příchutích: banán, jahoda a mango. Vyplnění zabere 3–4 minuty. Odpovědi jsou anonymní a slouží výhradně pro akademické účely.</p>
                 <div class="privacy-note" style="margin-top: 15px; font-weight: bold; color: #3E2723;" data-i18n="privacy">
                     Data nebudou poskytnuta třetím stranám.
                 </div>
@@ -112,19 +112,21 @@
             <div class="question-group" id="step-2">
                 <h2 data-i18n="q2_title">2. Srovnání produktů (Franui vs. Krunchies)</h2>
                 
-                <p class="psm-intro" data-i18n="q2_intro">Ohodnoťte na škále 1-10 (1 = nejhorší, 10 = nejlepší) následující parametry pro existující argentinskou značku <strong>Franui</strong> (mražené maliny v čokoládě) a náš nový koncept <strong>Krunchies</strong>.</p>
+                <p class="psm-intro" data-i18n="q2_intro">Nejprve si prohlédněte celou řadu Krunchies – banán, jahodu a mango v čokoládě. Poté na škále 1–10 porovnejte koncept Krunchies s existující značkou <strong>Franui</strong>.</p>
 
                 <div class="concept-board">
-                    <div class="concept-image">
-                        <img src="../images/krunchies-banana-bites.png" alt="Krunchies Packaging Design">
+                    <div class="concept-image concept-image-grid" aria-label="Krunchies flavor range">
+                        <img src="../images/krunchies-banana-bites.png" alt="Krunchies Banana Bites packaging">
+                        <img src="../images/krunchies-strawberry-blast.png" alt="Krunchies Strawberry Blast packaging">
+                        <img src="../images/krunchies-mango-crunch.png" alt="Krunchies Mango Crunch packaging">
                     </div>
                     <div class="concept-text">
                         <h3 data-i18n="concept_title">Představujeme koncept Krunchies</h3>
-                        <p data-i18n="concept_desc">Zcela nový koncept zdravé pochutiny: <strong>Lyofilizované a šokově mražené ovoce obalené v prémiové belgické čokoládě.</strong></p>
+                        <p data-i18n="concept_desc">Tři ovocné varianty v jednom konceptu: <strong>Banana Bites, Strawberry Blast a Mango Crunch – každý ve 150g balení s bohatou čokoládou.</strong></p>
                         <ul data-i18n="concept_points">
-                            <li>✓ Pouze přírodní suroviny, 100% přírodní ovoce</li>
-                            <li>✓ Křupavá belgická čokoláda na povrchu, ovocné jádro uvnitř</li>
-                            <li>✓ Unikátní 2D Pop-Art comic design</li>
+                            <li>✓ Tři příchutě: banán, jahoda a mango</li>
+                            <li>✓ Skutečné ovoce a bohatá čokoláda</li>
+                            <li>✓ Unikátní 2D pop-art design</li>
                         </ul>
                     </div>
                 </div>
@@ -171,8 +173,17 @@
                     </div>
                 </div>
 
+                <div class="form-group flavor-choice">
+                    <label data-i18n="q2_favorite_flavor">Která příchuť vás po zhlédnutí obalů láká nejvíce?</label>
+                    <div class="radio-options flavor-options">
+                        <label class="radio-card flavor-option"><input type="radio" name="favorite_flavor" value="banana" required> <span>Banana Bites</span></label>
+                        <label class="radio-card flavor-option"><input type="radio" name="favorite_flavor" value="strawberry"> <span>Strawberry Blast</span></label>
+                        <label class="radio-card flavor-option"><input type="radio" name="favorite_flavor" value="mango"> <span>Mango Crunch</span></label>
+                    </div>
+                </div>
+
                 <div class="form-group" style="margin-top: 30px;">
-                    <label data-i18n="q2_intent">Koupili byste si značku Krunchies, pokud by byla dostupná ve vašem obchodě?</label>
+                    <label data-i18n="q2_intent">Koupili byste si některou z příchutí Krunchies, pokud by byla dostupná ve vašem obchodě?</label>
                     <div class="radio-options">
                         <label class="radio-card"><input type="radio" name="intent" value="1" required><span data-i18n="intent_1">Určitě ne</span></label>
                         <label class="radio-card"><input type="radio" name="intent" value="2"><span data-i18n="intent_2">Spíše ne</span></label>
@@ -191,8 +202,8 @@
             <!-- PRICE SENSITIVITY METER (PSM) -->
             <div class="question-group" id="step-3">
                 <div class="step-kicker">Price ladder · 150 g pack</div>
-                <h2 data-i18n="q3_title">3. Cenová citlivost (Krunchies 150g)</h2>
-                <p class="psm-intro" data-i18n="q3_intro">Běžná velikost balení je 150 gramů (zhruba velikost menší bonboniéry). Na základě vašich dojmů, při jaké ceně za toto balení byste produkt považovali za:</p>
+                <h2 data-i18n="q3_title">3. Cenová citlivost (vybraná příchuť Krunchies, 150 g)</h2>
+                <p class="psm-intro" data-i18n="q3_intro">Odpovídejte s ohledem na příchuť, kterou jste právě vybrali. Běžná velikost balení je 150 gramů. Při jaké ceně byste tento produkt považovali za:</p>
                 <p class="choice-hint">Klikněte na jednu cenu v každém řádku. Je to rychlejší než zadávání čísla ručně.</p>
 
                 <div class="price-ladder">

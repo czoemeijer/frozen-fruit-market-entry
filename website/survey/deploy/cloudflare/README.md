@@ -15,6 +15,12 @@ wrangler d1 execute berrie-survey-db --file=./schema.sql
 wrangler deploy
 ```
 
+For an existing database, apply the three-flavor migration once before deploying:
+
+```bash
+wrangler d1 execute berrie-survey-db --file=./migrations/0002_add_favorite_flavor.sql
+```
+
 Then set frontend submit endpoint to your worker URL if needed:
 
 ```html

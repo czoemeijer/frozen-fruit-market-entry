@@ -28,18 +28,19 @@ export default {
       const body = await request.json();
       const stmt = env.SURVEY_DB.prepare(`
         INSERT INTO survey_responses (
-          language, age, children, purchase_frequency, preference, intent,
+          language, age, children, purchase_frequency, preference, favorite_flavor, intent,
           psm_too_cheap, psm_cheap, psm_expensive, psm_too_expensive,
           local_importance, premium_wtp, main_barrier,
           franui_visual, franui_quality, franui_health,
           berrie_visual, berrie_quality, berrie_health, client_ip
-        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
       `).bind(
         body.lang ?? "cs",
         body.age ?? "",
         body.children ?? "",
         body.purchase_frequency ?? "",
         body.preference ?? "",
+        body.favorite_flavor ?? "",
         Number(body.intent ?? 0),
         Number(body.psm_too_cheap ?? 0),
         Number(body.psm_cheap ?? 0),

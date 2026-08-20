@@ -11,6 +11,7 @@ const SURVEY_SCHEMA = `
     children TEXT,
     purchase_frequency TEXT,
     preference TEXT,
+    favorite_flavor TEXT,
     intent INTEGER,
     psm_too_cheap INTEGER,
     psm_cheap INTEGER,
@@ -60,6 +61,7 @@ async function ensureResponseSchema(db) {
   const info = await db.prepare("PRAGMA table_info(survey_responses)").all();
   const columns = new Set((info.results ?? []).map((column) => column.name));
   const optionalColumns = [
+    ["favorite_flavor", "TEXT"],
     ["session_id", "TEXT"],
     ["utm_source", "TEXT"],
     ["utm_medium", "TEXT"],
@@ -302,19 +304,20 @@ export default {
         await ensureResponseSchema(env.SURVEY_DB);
         await env.SURVEY_DB.prepare(`
           INSERT INTO survey_responses (
-            language, age, children, purchase_frequency, preference, intent,
+            language, age, children, purchase_frequency, preference, favorite_flavor, intent,
             psm_too_cheap, psm_cheap, psm_expensive, psm_too_expensive,
             local_importance, premium_wtp, main_barrier,
             franui_visual, franui_quality, franui_health,
             berrie_visual, berrie_quality, berrie_health, client_ip,
             session_id, utm_source, utm_medium, utm_campaign
-          ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+          ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
         `).bind(
           body.lang ?? "cs",
           body.age ?? "",
           body.children ?? "",
           body.purchase_frequency ?? "",
           body.preference ?? "",
+          body.favorite_flavor ?? "",
           numberOrZero(body.intent),
           numberOrZero(body.psm_too_cheap),
           numberOrZero(body.psm_cheap),

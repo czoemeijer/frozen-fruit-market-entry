@@ -3,7 +3,7 @@ const translations = {
         title: "Spotřebitelský výzkum (CAWI)",
         subtitle: "Akademický výzkum pro diplomovou práci na téma vstupu značky prémiových potravin na trh.",
         welcome: "Vítejte ve výzkumu",
-        intro_text: "Tento dotazník je součástí výzkumu trhu pro uvedení nové značky \"Krunchies\" (mražené ovoce v čokoládě). Vyplnění zabere 3-4 minuty. Odpovědi jsou plně anonymní a slouží výhradně pro akademické účely.",
+        intro_text: "Tento dotazník je součástí výzkumu trhu pro uvedení Krunchies – křupavých ovocných bites v čokoládě ve třech příchutích: banán, jahoda a mango. Vyplnění zabere 3–4 minuty. Odpovědi jsou anonymní a slouží výhradně pro akademické účely.",
         privacy: "Data nebudou poskytnuta třetím stranám.",
         start_btn: "Začít výzkum",
         q1_title: "1. Demografické údaje",
@@ -19,21 +19,22 @@ const translations = {
         back: "Zpět",
         next: "Další",
         q2_title: "2. Srovnání produktů (Franui vs. Krunchies)",
-        q2_intro: "Ohodnoťte na škále 1-10 (1 = nejhorší, 10 = nejlepší) následující parametry pro existující argentinskou značku <strong>Franui</strong> (mražené maliny v čokoládě) a náš nový český koncept <strong>Krunchies</strong>.",
+        q2_intro: "Nejprve si prohlédněte celou řadu Krunchies – banán, jahodu a mango v čokoládě. Poté na škále 1–10 porovnejte koncept Krunchies s existující značkou <strong>Franui</strong>.",
         concept_title: "Představujeme koncept Krunchies",
-        concept_desc: "Zcela nový koncept české zdravé pochutiny: <strong>Šokově mražené české ovoce obalené v prémiové dvojité vrstvě čokolády.</strong>",
-        concept_points: "<li>✓ Pouze přírodní suroviny, žádná chemie</li><li>✓ Křupavá čokoláda na povrchu, mrazené ovoce uvnitř</li><li>✓ Vyráběno lokálně v ČR z českého ovoce</li>",
+        concept_desc: "Tři ovocné varianty v jednom konceptu: <strong>Banana Bites, Strawberry Blast a Mango Crunch – každý ve 150g balení s bohatou čokoládou.</strong>",
+        concept_points: "<li>✓ Tři příchutě: banán, jahoda a mango</li><li>✓ Skutečné ovoce a bohatá čokoláda</li><li>✓ Unikátní 2D pop-art design</li>",
         visual_appeal: "Vizuální atraktivita",
         quality_perception: "Vnímaná kvalita surovin",
         health_perception: "Vnímání jako zdravá pochutina",
-        q2_intent: "Koupili byste si značku Krunchies, pokud by byla dostupná ve vašem obchodě?",
+        q2_favorite_flavor: "Která příchuť vás po zhlédnutí obalů láká nejvíce?",
+        q2_intent: "Koupili byste si některou z příchutí Krunchies, pokud by byla dostupná ve vašem obchodě?",
         intent_1: "Určitě ne",
         intent_2: "Spíše ne",
         intent_3: "Nevím",
         intent_4: "Spíše ano",
         intent_5: "Určitě ano",
-        q3_title: "3. Cenová citlivost (Krunchies 150g)",
-        q3_intro: "Běžná velikost balení je 150 gramů (zhruba velikost menší bonboniéry). Na základě vašich dojmů, při jaké ceně za toto balení byste produkt považovali za:",
+        q3_title: "3. Cenová citlivost (vybraná příchuť Krunchies, 150 g)",
+        q3_intro: "Odpovídejte s ohledem na příchuť, kterou jste právě vybrali. Běžná velikost balení je 150 gramů. Při jaké ceně byste tento produkt považovali za:",
         psm_1: "Příliš levný (pochybovali byste o kvalitě)",
         psm_2: "Výhodný (skvělý nákup za tuto cenu)",
         psm_3: "Drahý (stále byste zvažovali koupi)",
@@ -73,7 +74,7 @@ const translations = {
         title: "Consumer Survey (CAWI)",
         subtitle: "Academic market research for a master's thesis on market entry of a premium food brand.",
         welcome: "Welcome to the research",
-        intro_text: "This survey is part of market research for the launch of a new brand 'Krunchies' (frozen fruit in chocolate). It takes 3-4 minutes. Responses are fully anonymous and for academic purposes only.",
+        intro_text: "This survey is part of market research for Krunchies: crisp fruit bites in chocolate, offered in three flavors – banana, strawberry and mango. It takes 3–4 minutes and responses are anonymous and for academic purposes only.",
         privacy: "Data will not be shared with third parties.",
         start_btn: "Start Survey",
         q1_title: "1. Demographics",
@@ -89,21 +90,22 @@ const translations = {
         back: "Back",
         next: "Next",
         q2_title: "2. Product Comparison (Franui vs. Krunchies)",
-        q2_intro: "Rate on a scale of 1-10 (1 = worst, 10 = best) the following parameters for the existing Argentinian brand <strong>Franui</strong> (frozen raspberries in chocolate) and our new Czech concept <strong>Krunchies</strong>.",
+        q2_intro: "First, explore the full Krunchies range – banana, strawberry and mango in chocolate. Then rate the Krunchies concept against the existing brand <strong>Franui</strong> on a 1–10 scale.",
         concept_title: "Introducing the Krunchies Concept",
-        concept_desc: "A brand new concept of a Czech healthy snack: <strong>Shock-frozen Czech fruit covered in a premium double layer of chocolate.</strong>",
-        concept_points: "<li>✓ Only natural ingredients, no chemicals</li><li>✓ Crunchy chocolate on the outside, frozen fruit inside</li><li>✓ Made locally in the Czech Republic from Czech fruit</li>",
+        concept_desc: "Three fruit varieties in one range: <strong>Banana Bites, Strawberry Blast and Mango Crunch – each in a 150 g box with rich chocolate.</strong>",
+        concept_points: "<li>✓ Three flavors: banana, strawberry and mango</li><li>✓ Real fruit and rich chocolate</li><li>✓ Distinctive 2D pop-art packaging</li>",
         visual_appeal: "Visual attractiveness",
         quality_perception: "Perceived ingredient quality",
         health_perception: "Perception as a healthy snack",
-        q2_intent: "Would you buy the Krunchies brand if it were available in your store?",
+        q2_favorite_flavor: "Which flavor appeals to you most after seeing the packaging?",
+        q2_intent: "Would you buy one of the Krunchies flavors if it were available in your store?",
         intent_1: "Definitely not",
         intent_2: "Probably not",
         intent_3: "Don't know",
         intent_4: "Probably yes",
         intent_5: "Definitely yes",
-        q3_title: "3. Price Sensitivity (Krunchies 150g)",
-        q3_intro: "A typical package is 150 grams. Based on your impressions, at what price for this package would you consider the product to be:",
+        q3_title: "3. Price Sensitivity (selected Krunchies flavor, 150 g)",
+        q3_intro: "Please answer with your selected flavor in mind. A typical package is 150 grams. At what price would you consider this product to be:",
         psm_1: "Too cheap (you'd doubt the quality)",
         psm_2: "A bargain (great buy at this price)",
         psm_3: "Expensive (but you'd still consider it)",
@@ -1548,6 +1550,12 @@ document.addEventListener('DOMContentLoaded', () => {
     if (utmSourceInput) utmSourceInput.value = trackingContext.utm_source;
     if (utmMediumInput) utmMediumInput.value = trackingContext.utm_medium;
     if (utmCampaignInput) utmCampaignInput.value = trackingContext.utm_campaign;
+
+    const requestedFlavor = getUrlParam('flavor').toLowerCase();
+    if (['banana', 'strawberry', 'mango'].includes(requestedFlavor)) {
+        const preferredFlavorInput = form.querySelector(`[name="favorite_flavor"][value="${requestedFlavor}"]`);
+        if (preferredFlavorInput) preferredFlavorInput.checked = true;
+    }
 
     function sendTrackingEvent(eventType, extra = {}) {
         const payload = {
