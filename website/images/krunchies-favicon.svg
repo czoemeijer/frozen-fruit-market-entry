@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title">
+  <title>Krunchies</title>
+  <rect width="64" height="64" rx="15" fill="#ffd23f"/>
+  <path d="M5 5h54v54H5z" fill="#fffdf7" stroke="#080808" stroke-width="4"/>
+  <path d="M19 13h10v15l12-15h13L38 31l17 20H42L29 34v17H19z" fill="#ef7136" stroke="#080808" stroke-linejoin="round" stroke-width="3"/>
+</svg>
