@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>KRUNCHIES | Premium fruit, serious crunch</title>
-  <meta name="description" content="Krunchies is freeze-dried real fruit finished with premium chocolate. Explore the lineup and help shape the next European snack brand.">
+  <meta name="description" data-i18n-content="meta_description" content="Krunchies is freeze-dried real fruit finished with premium chocolate. Explore the lineup and help shape the next European snack brand.">
   <link rel="icon" href="images/krunchies-favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,11 +19,15 @@
         <span class="brand-name">KRUNCHIES</span>
       </a>
       <nav class="main-nav" aria-label="Primary navigation">
-        <a href="#lineup">Lineup</a>
-        <a href="#craft">The craft</a>
-        <a href="#research">Research</a>
+        <a href="#lineup" data-i18n="nav_lineup">Lineup</a>
+        <a href="#craft" data-i18n="nav_craft">The craft</a>
+        <a href="#research" data-i18n="nav_research">Research</a>
       </nav>
-      <a class="nav-cta" href="survey/">Share your taste <span aria-hidden="true">↗</span></a>
+      <div class="language-toggle" role="group" aria-label="Language selector">
+        <button class="language-button is-active" type="button" data-site-lang="en" aria-pressed="true">EN</button>
+        <button class="language-button" type="button" data-site-lang="cs" aria-pressed="false">CZ</button>
+      </div>
+      <a class="nav-cta" href="survey/"><span data-i18n="nav_cta">Share your taste</span> <span aria-hidden="true">↗</span></a>
     </div>
   </header>
 
@@ -31,17 +35,17 @@
     <section class="hero-section">
       <div class="container hero-grid">
         <div class="hero-copy">
-          <p class="eyebrow">Freeze-dried fruit / premium chocolate</p>
-          <h1>A sharper crunch for <em>better</em> snacking.</h1>
-          <p class="hero-lede">Real fruit, rebuilt for the snack aisle: airy, crisp and finished with a generous chocolate shell.</p>
+          <p class="eyebrow" data-i18n="hero_eyebrow">Freeze-dried fruit / premium chocolate</p>
+          <h1 data-i18n-html="hero_title">A sharper crunch for <em>better</em> snacking.</h1>
+          <p class="hero-lede" data-i18n="hero_lede">Real fruit, rebuilt for the snack aisle: airy, crisp and finished with a generous chocolate shell.</p>
           <div class="hero-actions">
-            <a class="button button-dark" href="survey/">Take the 3-minute survey <span aria-hidden="true">↗</span></a>
-            <a class="text-link" href="#lineup">See the collection <span aria-hidden="true">↓</span></a>
+            <a class="button button-dark" href="survey/"><span data-i18n="hero_survey">Take the 3-minute survey</span> <span aria-hidden="true">↗</span></a>
+            <a class="text-link" href="#lineup"><span data-i18n="hero_collection">See the collection</span> <span aria-hidden="true">↓</span></a>
           </div>
           <div class="hero-proof" aria-label="Product highlights">
-            <div><strong>150 g</strong><span>flagship format</span></div>
-            <div><strong>100%</strong><span>real fruit core</span></div>
-            <div><strong>70%</strong><span>dark cocoa shell</span></div>
+            <div><strong>150 g</strong><span data-i18n="proof_format">flagship format</span></div>
+            <div><strong>100%</strong><span data-i18n="proof_fruit">real fruit core</span></div>
+            <div><strong>70%</strong><span data-i18n="proof_cocoa">dark cocoa shell</span></div>
           </div>
         </div>
 
@@ -52,9 +56,9 @@
             <div class="hero-product-caption"><span id="hero-product-name">Chocolate banana bites</span><strong id="hero-product-count">01 / 03</strong></div>
           </div>
           <div class="hero-flavor-controls" role="tablist" aria-label="Choose a Krunchies flavor">
-            <button class="flavor-control is-active" type="button" role="tab" aria-selected="true" data-flavor="banana"><span class="flavor-dot"></span>Banana</button>
-            <button class="flavor-control" type="button" role="tab" aria-selected="false" data-flavor="strawberry"><span class="flavor-dot"></span>Strawberry</button>
-            <button class="flavor-control" type="button" role="tab" aria-selected="false" data-flavor="mango"><span class="flavor-dot"></span>Mango</button>
+            <button class="flavor-control is-active" type="button" role="tab" aria-selected="true" data-flavor="banana"><span class="flavor-dot"></span><span data-i18n="flavor_banana">Banana</span></button>
+            <button class="flavor-control" type="button" role="tab" aria-selected="false" data-flavor="strawberry"><span class="flavor-dot"></span><span data-i18n="flavor_strawberry">Strawberry</span></button>
+            <button class="flavor-control" type="button" role="tab" aria-selected="false" data-flavor="mango"><span class="flavor-dot"></span><span data-i18n="flavor_mango">Mango</span></button>
           </div>
           <button class="hero-arrow hero-arrow-prev" type="button" aria-label="Previous flavor">←</button>
           <button class="hero-arrow hero-arrow-next" type="button" aria-label="Next flavor">→</button>
@@ -64,46 +68,46 @@
     </section>
 
     <section class="ticker" aria-label="Krunchies product statement">
-      <div class="ticker-track"><span>REAL FRUIT</span><i></i><span>BIG CRUNCH</span><i></i><span>PREMIUM COCOA</span><i></i><span>MADE TO BE REMEMBERED</span><i></i><span>REAL FRUIT</span><i></i><span>BIG CRUNCH</span></div>
+      <div class="ticker-track"><span data-i18n="ticker_fruit">REAL FRUIT</span><i></i><span data-i18n="ticker_crunch">BIG CRUNCH</span><i></i><span data-i18n="ticker_cocoa">PREMIUM COCOA</span><i></i><span data-i18n="ticker_memory">MADE TO BE REMEMBERED</span><i></i><span data-i18n="ticker_fruit">REAL FRUIT</span><i></i><span data-i18n="ticker_crunch">BIG CRUNCH</span></div>
     </section>
 
     <section id="lineup" class="section lineup-section">
       <div class="container">
         <div class="section-intro split-intro">
           <div>
-            <p class="eyebrow">The collection</p>
-            <h2>Three ways to make fruit impossible to ignore.</h2>
+            <p class="eyebrow" data-i18n="collection_eyebrow">The collection</p>
+            <h2 data-i18n="collection_title">Three ways to make fruit impossible to ignore.</h2>
           </div>
-          <p>One visual language, three distinct flavour directions. The packaging carries the color; the presentation stays clean and considered.</p>
+          <p data-i18n="collection_lede">One visual language, three distinct flavour directions. The packaging carries the color; the presentation stays clean and considered.</p>
         </div>
 
         <div class="lineup-grid">
           <article class="product-tile product-tile-featured">
             <div class="tile-art tile-art-photo"><img src="images/krunchies-banana-bites.png" alt="Banana bites packaging concept"></div>
-            <div class="tile-meta"><span class="tile-index">01 / FLAGSHIP</span><span class="tile-size">150 g box</span></div>
-            <h3>Chocolate banana bites</h3>
-            <p>Sweet banana, deep cocoa, a clean snap.</p>
-            <a href="survey/?flavor=banana" class="tile-link">Vote on this concept <span aria-hidden="true">↗</span></a>
+            <div class="tile-meta"><span class="tile-index" data-i18n="tile_banana_tag">01 / FLAGSHIP</span><span class="tile-size" data-i18n="tile_size">150 g box</span></div>
+            <h3 data-i18n="tile_banana_title">Chocolate banana bites</h3>
+            <p data-i18n="tile_banana_desc">Sweet banana, deep cocoa, a clean snap.</p>
+            <a href="survey/?flavor=banana" class="tile-link"><span data-i18n="tile_vote">Vote on this concept</span> <span aria-hidden="true">↗</span></a>
           </article>
 
           <article class="product-tile product-tile-strawberry">
             <div class="tile-art tile-art-image tile-art-strawberry">
               <img src="images/krunchies-strawberry-blast.png" alt="Strawberry Blast Krunchies packaging concept">
             </div>
-            <div class="tile-meta"><span class="tile-index">02 / BERRY</span><span class="tile-size">150 g box</span></div>
-            <h3>Strawberry blast</h3>
-            <p>Tart berry brightness with rich chocolate crunch.</p>
-            <a href="survey/?flavor=strawberry" class="tile-link">Vote on this concept <span aria-hidden="true">↗</span></a>
+            <div class="tile-meta"><span class="tile-index" data-i18n="tile_strawberry_tag">02 / BERRY</span><span class="tile-size" data-i18n="tile_size">150 g box</span></div>
+            <h3 data-i18n="tile_strawberry_title">Strawberry blast</h3>
+            <p data-i18n="tile_strawberry_desc">Tart berry brightness with rich chocolate crunch.</p>
+            <a href="survey/?flavor=strawberry" class="tile-link"><span data-i18n="tile_vote">Vote on this concept</span> <span aria-hidden="true">↗</span></a>
           </article>
 
           <article class="product-tile product-tile-mango">
             <div class="tile-art tile-art-image tile-art-mango">
               <img src="images/krunchies-mango-crunch.png" alt="Mango Crunch Krunchies packaging concept">
             </div>
-            <div class="tile-meta"><span class="tile-index">03 / TROPICAL</span><span class="tile-size">150 g box</span></div>
-            <h3>Mango crunch</h3>
-            <p>Bright tropical fruit with rich chocolate crunch.</p>
-            <a href="survey/?flavor=mango" class="tile-link">Vote on this concept <span aria-hidden="true">↗</span></a>
+            <div class="tile-meta"><span class="tile-index" data-i18n="tile_mango_tag">03 / TROPICAL</span><span class="tile-size" data-i18n="tile_size">150 g box</span></div>
+            <h3 data-i18n="tile_mango_title">Mango crunch</h3>
+            <p data-i18n="tile_mango_desc">Bright tropical fruit with rich chocolate crunch.</p>
+            <a href="survey/?flavor=mango" class="tile-link"><span data-i18n="tile_vote">Vote on this concept</span> <span aria-hidden="true">↗</span></a>
           </article>
         </div>
       </div>
@@ -112,18 +116,18 @@
     <section id="craft" class="section craft-section">
       <div class="container craft-grid">
         <div class="craft-visual">
-          <div class="craft-label">A simple formula</div>
-          <div class="formula"><span>fruit</span><b>+</b><span>freeze</span><b>+</b><span>cocoa</span></div>
-          <div class="formula-note">The texture does the talking.</div>
+          <div class="craft-label" data-i18n="craft_formula">A simple formula</div>
+          <div class="formula"><span data-i18n="formula_fruit">fruit</span><b>+</b><span data-i18n="formula_freeze">freeze</span><b>+</b><span data-i18n="formula_cocoa">cocoa</span></div>
+          <div class="formula-note" data-i18n="craft_note">The texture does the talking.</div>
         </div>
         <div class="craft-copy">
-          <p class="eyebrow">The craft</p>
-          <h2>Less noise on the label. More character in the bite.</h2>
-          <p>Krunchies pairs a light, freeze-dried fruit centre with a confident chocolate finish. The result is playful enough to stand out and considered enough to earn a place in a premium basket.</p>
+          <p class="eyebrow" data-i18n="craft_eyebrow">The craft</p>
+          <h2 data-i18n="craft_title">Less noise on the label. More character in the bite.</h2>
+          <p data-i18n="craft_lede">Krunchies pairs a light, freeze-dried fruit centre with a confident chocolate finish. The result is playful enough to stand out and considered enough to earn a place in a premium basket.</p>
           <div class="craft-list">
-            <div><span>01</span><div><strong>Real fruit centre</strong><p>Recognisable ingredients with a clean, airy texture.</p></div></div>
-            <div><span>02</span><div><strong>Bold cocoa finish</strong><p>A dark chocolate shell that gives every piece a clear point of view.</p></div></div>
-            <div><span>03</span><div><strong>Designed to travel</strong><p>Formats built for discovery, sharing and repeat purchase.</p></div></div>
+            <div><span>01</span><div><strong data-i18n="craft_one_title">Real fruit centre</strong><p data-i18n="craft_one_desc">Recognisable ingredients with a clean, airy texture.</p></div></div>
+            <div><span>02</span><div><strong data-i18n="craft_two_title">Bold cocoa finish</strong><p data-i18n="craft_two_desc">A dark chocolate shell that gives every piece a clear point of view.</p></div></div>
+            <div><span>03</span><div><strong data-i18n="craft_three_title">Designed to travel</strong><p data-i18n="craft_three_desc">Formats built for discovery, sharing and repeat purchase.</p></div></div>
           </div>
         </div>
       </div>
@@ -132,24 +136,24 @@
     <section id="research" class="research-section">
       <div class="container research-shell">
         <div>
-          <p class="eyebrow">Open research</p>
-          <h2>Help decide what reaches the shelf next.</h2>
-          <p>Tell us which flavour, format and price feel right. The research takes around three minutes and directly informs the launch strategy.</p>
+          <p class="eyebrow" data-i18n="research_eyebrow">Open research</p>
+          <h2 data-i18n="research_title">Help decide what reaches the shelf next.</h2>
+          <p data-i18n="research_lede">Tell us which flavour, format and price feel right. The research takes around three minutes and directly informs the launch strategy.</p>
         </div>
-        <div class="research-actions"><a class="button button-yellow" href="survey/">Start the survey <span aria-hidden="true">↗</span></a><a class="research-dashboard-link" href="survey/dashboard.html">View research dashboard <span aria-hidden="true">↗</span></a></div>
+        <div class="research-actions"><a class="button button-yellow" href="survey/"><span data-i18n="research_start">Start the survey</span> <span aria-hidden="true">↗</span></a><a class="research-dashboard-link" href="survey/dashboard.html"><span data-i18n="research_dashboard">View research dashboard</span> <span aria-hidden="true">↗</span></a></div>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
     <div class="container footer-grid">
-      <div><a href="#top" class="brand brand-footer"><span class="brand-mark">K</span><span class="brand-name">KRUNCHIES</span></a><p>Fruit-forward snacks with a serious crunch.</p></div>
-      <div class="footer-links"><a href="#lineup">Lineup</a><a href="#craft">The craft</a><a href="survey/">Market survey</a><a href="survey/dashboard.html">Research dashboard</a></div>
-      <div class="footer-note">Market-entry research / 2026</div>
+      <div><a href="#top" class="brand brand-footer"><span class="brand-mark">K</span><span class="brand-name">KRUNCHIES</span></a><p data-i18n="footer_tagline">Fruit-forward snacks with a serious crunch.</p></div>
+      <div class="footer-links"><a href="#lineup" data-i18n="nav_lineup">Lineup</a><a href="#craft" data-i18n="nav_craft">The craft</a><a href="survey/" data-i18n="footer_survey">Market survey</a><a href="survey/dashboard.html" data-i18n="footer_dashboard">Research dashboard</a></div>
+      <div class="footer-note" data-i18n="footer_note">Market-entry research / 2026</div>
       <div class="footer-legal">
         <span>© 2026 Catherine Zoë Meijer · Original Krunchies work</span>
-        <a href="https://github.com/czoemeijer/frozen-fruit-market-entry/blob/main/LICENSE.md" target="_blank" rel="noreferrer">Usage &amp; copyright</a>
-        <span>Commercial use requires a paid written license.</span>
+        <a href="https://github.com/czoemeijer/frozen-fruit-market-entry/blob/main/LICENSE.md" target="_blank" rel="noreferrer" data-i18n="footer_usage">Usage &amp; copyright</a>
+        <span data-i18n="footer_commercial">Commercial use requires a paid written license.</span>
       </div>
     </div>
   </footer>

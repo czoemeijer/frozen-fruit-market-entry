@@ -9,29 +9,33 @@
   <link rel="stylesheet" href="dashboard.css">
 </head>
 <body>
+  <div class="dashboard-language-toggle" role="group" aria-label="Language selector">
+    <button class="dashboard-language-button is-active" type="button" data-dashboard-lang="en" aria-pressed="true">EN</button>
+    <button class="dashboard-language-button" type="button" data-dashboard-lang="cs" aria-pressed="false">CZ</button>
+  </div>
   <section class="dashboard-lock" id="dashboard-lock" aria-labelledby="dashboard-lock-title">
     <form class="lock-card" id="dashboard-unlock-form">
-      <p class="eyebrow">KRUNCHIES / PRIVATE RESEARCH</p>
-      <h1 id="dashboard-lock-title">Dashboard access</h1>
-      <p>This area contains internal market-research results.</p>
-      <label for="dashboard-passcode">Access code</label>
+      <p class="eyebrow" data-dashboard-i18n="lock_eyebrow">KRUNCHIES / PRIVATE RESEARCH</p>
+      <h1 id="dashboard-lock-title" data-dashboard-i18n="lock_title">Dashboard access</h1>
+      <p data-dashboard-i18n="lock_description">This area contains internal market-research results.</p>
+      <label for="dashboard-passcode" data-dashboard-i18n="lock_label">Access code</label>
       <input id="dashboard-passcode" name="passcode" type="password" inputmode="numeric" autocomplete="off" pattern="[0-9]{1,2}" maxlength="2" required>
-      <button type="submit">Unlock dashboard</button>
+      <button type="submit" data-dashboard-i18n="lock_button">Unlock dashboard</button>
       <p id="dashboard-lock-error" class="lock-error" role="alert"></p>
     </form>
   </section>
 
   <main class="container" id="dashboard-content" hidden>
-    <a class="dashboard-home" href="../index.html">← KRUNCHIES Home</a>
+    <a class="dashboard-home" href="../index.html">← KRUNCHIES <span data-dashboard-i18n="home">Home</span></a>
     <header class="dashboard-header">
       <div>
-        <p class="eyebrow">KRUNCHIES / RESEARCH OPS</p>
-        <h1>Survey Quality Dashboard</h1>
-        <p class="subtitle">A compact view of response volume, price expectations and audience signals.</p>
+        <p class="eyebrow" data-dashboard-i18n="ops_eyebrow">KRUNCHIES / RESEARCH OPS</p>
+        <h1 data-dashboard-i18n="dashboard_title">Survey Quality Dashboard</h1>
+        <p class="subtitle" data-dashboard-i18n="dashboard_subtitle">A compact view of response volume, price expectations and audience signals.</p>
       </div>
       <div class="header-actions">
-        <span id="last-updated" class="last-updated">Waiting for data</span>
-        <button id="refresh-button" class="refresh-button" type="button">Refresh</button>
+        <span id="last-updated" class="last-updated" data-dashboard-i18n="waiting">Waiting for data</span>
+        <button id="refresh-button" class="refresh-button" type="button" data-dashboard-i18n="refresh">Refresh</button>
       </div>
     </header>
 
@@ -42,67 +46,67 @@
     <section class="panel panel-highlight">
       <div class="panel-heading">
         <div>
-          <p class="eyebrow">PRICE SIGNAL</p>
-          <h2>Price Sensitivity Meter</h2>
+          <p class="eyebrow" data-dashboard-i18n="price_signal">PRICE SIGNAL</p>
+          <h2 data-dashboard-i18n="price_title">Price Sensitivity Meter</h2>
         </div>
-        <p class="panel-note">Average selected price for the 150 g pack.</p>
+        <p class="panel-note" data-dashboard-i18n="price_note">Average selected price for the 150 g pack.</p>
       </div>
       <div id="price-signal" class="price-signal"></div>
     </section>
 
     <section class="grid-2">
       <article class="panel">
-        <div class="panel-heading"><h2>Audience mix</h2><span class="panel-note">Who answered</span></div>
+        <div class="panel-heading"><h2 data-dashboard-i18n="audience">Audience mix</h2><span class="panel-note" data-dashboard-i18n="who_answered">Who answered</span></div>
         <div id="age-table"></div>
-        <div class="subsection"><h3>Purchase frequency</h3><div id="frequency-table"></div></div>
+        <div class="subsection"><h3 data-dashboard-i18n="purchase_frequency">Purchase frequency</h3><div id="frequency-table"></div></div>
       </article>
       <article class="panel">
-        <div class="panel-heading"><h2>Purchase intent</h2><span class="panel-note">5-point scale</span></div>
+        <div class="panel-heading"><h2 data-dashboard-i18n="purchase_intent">Purchase intent</h2><span class="panel-note" data-dashboard-i18n="five_point">5-point scale</span></div>
         <div id="intent-table"></div>
-        <div class="subsection"><h3>Local premium willingness</h3><div id="premium-table"></div></div>
+        <div class="subsection"><h3 data-dashboard-i18n="local_premium">Local premium willingness</h3><div id="premium-table"></div></div>
       </article>
     </section>
 
     <section class="panel">
-      <div class="panel-heading"><h2>Flavor preference</h2><span class="panel-note">Most appealing packaging after review</span></div>
+      <div class="panel-heading"><h2 data-dashboard-i18n="flavor_preference">Flavor preference</h2><span class="panel-note" data-dashboard-i18n="flavor_note">Most appealing packaging after review</span></div>
       <div id="flavor-table"></div>
     </section>
 
     <section class="grid-2">
       <article class="panel">
-        <div class="panel-heading"><h2>Preferred channel</h2><span class="panel-note">Where they would buy</span></div>
+        <div class="panel-heading"><h2 data-dashboard-i18n="preferred_channel">Preferred channel</h2><span class="panel-note" data-dashboard-i18n="where_buy">Where they would buy</span></div>
         <div id="channel-table"></div>
       </article>
       <article class="panel">
-        <div class="panel-heading"><h2>Purchase barriers</h2><span class="panel-note">What blocks conversion</span></div>
+        <div class="panel-heading"><h2 data-dashboard-i18n="purchase_barriers">Purchase barriers</h2><span class="panel-note" data-dashboard-i18n="conversion_blockers">What blocks conversion</span></div>
         <div id="barrier-table"></div>
       </article>
     </section>
 
     <section class="panel">
-      <div class="panel-heading"><h2>Funnel drop-off</h2><span class="panel-note">Tracked survey steps</span></div>
+      <div class="panel-heading"><h2 data-dashboard-i18n="funnel">Funnel drop-off</h2><span class="panel-note" data-dashboard-i18n="tracked_steps">Tracked survey steps</span></div>
       <div id="dropoff-table"></div>
     </section>
 
     <section class="grid-2">
       <article class="panel">
-        <div class="panel-heading"><h2>Language</h2><span class="panel-note">Submitted responses</span></div>
+        <div class="panel-heading"><h2 data-dashboard-i18n="language">Language</h2><span class="panel-note" data-dashboard-i18n="submitted_responses">Submitted responses</span></div>
         <div id="lang-table"></div>
       </article>
       <article class="panel">
-        <div class="panel-heading"><h2>Traffic source</h2><span class="panel-note">UTM source or direct</span></div>
+        <div class="panel-heading"><h2 data-dashboard-i18n="traffic_source">Traffic source</h2><span class="panel-note" data-dashboard-i18n="utm_or_direct">UTM source or direct</span></div>
         <div id="source-table"></div>
       </article>
     </section>
 
     <section class="panel">
-      <div class="panel-heading"><h2>Response quality</h2><span class="panel-note">Useful checks, not a judgement</span></div>
+      <div class="panel-heading"><h2 data-dashboard-i18n="response_quality">Response quality</h2><span class="panel-note" data-dashboard-i18n="quality_note">Useful checks, not a judgement</span></div>
       <div id="quality-box" class="quality-grid"></div>
     </section>
 
     <section class="panel">
       <div class="panel-heading">
-        <div><h2>Recent responses</h2><p class="panel-note">Personal IP addresses are never shown here.</p></div>
+        <div><h2 data-dashboard-i18n="recent_responses">Recent responses</h2><p class="panel-note" data-dashboard-i18n="privacy_note">Personal IP addresses are never shown here.</p></div>
       </div>
       <div id="recent-table" class="table-scroll"></div>
     </section>
@@ -110,8 +114,8 @@
 
   <footer class="dashboard-legal" id="dashboard-legal" hidden>
     <span>© 2026 Catherine Zoë Meijer · Original Krunchies work</span>
-    <a href="https://github.com/czoemeijer/frozen-fruit-market-entry/blob/main/LICENSE.md" target="_blank" rel="noreferrer">Usage &amp; copyright</a>
-    <span>Commercial use requires a paid written license.</span>
+    <a href="https://github.com/czoemeijer/frozen-fruit-market-entry/blob/main/LICENSE.md" target="_blank" rel="noreferrer" data-dashboard-i18n="legal_usage">Usage &amp; copyright</a>
+    <span data-dashboard-i18n="legal_commercial">Commercial use requires a paid written license.</span>
   </footer>
 
   <script src="dashboard.js"></script>

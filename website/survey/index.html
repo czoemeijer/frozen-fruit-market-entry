@@ -1,42 +1,22 @@
 <!DOCTYPE html>
-<html lang="cs">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KRUNCHIES | Spotřebitelský výzkum trhu (CAWI)</title>
+    <title>KRUNCHIES | Consumer market research</title>
     <link rel="icon" href="../images/krunchies-favicon.svg" type="image/svg+xml">
     <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="survey-topbar">
-        <a href="../index.html" class="survey-back">KRUNCHIES <span>Home</span></a>
-        <span class="survey-meta">Market-entry research · 3 min</span>
+        <a href="../index.html" class="survey-back">KRUNCHIES <span data-i18n="top_home">Home</span></a>
+        <span class="survey-meta" data-i18n="top_meta">Market-entry research · 3 min</span>
     </div>
 
-    <div class="lang-switcher">
-        <select id="lang-select" class="lang-select">
-            <option value="cs">Čeština</option>
-            <option value="sk">Slovenčina</option>
-            <option value="en">English</option>
-            <option value="de">Deutsch</option>
-            <option value="pl">Polski</option>
-            <option value="fr">Français</option>
-            <option value="it">Italiano</option>
-            <option value="es">Español</option>
-            <option value="hu">Magyar</option>
-            <option value="ro">Română</option>
-            <option value="nl">Nederlands</option>
-            <option value="pt">Português</option>
-            <option value="el">Ελληνικά</option>
-            <option value="sv">Svenska</option>
-            <option value="da">Dansk</option>
-            <option value="fi">Suomi</option>
-            <option value="uk">Українська</option>
-            <option value="ru">Русский</option>
-            <option value="vi">Tiếng Việt</option>
-            <option value="zh">中文</option>
-        </select>
+    <div class="lang-switcher" role="group" aria-label="Language selector">
+        <button class="language-button is-active" type="button" data-survey-lang="en" aria-pressed="true">EN</button>
+        <button class="language-button" type="button" data-survey-lang="cs" aria-pressed="false">CZ</button>
     </div>
 
     <div class="survey-container">
@@ -45,15 +25,15 @@
         </div>
 
         <header>
-            <h1 data-i18n="title">KRUNCHIES Spotřebitelský výzkum (CAWI)</h1>
-            <p data-i18n="subtitle">Akademický výzkum pro diplomovou práci na téma vstupu značky prémiových potravin na trh.</p>
-            <p class="section-hint" data-i18n="header_hint">Odpovědi pomohou určit cílový segment, cenové rozpětí a distribuční strategii pro vstup značky na trh.</p>
+            <h1 data-i18n="title">Consumer Survey (CAWI)</h1>
+            <p data-i18n="subtitle">Academic market research for a master's thesis on market entry of a premium food brand.</p>
+            <p class="section-hint" data-i18n="header_hint">Your answers help define target segments, price corridor, and go-to-market distribution strategy.</p>
         </header>
 
         <form id="survey-form" novalidate>
             <!-- ANTI-SPAM HONEYPOT -->
             <input type="text" name="website_url" class="honeypot" tabindex="-1" autocomplete="off" style="display:none;">
-            <input type="hidden" name="lang" id="lang-input" value="cs">
+            <input type="hidden" name="lang" id="lang-input" value="en">
             <input type="hidden" name="session_id" id="session-id-input" value="">
             <input type="hidden" name="utm_source" id="utm-source-input" value="">
             <input type="hidden" name="utm_medium" id="utm-medium-input" value="">
@@ -116,10 +96,13 @@
                 <p class="psm-intro" data-i18n="q2_intro">Nejprve si prohlédněte celou řadu Krunchies – banán, jahodu a mango v čokoládě. Poté na škále 1–10 porovnejte koncept Krunchies s existující značkou <strong>Franui</strong>.</p>
 
                 <div class="concept-board">
-                    <div class="concept-image concept-image-grid" aria-label="Krunchies flavor range">
-                        <img src="../images/krunchies-banana-bites.png" alt="Krunchies Banana Bites packaging">
-                        <img src="../images/krunchies-strawberry-blast.png" alt="Krunchies Strawberry Blast packaging">
-                        <img src="../images/krunchies-mango-crunch.png" alt="Krunchies Mango Crunch packaging">
+                    <div class="concept-image concept-showcase" data-concept-carousel tabindex="0" aria-label="Krunchies flavor showcase">
+                        <img id="concept-product-image" src="../images/krunchies-banana-bites.png" alt="Krunchies Banana Bites packaging">
+                        <div class="concept-flavor-controls" role="tablist" aria-label="Choose a Krunchies flavor">
+                            <button class="concept-flavor-control is-active" type="button" role="tab" aria-selected="true" data-concept-flavor="banana">Banana</button>
+                            <button class="concept-flavor-control" type="button" role="tab" aria-selected="false" data-concept-flavor="strawberry">Strawberry</button>
+                            <button class="concept-flavor-control" type="button" role="tab" aria-selected="false" data-concept-flavor="mango">Mango</button>
+                        </div>
                     </div>
                     <div class="concept-text">
                         <h3 data-i18n="concept_title">Představujeme koncept Krunchies</h3>
@@ -202,10 +185,10 @@
 
             <!-- PRICE SENSITIVITY METER (PSM) -->
             <div class="question-group" id="step-3">
-                <div class="step-kicker">Price ladder · 150 g pack</div>
+                <div class="step-kicker" data-i18n="price_ladder">Price ladder · 150 g pack</div>
                 <h2 data-i18n="q3_title">3. Cenová citlivost (vybraná příchuť Krunchies, 150 g)</h2>
                 <p class="psm-intro" data-i18n="q3_intro">Odpovídejte s ohledem na příchuť, kterou jste právě vybrali. Běžná velikost balení je 150 gramů. Při jaké ceně byste tento produkt považovali za:</p>
-                <p class="choice-hint">Klikněte na jednu cenu v každém řádku. Je to rychlejší než zadávání čísla ručně.</p>
+                <p class="choice-hint" data-i18n="price_hint">Choose one price in each row. It is faster than typing a number.</p>
 
                 <div class="price-ladder">
                     <div class="form-group psm-group">
@@ -322,7 +305,7 @@
                     <div class="checkmark" aria-hidden="true">✓</div>
                     <h2 data-i18n="success_title">Děkujeme za vyplnění!</h2>
                     <p data-i18n="success_text">Vaše odpovědi byly úspěšně odeslány do databáze značky Krunchies.</p>
-                    <a href="../index.html" class="btn btn-primary" style="display: inline-block; margin-top: 20px; text-decoration: none;">ZPĚT NA HLAVNÍ STRÁNKU KRUNCHIES</a>
+                    <a href="../index.html" class="btn btn-primary" style="display: inline-block; margin-top: 20px; text-decoration: none;" data-i18n="back_home">BACK TO KRUNCHIES HOME</a>
                 </div>
             </div>
         </form>
@@ -330,8 +313,8 @@
 
     <footer class="survey-legal">
         <span>© 2026 Catherine Zoë Meijer · Original Krunchies work</span>
-        <a href="https://github.com/czoemeijer/frozen-fruit-market-entry/blob/main/LICENSE.md" target="_blank" rel="noreferrer">Usage &amp; copyright</a>
-        <span>Commercial use requires a paid written license.</span>
+        <a href="https://github.com/czoemeijer/frozen-fruit-market-entry/blob/main/LICENSE.md" target="_blank" rel="noreferrer" data-i18n="legal_usage">Usage &amp; copyright</a>
+        <span data-i18n="legal_commercial">Commercial use requires a paid written license.</span>
     </footer>
 
     <script src="script.js"></script>

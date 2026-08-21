@@ -1,5 +1,12 @@
 const translations = {
     cs: {
+        top_home: "Domů",
+        top_meta: "Výzkum vstupu na trh · 3 min",
+        price_ladder: "Cenové úrovně · balení 150 g",
+        price_hint: "Vyberte jednu cenu v každém řádku. Je to rychlejší než psát číslo ručně.",
+        back_home: "ZPĚT NA HLAVNÍ STRÁNKU KRUNCHIES",
+        legal_usage: "Použití a autorská práva",
+        legal_commercial: "Komerční použití vyžaduje placenou písemnou licenci.",
         title: "Spotřebitelský výzkum (CAWI)",
         subtitle: "Akademický výzkum pro diplomovou práci na téma vstupu značky prémiových potravin na trh.",
         welcome: "Vítejte ve výzkumu",
@@ -71,6 +78,13 @@ const translations = {
         success_text: "Vaše odpovědi byly úspěšně odeslány do akademické databáze."
     },
     en: {
+        top_home: "Home",
+        top_meta: "Market-entry research · 3 min",
+        price_ladder: "Price ladder · 150 g pack",
+        price_hint: "Choose one price in each row. It is faster than typing a number.",
+        back_home: "BACK TO KRUNCHIES HOME",
+        legal_usage: "Usage & copyright",
+        legal_commercial: "Commercial use requires a paid written license.",
         title: "Consumer Survey (CAWI)",
         subtitle: "Academic market research for a master's thesis on market entry of a premium food brand.",
         welcome: "Welcome to the research",
@@ -1451,9 +1465,9 @@ Object.keys(completionTranslations).forEach((lang) => {
 
 document.addEventListener('DOMContentLoaded', () => {
     // --- LANGUAGE SWITCHER ---
-    let currentLang = 'cs';
+    let currentLang = 'en';
     const fallbackLang = 'en';
-    const langSelect = document.getElementById('lang-select');
+    const languageButtons = [...document.querySelectorAll('[data-survey-lang]')];
     const langInput = document.getElementById('lang-input');
 
     function t(key) {
@@ -1473,35 +1487,33 @@ document.addEventListener('DOMContentLoaded', () => {
         currentLang = lang;
         langInput.value = lang;
         document.documentElement.lang = lang;
-        localStorage.setItem('survey_lang', lang);
-        
-        if (langSelect) {
-            langSelect.value = lang;
-        }
+        localStorage.setItem('krunchies_language', lang);
 
         document.querySelectorAll('[data-i18n]').forEach(el => {
             const key = el.dataset.i18n;
             el.innerHTML = t(key);
         });
+        languageButtons.forEach((button) => {
+            const isActive = button.dataset.surveyLang === lang;
+            button.classList.toggle('is-active', isActive);
+            button.setAttribute('aria-pressed', String(isActive));
+        });
+        document.title = lang === 'cs' ? 'KRUNCHIES | Spotřebitelský výzkum trhu' : 'KRUNCHIES | Consumer market research';
     }
 
     // Auto-detect browser language
-    const browserLang = navigator.language || navigator.userLanguage;
-    const supportedLangs = Object.keys(translations);
-    const detectedLang = browserLang ? browserLang.split('-')[0].toLowerCase() : 'cs';
-    const persistedLang = localStorage.getItem('survey_lang');
+    const browserLanguages = navigator.languages || [navigator.language || navigator.userLanguage || 'en'];
+    const supportedLangs = ['en', 'cs'];
+    const detectedLang = browserLanguages.some((lang) => String(lang).toLowerCase().startsWith('cs')) ? 'cs' : 'en';
+    const persistedLang = localStorage.getItem('krunchies_language') || localStorage.getItem('survey_lang');
     
     if (persistedLang && supportedLangs.includes(persistedLang)) {
         updateLanguage(persistedLang);
-    } else if (supportedLangs.includes(detectedLang)) {
-        updateLanguage(detectedLang);
     } else {
-        updateLanguage('cs');
+        updateLanguage(detectedLang);
     }
 
-    if (langSelect) {
-        langSelect.addEventListener('change', (e) => updateLanguage(e.target.value));
-    }
+    languageButtons.forEach((button) => button.addEventListener('click', () => updateLanguage(button.dataset.surveyLang)));
 
     // --- NAVIGATION LOGIC ---
     const nextBtns = document.querySelectorAll('.next-btn');
@@ -1512,6 +1524,46 @@ document.addEventListener('DOMContentLoaded', () => {
     const totalSteps = groups.length - 1; 
     const submitEndpoint = window.SURVEY_SUBMIT_ENDPOINT || '/api/submit';
     const trackingEndpoint = window.SURVEY_TRACK_ENDPOINT || '/track';
+
+    // --- PRODUCT SHOWCASE ---
+    const conceptCarousel = document.querySelector('[data-concept-carousel]');
+    const conceptImage = document.getElementById('concept-product-image');
+    const conceptControls = [...document.querySelectorAll('[data-concept-flavor]')];
+    const conceptFlavors = [
+        { id: 'banana', image: '../images/krunchies-banana-bites.png', alt: 'Krunchies Banana Bites packaging' },
+        { id: 'strawberry', image: '../images/krunchies-strawberry-blast.png', alt: 'Krunchies Strawberry Blast packaging' },
+        { id: 'mango', image: '../images/krunchies-mango-crunch.png', alt: 'Krunchies Mango Crunch packaging' }
+    ];
+    let activeConceptFlavor = 0;
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    function showConceptFlavor(index, animate = true) {
+        if (!conceptCarousel || !conceptImage) return;
+        activeConceptFlavor = (index + conceptFlavors.length) % conceptFlavors.length;
+        const flavor = conceptFlavors[activeConceptFlavor];
+        const update = () => {
+            conceptImage.src = flavor.image;
+            conceptImage.alt = flavor.alt;
+            conceptControls.forEach((control) => {
+                const isActive = control.dataset.conceptFlavor === flavor.id;
+                control.classList.toggle('is-active', isActive);
+                control.setAttribute('aria-selected', String(isActive));
+            });
+        };
+        if (!animate || reduceMotion) { update(); return; }
+        conceptCarousel.classList.add('is-changing');
+        window.setTimeout(() => { update(); conceptCarousel.classList.remove('is-changing'); }, 140);
+    }
+
+    conceptControls.forEach((control) => {
+        const displayFlavor = () => showConceptFlavor(conceptFlavors.findIndex((flavor) => flavor.id === control.dataset.conceptFlavor));
+        control.addEventListener('click', displayFlavor);
+        control.addEventListener('pointerenter', displayFlavor);
+    });
+    conceptCarousel?.addEventListener('keydown', (event) => {
+        if (event.key === 'ArrowLeft') { event.preventDefault(); showConceptFlavor(activeConceptFlavor - 1); }
+        if (event.key === 'ArrowRight') { event.preventDefault(); showConceptFlavor(activeConceptFlavor + 1); }
+    });
 
     const sessionInput = document.getElementById('session-id-input');
     const utmSourceInput = document.getElementById('utm-source-input');
@@ -1555,6 +1607,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (['banana', 'strawberry', 'mango'].includes(requestedFlavor)) {
         const preferredFlavorInput = form.querySelector(`[name="favorite_flavor"][value="${requestedFlavor}"]`);
         if (preferredFlavorInput) preferredFlavorInput.checked = true;
+        showConceptFlavor(conceptFlavors.findIndex((flavor) => flavor.id === requestedFlavor), false);
     }
 
     function sendTrackingEvent(eventType, extra = {}) {
