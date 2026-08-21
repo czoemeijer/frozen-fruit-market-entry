@@ -44,13 +44,20 @@
           </div>
         </div>
 
-        <div class="hero-stage">
-          <div class="stage-note stage-note-top"><span>01</span> flagship drop</div>
-          <div class="hero-product-card">
-            <img src="images/krunchies-banana-bites.png" alt="Krunchies chocolate dipped banana bites packaging" class="hero-product-image">
-            <div class="hero-product-caption"><span>Chocolate dipped banana bites</span><strong>01 / 03</strong></div>
+        <div class="hero-stage" data-flavor-carousel tabindex="0" aria-label="Krunchies flavor showcase. Use the flavor buttons or arrow keys to change the product.">
+          <div class="stage-note stage-note-top"><span id="hero-flavor-number">01</span> <span id="hero-flavor-label">banana edit</span></div>
+          <div class="hero-product-card" id="hero-product-card">
+            <img src="images/krunchies-banana-bites.png" alt="Krunchies Chocolate Banana Bites packaging" class="hero-product-image" id="hero-product-image">
+            <div class="hero-product-caption"><span id="hero-product-name">Chocolate banana bites</span><strong id="hero-product-count">01 / 03</strong></div>
           </div>
-          <div class="stage-note stage-note-bottom"><span class="dot dot-yellow"></span> loudly crisp / quietly premium</div>
+          <div class="hero-flavor-controls" role="tablist" aria-label="Choose a Krunchies flavor">
+            <button class="flavor-control is-active" type="button" role="tab" aria-selected="true" data-flavor="banana"><span class="flavor-dot"></span>Banana</button>
+            <button class="flavor-control" type="button" role="tab" aria-selected="false" data-flavor="strawberry"><span class="flavor-dot"></span>Strawberry</button>
+            <button class="flavor-control" type="button" role="tab" aria-selected="false" data-flavor="mango"><span class="flavor-dot"></span>Mango</button>
+          </div>
+          <button class="hero-arrow hero-arrow-prev" type="button" aria-label="Previous flavor">←</button>
+          <button class="hero-arrow hero-arrow-next" type="button" aria-label="Next flavor">→</button>
+          <div class="stage-note stage-note-bottom"><span class="dot dot-yellow"></span><span id="hero-flavor-note">creamy fruit / dark cocoa</span></div>
         </div>
       </div>
     </section>
@@ -66,7 +73,7 @@
             <p class="eyebrow">The collection</p>
             <h2>Three ways to make fruit impossible to ignore.</h2>
           </div>
-          <p>One visual language, three distinct flavour directions. Banana, strawberry and mango each come in a 150 g box.</p>
+          <p>One visual language, three distinct flavour directions. The packaging carries the color; the presentation stays clean and considered.</p>
         </div>
 
         <div class="lineup-grid">

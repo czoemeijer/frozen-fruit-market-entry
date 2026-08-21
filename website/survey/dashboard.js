@@ -34,6 +34,19 @@ const BARRIER_LABELS = {
   brand: 'Unknown brand'
 };
 
+const FLAVOR_LABELS = {
+  banana: 'Banana Bites',
+  strawberry: 'Strawberry Blast',
+  mango: 'Mango Crunch'
+};
+
+let dashboardPasscode = '';
+
+function accessStorageKey() {
+  const now = new Date();
+  return `krunchies_dashboard_access_${now.getFullYear()}-${now.getMonth() + 1}-${now.getDate()}`;
+}
+
 function escapeHtml(value) {
   return String(value ?? '')
     .replaceAll('&', '&amp;')
@@ -54,7 +67,12 @@ function labelFor(value, labels = {}) {
 }
 
 async function loadMetrics() {
-  const response = await fetch('/_ops/metrics', { headers: { Accept: 'application/json' } });
+  const response = await fetch('/_ops/metrics', {
+    headers: {
+      Accept: 'application/json',
+      'X-Krunchies-Dashboard-Day': dashboardPasscode
+    }
+  });
   let payload = null;
   try { payload = await response.json(); } catch { /* handled below */ }
   if (!response.ok || payload?.status !== 'success' || !payload?.data) {
@@ -169,6 +187,7 @@ async function refreshDashboard() {
     renderDistribution('premium-table', data.distributions?.premium_wtp, PREMIUM_LABELS);
     renderDistribution('channel-table', data.distributions?.purchase_channel, CHANNEL_LABELS);
     renderDistribution('barrier-table', data.distributions?.barrier, BARRIER_LABELS);
+    renderDistribution('flavor-table', data.distributions?.favorite_flavor, FLAVOR_LABELS);
     renderDropoff(data.step_dropoff);
     renderTable('lang-table', ['Language', 'Count'], (data.language_distribution || []).map((item) => [item.language, { numeric: true, html: number(item.count) }]));
     renderTable('source-table', ['Source', 'Count'], (data.source_distribution || []).map((item) => [item.source, { numeric: true, html: number(item.count) }]));
@@ -179,10 +198,55 @@ async function refreshDashboard() {
     setStatus('Metrics loaded');
   } catch (error) {
     setStatus(error.message || 'Failed to load metrics', true);
+    if (/HTTP 401|unauthorized/i.test(error.message || '')) lockDashboard('The passcode is no longer valid. Enter today’s date.');
   } finally {
     button.disabled = false;
   }
 }
 
+function unlockDashboard() {
+  document.getElementById('dashboard-lock').hidden = true;
+  document.getElementById('dashboard-content').hidden = false;
+  document.getElementById('dashboard-legal').hidden = false;
+  refreshDashboard();
+}
+
+function lockDashboard(message = '') {
+  dashboardPasscode = '';
+  sessionStorage.removeItem(accessStorageKey());
+  document.getElementById('dashboard-lock').hidden = false;
+  document.getElementById('dashboard-content').hidden = true;
+  document.getElementById('dashboard-legal').hidden = true;
+  document.getElementById('dashboard-lock-error').textContent = message;
+  document.getElementById('dashboard-passcode').focus();
+}
+
 document.getElementById('refresh-button').addEventListener('click', refreshDashboard);
-refreshDashboard();
+document.getElementById('dashboard-unlock-form').addEventListener('submit', async (event) => {
+  event.preventDefault();
+  const input = document.getElementById('dashboard-passcode');
+  const error = document.getElementById('dashboard-lock-error');
+  dashboardPasscode = input.value.trim();
+  error.textContent = '';
+  if (!/^\d{1,2}$/.test(dashboardPasscode)) {
+    error.textContent = 'Enter today’s date as a number from 1 to 31.';
+    return;
+  }
+  try {
+    await loadMetrics();
+    sessionStorage.setItem(accessStorageKey(), dashboardPasscode);
+    unlockDashboard();
+  } catch (requestError) {
+    dashboardPasscode = '';
+    input.select();
+    error.textContent = 'Incorrect passcode. Please enter today’s date.';
+  }
+});
+
+const savedPasscode = sessionStorage.getItem(accessStorageKey());
+if (savedPasscode) {
+  dashboardPasscode = savedPasscode;
+  unlockDashboard();
+} else {
+  document.getElementById('dashboard-passcode').focus();
+}

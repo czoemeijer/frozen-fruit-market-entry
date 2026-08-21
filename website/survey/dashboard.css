@@ -14,6 +14,8 @@
 
 * { box-sizing: border-box; }
 
+[hidden] { display: none !important; }
+
 body {
   margin: 0;
   min-width: 320px;
@@ -23,6 +25,17 @@ body {
   color: var(--ink);
   font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
+
+.dashboard-lock { display: grid; min-height: 100vh; padding: 22px; place-items: center; }
+.lock-card { width: min(100%, 460px); padding: clamp(28px, 6vw, 48px); border: 1px solid var(--line); border-radius: 26px; background: var(--surface); box-shadow: var(--shadow); }
+.lock-card h1 { margin: 0; font-size: clamp(2.3rem, 7vw, 4.3rem); }
+.lock-card > p:not(.eyebrow):not(.lock-error) { margin: 20px 0 28px; color: var(--muted); line-height: 1.6; }
+.lock-card label { display: block; margin-bottom: 8px; color: var(--muted); font-size: 12px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; }
+.lock-card input { width: 100%; border: 1px solid var(--ink); border-radius: 14px; padding: 14px 16px; background: #fff; color: var(--ink); font: 800 1.25rem/1 Inter, ui-sans-serif, system-ui, sans-serif; letter-spacing: .12em; }
+.lock-card input:focus { outline: 3px solid rgba(238, 111, 78, .35); outline-offset: 2px; }
+.lock-card button { width: 100%; margin-top: 14px; border: 1px solid var(--ink); border-radius: 14px; padding: 14px 18px; background: var(--ink); color: var(--surface); cursor: pointer; font: 800 14px Inter, ui-sans-serif, system-ui, sans-serif; }
+.lock-card button:hover { background: var(--accent-dark); }
+.lock-error { min-height: 20px; margin: 12px 0 0; color: var(--accent-dark); font-size: 13px; }
 
 .container { max-width: 1180px; margin: 0 auto; padding: 42px 22px 72px; }
 .dashboard-header { display: flex; justify-content: space-between; gap: 28px; align-items: end; }

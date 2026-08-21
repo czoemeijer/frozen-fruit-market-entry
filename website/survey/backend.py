@@ -2,9 +2,24 @@ import sqlite3
 import json
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 import os
+from datetime import datetime
 from urllib.parse import urlsplit
 
+try:
+    from zoneinfo import ZoneInfo
+except ImportError:
+    ZoneInfo = None
+
 DB_NAME = os.getenv("SURVEY_DB_PATH", os.path.join(os.path.dirname(__file__), "survey_data.db"))
+
+
+def dashboard_day_passcode():
+    timezone = ZoneInfo("Europe/Prague") if ZoneInfo else None
+    return str(datetime.now(timezone).day)
+
+
+def has_dashboard_access(headers):
+    return headers.get('X-Krunchies-Dashboard-Day', '') == dashboard_day_passcode()
 
 
 def ensure_column(cursor, table_name, column_name, column_type):
@@ -175,13 +190,16 @@ class SurveyHandler(BaseHTTPRequestHandler):
         self.send_response(200)
         self.send_header('Access-Control-Allow-Origin', '*')
         self.send_header('Access-Control-Allow-Methods', 'POST, GET, OPTIONS')
-        self.send_header('Access-Control-Allow-Headers', 'Content-Type')
+        self.send_header('Access-Control-Allow-Headers', 'Content-Type, X-Krunchies-Dashboard-Day')
         self.end_headers()
 
     def do_GET(self):
         path = urlsplit(self.path).path
 
         if path == '/_ops/metrics':
+            if not has_dashboard_access(self.headers):
+                self._send_json(401, {'status': 'error', 'message': 'Unauthorized'})
+                return
             try:
                 summary = fetch_metrics_summary()
                 self._send_json(200, {'status': 'success', 'data': summary})

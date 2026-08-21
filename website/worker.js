@@ -56,6 +56,17 @@ function jsonResponse(payload, status = 200, corsHeaders = {}) {
   });
 }
 
+function dashboardDayPasscode() {
+  return new Intl.DateTimeFormat("en-GB", {
+    timeZone: "Europe/Prague",
+    day: "numeric"
+  }).format(new Date());
+}
+
+function hasDashboardAccess(request) {
+  return request.headers.get("X-Krunchies-Dashboard-Day") === dashboardDayPasscode();
+}
+
 async function ensureResponseSchema(db) {
   await db.prepare(SURVEY_SCHEMA).run();
   const info = await db.prepare("PRAGMA table_info(survey_responses)").all();
@@ -122,6 +133,7 @@ async function fetchMetrics(db) {
     premiumRows,
     channelRows,
     barrierRows,
+    favoriteFlavorRows,
     recentRows
   ] = await Promise.all([
     db.prepare("SELECT COUNT(*) AS submits FROM survey_responses").first(),
@@ -186,6 +198,7 @@ async function fetchMetrics(db) {
     db.prepare(`SELECT COALESCE(NULLIF(premium_wtp, ''), '(unknown)') AS value, COUNT(*) AS count FROM survey_responses GROUP BY premium_wtp ORDER BY count DESC`).all(),
     db.prepare(`SELECT COALESCE(NULLIF(preference, ''), '(unknown)') AS value, COUNT(*) AS count FROM survey_responses GROUP BY preference ORDER BY count DESC`).all(),
     db.prepare(`SELECT COALESCE(NULLIF(main_barrier, ''), '(unknown)') AS value, COUNT(*) AS count FROM survey_responses GROUP BY main_barrier ORDER BY count DESC`).all(),
+    db.prepare(`SELECT COALESCE(NULLIF(favorite_flavor, ''), '(unknown)') AS value, COUNT(*) AS count FROM survey_responses GROUP BY favorite_flavor ORDER BY count DESC`).all(),
     db.prepare(`
       SELECT timestamp, language, age, purchase_frequency, intent,
         psm_cheap, psm_expensive, local_importance, premium_wtp, main_barrier
@@ -248,7 +261,8 @@ async function fetchMetrics(db) {
       intent: mapDistribution(intentRows),
       premium_wtp: mapDistribution(premiumRows),
       purchase_channel: mapDistribution(channelRows),
-      barrier: mapDistribution(barrierRows)
+      barrier: mapDistribution(barrierRows),
+      favorite_flavor: mapDistribution(favoriteFlavorRows)
     },
     quality: {
       response_count: numberOrZero(qualityRow?.response_count),
@@ -280,7 +294,7 @@ export default {
     const corsHeaders = {
       "Access-Control-Allow-Origin": "*",
       "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
-      "Access-Control-Allow-Headers": "Content-Type"
+      "Access-Control-Allow-Headers": "Content-Type, X-Krunchies-Dashboard-Day"
     };
 
     if (request.method === "OPTIONS") {
@@ -384,6 +398,9 @@ export default {
       }
       if (!env.SURVEY_DB) {
         return jsonResponse({ status: "error", message: "SURVEY_DB binding is not configured" }, 503, corsHeaders);
+      }
+      if (!hasDashboardAccess(request)) {
+        return jsonResponse({ status: "error", message: "Unauthorized" }, 401, corsHeaders);
       }
       try {
         const data = await fetchMetrics(env.SURVEY_DB);
