@@ -63,6 +63,10 @@ document.addEventListener('DOMContentLoaded', () => {
     showFlavor(flavors.findIndex((flavor) => flavor.id === control.dataset.flavor));
     restartRotation();
   }));
+  controls.forEach((control) => control.addEventListener('pointerenter', () => {
+    showFlavor(flavors.findIndex((flavor) => flavor.id === control.dataset.flavor));
+    window.clearInterval(rotationTimer);
+  }));
   carousel.querySelector('.hero-arrow-prev').addEventListener('click', () => { showFlavor(activeIndex - 1); restartRotation(); });
   carousel.querySelector('.hero-arrow-next').addEventListener('click', () => { showFlavor(activeIndex + 1); restartRotation(); });
   carousel.addEventListener('keydown', (event) => {
