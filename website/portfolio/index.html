@@ -1,0 +1,2633 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <title>Catherine Zoë Meijer – Marketing & Social Media Specialist – Portfolio</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    @page {
+      size: 297mm 167.0625mm; /* 16:9 landscape */
+      margin: 0;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --navy: #122F49;
+      --navy-dark: #0A1B2A;
+      --navy-light: #1E466B;
+      --rose: #CC6987;
+      --rose-dark: #B35470;
+      --rose-light: #FCEEF2;
+      --bg-cream: #FAF7F8;
+      --bg-light: #F7F2F5;
+      --card-border: #E8E2E6;
+      --text-main: #122F49;
+      --text-muted: #293447; /* Ztmaveno pro vysoký kontrast dle zadání */
+      --text-dim: #5C6B7E;
+      --white: #FFFFFF;
+    }
+
+    html, body {
+      width: 297mm;
+      margin: 0;
+      padding: 0;
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      color: var(--text-main);
+      background-color: var(--bg-cream);
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    @media screen {
+      html, body {
+        width: 100%;
+        min-width: 297mm;
+        background-color: #EAE5E8;
+      }
+
+      .slide {
+        margin: 20px auto;
+        box-shadow: 0 8px 30px rgba(18, 47, 73, 0.12);
+        border-radius: 4px;
+      }
+    }
+
+    .slide {
+      width: 297mm;
+      height: 167.0625mm;
+      page-break-after: always;
+      page-break-inside: avoid;
+      position: relative;
+      overflow: hidden;
+      padding: 10mm 15mm 8.5mm 15mm;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background: var(--bg-cream);
+    }
+
+    /* TOP HEADER BAR */
+    .top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--card-border);
+      padding-bottom: 2.2mm;
+      margin-bottom: 3mm;
+    }
+
+    .top-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .badge-section {
+      background: var(--rose-light);
+      color: var(--rose);
+      font-weight: 700;
+      font-size: 7.8pt;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 2.5px 8px;
+      border-radius: 4px;
+      display: inline-block;
+    }
+
+    .section-title-tag {
+      font-size: 8.2pt;
+      font-weight: 600;
+      color: var(--navy);
+      letter-spacing: 0.02em;
+    }
+
+    .top-right {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-size: 7.8pt;
+      color: var(--text-dim);
+      font-weight: 500;
+    }
+
+    .slide-num {
+      color: var(--rose);
+      font-weight: 700;
+      font-size: 8.5pt;
+      letter-spacing: 0.05em;
+    }
+
+    /* BOTTOM BAR */
+    .bottom-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid var(--card-border);
+      padding-top: 2.2mm;
+      margin-top: 2.5mm;
+      font-size: 7.5pt;
+      color: var(--text-dim);
+    }
+
+    .bottom-contact {
+      display: flex;
+      gap: 16px;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    .bottom-contact strong {
+      color: var(--navy);
+    }
+
+    /* CONTENT LAYOUTS */
+    .content-area {
+      flex: 1;
+      display: flex;
+      gap: 5.5mm;
+      overflow: hidden;
+    }
+
+    /* TYPOGRAPHY */
+    h1, h2, h3, h4 {
+      font-family: 'Outfit', 'Plus Jakarta Sans', sans-serif;
+      color: var(--navy);
+      letter-spacing: -0.01em;
+    }
+
+    .title-h1 {
+      font-size: 32pt;
+      font-weight: 800;
+      line-height: 1.05;
+      color: var(--navy);
+    }
+
+    .title-h2 {
+      font-size: 15.5pt;
+      font-weight: 700;
+      line-height: 1.2;
+      color: var(--navy);
+      margin-bottom: 1.5mm;
+    }
+
+    .subtitle-p {
+      font-size: 8.8pt;
+      color: #293447;
+      line-height: 1.40;
+    }
+
+    /* PILLS & TAGS */
+    .role-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 7.2pt;
+      background: var(--navy);
+      color: #FFFFFF;
+      padding: 2.5px 7.5px;
+      border-radius: 4px;
+      font-weight: 600;
+    }
+
+    .role-badge.author {
+      background: var(--rose);
+    }
+
+    .role-badge.subtle {
+      background: var(--bg-light);
+      color: var(--navy);
+      border: 1px solid var(--card-border);
+    }
+
+    /* CARDS */
+    .card {
+      background: var(--white);
+      border-radius: 7px;
+      border: 1px solid var(--card-border);
+      padding: 3mm 4mm;
+      box-shadow: 0 2px 10px rgba(18, 47, 73, 0.03);
+    }
+
+    .card.dark {
+      background: var(--navy);
+      border: 1px solid var(--navy-dark);
+      color: #FFFFFF;
+    }
+
+    .card.dark h3, .card.dark h4, .card.dark strong {
+      color: #FFFFFF;
+    }
+
+    .card.dark p {
+      color: #D1DCE5;
+    }
+
+    .card.accent {
+      border-left: 3px solid var(--rose);
+    }
+
+    /* METRICS BLOCKS */
+    .metric-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2mm;
+    }
+
+    .metric-box {
+      background: var(--white);
+      border: 1px solid var(--card-border);
+      border-radius: 6px;
+      padding: 2mm 2.5mm;
+      text-align: left;
+    }
+
+    .metric-box.highlight {
+      border-color: var(--rose);
+      background: #FFF9FA;
+    }
+
+    .metric-val {
+      font-family: 'Outfit', sans-serif;
+      font-size: 13.5pt;
+      font-weight: 800;
+      color: var(--navy);
+      line-height: 1.05;
+    }
+
+    .metric-val.rose {
+      color: var(--rose);
+    }
+
+    .metric-label {
+      font-size: 6.6pt;
+      font-weight: 700;
+      color: var(--text-dim);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-top: 0.8mm;
+    }
+
+    .metric-sub {
+      font-size: 6.5pt;
+      color: var(--text-muted);
+      margin-top: 0.3mm;
+    }
+
+    /* SMARTPHONE CARD MOCKUPS */
+    .image-grid {
+      display: flex;
+      gap: 3mm;
+      height: 100%;
+      align-items: center;
+      justify-content: flex-end;
+    }
+
+    .device-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 100%;
+      justify-content: space-between;
+    }
+
+    .phone-mockup {
+      width: 100%;
+      flex: 1;
+      max-height: 100mm;
+      background: #FFFFFF;
+      border-radius: 9px;
+      border: 1.5px solid #DDD4DA;
+      box-shadow: 0 4px 14px rgba(18, 47, 73, 0.07);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .phone-mockup img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      display: block;
+    }
+
+    .device-caption {
+      font-size: 6.8pt;
+      font-weight: 600;
+      color: var(--navy);
+      margin-top: 1.5mm;
+      line-height: 1.2;
+      text-align: center;
+    }
+
+    .device-tag {
+      font-size: 5.8pt;
+      color: var(--rose);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      display: block;
+      font-weight: 700;
+      margin-bottom: 0.3mm;
+    }
+
+    /* MINIMALIST COVER PAGE STYLES */
+    .slide.slide-cover {
+      padding: 16mm 22mm 10mm 22mm;
+      background: #FFFFFF;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .cover-hero {
+      margin-top: 14mm;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .cover-tag {
+      font-size: 8.5pt;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--rose);
+      margin-bottom: 4mm;
+    }
+
+    .cover-name {
+      font-family: 'Outfit', sans-serif;
+      font-size: 48pt;
+      font-weight: 800;
+      color: var(--navy);
+      line-height: 1.0;
+      letter-spacing: -0.025em;
+      margin: 0;
+    }
+
+    .cover-role {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 15.5pt;
+      font-weight: 600;
+      color: var(--rose);
+      margin-top: 3.5mm;
+      letter-spacing: 0.01em;
+    }
+
+    .cover-accent-line {
+      width: 44mm;
+      height: 2.5px;
+      background: var(--rose);
+      margin-top: 7mm;
+      border-radius: 2px;
+    }
+
+    .cover-projects-section {
+      margin-bottom: 8mm;
+    }
+
+    .cover-projects-label {
+      font-size: 7.2pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--text-dim);
+      margin-bottom: 3.5mm;
+    }
+
+    .cover-projects-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 3.5mm;
+      width: 100%;
+    }
+
+    .cover-project-card {
+      background: var(--bg-light);
+      border: 1px solid var(--card-border);
+      border-radius: 7px;
+      padding: 3.8mm 3.5mm;
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      border-left: 3px solid var(--rose);
+      box-shadow: 0 2px 8px rgba(18, 47, 73, 0.02);
+      text-decoration: none;
+      color: inherit;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .cover-project-card:hover {
+      background: #FFFFFF;
+      border-color: var(--rose);
+      box-shadow: 0 4px 12px rgba(18, 47, 73, 0.06);
+    }
+
+    .cover-project-num {
+      font-family: 'Outfit', sans-serif;
+      font-size: 8.5pt;
+      font-weight: 800;
+      color: var(--rose);
+      letter-spacing: 0.05em;
+    }
+
+    .cover-project-name {
+      font-family: 'Outfit', sans-serif;
+      font-size: 10.5pt;
+      font-weight: 700;
+      color: var(--navy);
+      letter-spacing: -0.01em;
+      white-space: nowrap;
+    }
+
+    .cover-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid var(--card-border);
+      padding-top: 3.2mm;
+      font-size: 8pt;
+      color: var(--text-muted);
+    }
+
+    .cover-contact {
+      display: flex;
+      gap: 14px;
+      align-items: center;
+      font-weight: 500;
+      color: var(--navy);
+    }
+
+    .cover-contact .sep {
+      color: var(--rose);
+      font-weight: 700;
+    }
+
+    .cover-num {
+      font-family: 'Outfit', sans-serif;
+      font-size: 9pt;
+      font-weight: 700;
+      color: var(--rose);
+      letter-spacing: 0.05em;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    /* ========================================================= */
+    /* STRANA 2 – NC EDEN | KAMPANĚ & VÝSLEDKY (DESIGN VZOR SMETANITO) */
+    /* ========================================================= */
+    .eden-campaigns-grid-v4 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5mm;
+      height: 100%;
+      width: 100%;
+    }
+
+    .eden-hero-card-v4 {
+      background: var(--white);
+      border: 1px solid var(--card-border);
+      border-radius: 8px;
+      padding: 3.5mm 4mm;
+      display: flex;
+      gap: 4mm;
+      align-items: center;
+      box-shadow: 0 2px 10px rgba(18, 47, 73, 0.03);
+      box-sizing: border-box;
+      overflow: hidden;
+      height: 100%;
+    }
+
+    /* COLLAGE BOX FOR CAMPAIGNS (OVERLAPPING SCREENSHOTS) */
+    .eden-collage-box-v4 {
+      position: relative;
+      width: 74mm;
+      height: 105mm;
+      flex-shrink: 0;
+    }
+
+    .eden-frame-v4 {
+      position: absolute;
+      border-radius: 6px;
+      overflow: hidden;
+      background: #FAF7F8;
+      border: 1.5px solid #DDD4DA;
+      box-shadow: 0 4px 14px rgba(18, 47, 73, 0.12);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .eden-frame-v4 img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
+      display: block;
+    }
+
+    /* CHRISTMAS 3-LAYER COLLAGE */
+    /* Back left: Losy (exact 4:5 ratio 0.800) */
+    .eden-frame-v4.xmas-losy {
+      width: 38mm;
+      height: 47.5mm;
+      top: 4mm;
+      left: 1mm;
+      z-index: 1;
+      transform: none;
+    }
+
+    /* Back right / top: Strom Story (exact ratio 0.623) moved higher */
+    .eden-frame-v4.xmas-strom {
+      width: 33mm;
+      height: 53mm;
+      top: 2mm;
+      right: 1mm;
+      z-index: 3;
+      transform: none;
+    }
+
+    /* Front center/left: Medved (dominant hero visual, exact 4:5 ratio 0.801) */
+    .eden-frame-v4.xmas-medved {
+      width: 44mm;
+      height: 55mm;
+      bottom: 4mm;
+      left: 9mm;
+      z-index: 2;
+      transform: none;
+      border-color: #CC6987;
+      box-shadow: 0 6px 20px rgba(18, 47, 73, 0.20);
+    }
+
+    /* BACK TO SCHOOL 2-LAYER COLLAGE */
+    /* Back left: BTS KV (exact 4:5 ratio 0.797) */
+    .eden-frame-v4.bts-kv {
+      width: 47mm;
+      height: 59mm;
+      top: 6mm;
+      left: 2mm;
+      z-index: 1;
+      transform: none;
+    }
+
+    /* Front right: BTS Story (exact 9:16 ratio 0.566) */
+    .eden-frame-v4.bts-story {
+      width: 37mm;
+      height: 65.4mm;
+      bottom: 6mm;
+      right: 2mm;
+      z-index: 2;
+      transform: none;
+      border-color: #CC6987;
+      box-shadow: 0 6px 20px rgba(18, 47, 73, 0.20);
+    }
+
+    .eden-pill-story {
+      position: absolute;
+      top: 2.2mm;
+      left: 2.2mm;
+      background: rgba(18, 47, 73, 0.90);
+      color: #FFFFFF;
+      font-size: 5pt;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      padding: 0.6mm 1.8mm;
+      border-radius: 3px;
+      backdrop-filter: blur(4px);
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+      z-index: 5;
+    }
+
+    /* METADATA SIDE FOR CARDS */
+    .eden-meta-side-v4 {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      min-width: 0;
+    }
+
+    .eden-card-title-v4 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 11pt;
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1.15;
+      margin-bottom: 1.2mm;
+    }
+
+    .eden-card-sub-v4 {
+      font-size: 8.6pt;
+      color: #293447;
+      line-height: 1.35;
+      margin-bottom: 1.5mm;
+    }
+
+    .eden-metrics-grid-v4 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5mm;
+      margin: 1.2mm 0 1.5mm 0;
+    }
+
+    .eden-metric-mini-v4 {
+      background: var(--bg-light);
+      border: 1px solid var(--card-border);
+      border-radius: 4px;
+      padding: 1.2mm 1.8mm;
+    }
+
+    .eden-metric-mini-v4.highlight {
+      background: #FFF3F6;
+      border-color: #F0CFDA;
+    }
+
+    .eden-metric-mini-val-v4 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 9.6pt;
+      font-weight: 800;
+      color: var(--navy);
+      line-height: 1.05;
+    }
+
+    .eden-metric-mini-val-v4.rose {
+      color: var(--rose);
+    }
+
+    .eden-metric-mini-lbl-v4 {
+      font-size: 5.4pt;
+      font-weight: 700;
+      color: var(--text-dim);
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      margin-top: 0.3mm;
+    }
+
+    .eden-metric-mini-sub-v4 {
+      font-size: 5.2pt;
+      color: #293447;
+      margin-top: 0.2mm;
+    }
+
+    .eden-desc-v4 {
+      font-size: 8.5pt;
+      color: #293447;
+      line-height: 1.35;
+      margin-top: 1mm;
+    }
+
+    /* ========================================================= */
+    /* STRANA 3 – NC EDEN | AUTORSKÁ VIDEO TVORBA & SOCIAL MEDIA */
+    /* ========================================================= */
+    .eden-v3-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 3mm;
+      height: 100%;
+      width: 100%;
+    }
+
+    /* TOP REELS ROW (2 LARGE COLLAGE CARDS) */
+    .eden-reels-top-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5mm;
+      height: 79mm;
+      min-height: 77mm;
+    }
+
+    .eden-reel-card-v3 {
+      background: var(--white);
+      border: 1px solid var(--card-border);
+      border-radius: 8px;
+      padding: 3mm 3.5mm;
+      display: flex;
+      gap: 4mm;
+      align-items: center;
+      box-shadow: 0 2px 10px rgba(18, 47, 73, 0.03);
+      box-sizing: border-box;
+      overflow: hidden;
+    }
+
+    .eden-reel-collage-box {
+      position: relative;
+      width: 72mm;
+      height: 72mm;
+      flex-shrink: 0;
+    }
+
+    .eden-collage-frame {
+      position: absolute;
+      border-radius: 7px;
+      overflow: hidden;
+      background: #FAF7F8;
+      border: 1.5px solid #DDD4DA;
+      box-shadow: 0 4px 14px rgba(18, 47, 73, 0.12);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .eden-collage-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      display: block;
+    }
+
+    /* Back frame: higher and shifted left */
+    .eden-collage-frame.frame-back {
+      width: 38mm;
+      height: 65mm;
+      top: 0;
+      left: 1mm;
+      z-index: 1;
+      transform: rotate(-2deg);
+    }
+
+    /* Front frame: shifted right and down, overlapping */
+    .eden-collage-frame.frame-front {
+      width: 39mm;
+      height: 66mm;
+      bottom: 0;
+      right: 2mm;
+      z-index: 2;
+      transform: rotate(1.5deg);
+      border-color: #CC6987;
+      box-shadow: 0 6px 18px rgba(18, 47, 73, 0.18);
+    }
+
+    .eden-frame-tag {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(18, 47, 73, 0.90);
+      color: #FFFFFF;
+      font-size: 5.2pt;
+      padding: 0.8mm 1.2mm;
+      text-align: center;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
+
+    .eden-reel-meta-side {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      min-width: 0;
+    }
+
+    .eden-reel-title-v3 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 10.2pt;
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1.15;
+      margin-bottom: 1.2mm;
+    }
+
+    .eden-reel-desc-v3 {
+      font-size: 8.6pt;
+      color: #293447;
+      line-height: 1.35;
+    }
+
+    /* STRANA 3 BOTTOM STRIP: CONTENT PLANNING & SOCIAL MEDIA MANAGEMENT (SMETANITO STYLE) */
+    .eden-mgmt-strip {
+      background: var(--white);
+      border: 1px solid var(--card-border);
+      border-radius: 8px;
+      padding: 2.2mm 3.5mm 2.2mm 3.5mm;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 2px 8px rgba(18, 47, 73, 0.02);
+      box-sizing: border-box;
+      height: 38mm;
+    }
+
+    .eden-mgmt-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 1.5mm;
+      border-bottom: 1px solid #F3EDF1;
+      padding-bottom: 0.8mm;
+    }
+
+    .eden-strip-title {
+      font-size: 6.5pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      color: var(--rose);
+    }
+
+    .eden-strip-hint {
+      font-size: 6pt;
+      color: var(--text-dim);
+      font-weight: 500;
+    }
+
+    .eden-mgmt-body {
+      display: flex;
+      gap: 4.5mm;
+      align-items: center;
+      flex: 1;
+    }
+
+    .eden-mgmt-thumbs {
+      display: flex;
+      gap: 2.5mm;
+      flex-shrink: 0;
+    }
+
+    .eden-mgmt-thumb-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 25mm;
+    }
+
+    .eden-mgmt-thumb-img {
+      width: 25mm;
+      height: 25mm;
+      border-radius: 5px;
+      overflow: hidden;
+      border: 1px solid var(--card-border);
+      background: #FAF7F8;
+      box-shadow: 0 1px 4px rgba(18, 47, 73, 0.04);
+      position: relative;
+    }
+
+    .eden-mgmt-thumb-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .eden-mgmt-thumb-lbl {
+      font-size: 5.4pt;
+      font-weight: 600;
+      color: var(--navy);
+      text-align: center;
+      margin-top: 0.8mm;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 100%;
+    }
+
+    .eden-mgmt-content-side {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      min-width: 0;
+    }
+
+    .eden-mgmt-quote {
+      font-size: 7.1pt;
+      font-weight: 600;
+      color: var(--navy);
+      line-height: 1.30;
+      margin-bottom: 1.2mm;
+      background: #FAF6F8;
+      border-left: 2.5px solid var(--rose);
+      padding: 0.8mm 1.8mm;
+      border-radius: 0 3px 3px 0;
+    }
+
+    .eden-mgmt-duties-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.8mm 5mm;
+    }
+
+    .eden-mgmt-duty {
+      display: flex;
+      align-items: flex-start;
+      gap: 2mm;
+      font-size: 7.8pt;
+      color: var(--text-muted);
+      line-height: 1.30;
+    }
+
+    .eden-mgmt-duty-bullet {
+      width: 4.5px;
+      height: 4.5px;
+      border-radius: 50%;
+      background: var(--rose);
+      margin-top: 4px;
+      flex-shrink: 0;
+    }
+
+    .eden-mgmt-duty strong {
+      color: var(--navy);
+    }
+
+    .eden-mgmt-note {
+      font-size: 6.6pt;
+      color: var(--text-dim);
+      font-style: italic;
+      border-top: 1px dashed #EDE5E9;
+      padding-top: 0.8mm;
+      margin-top: 1.4mm;
+    }
+
+    /* SOCIAL LINKS FOOTER PILL */
+    .eden-social-links {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 7.2pt;
+      color: var(--text-dim);
+      font-weight: 500;
+    }
+
+    .eden-social-link {
+      color: var(--navy);
+      text-decoration: none;
+      font-weight: 700;
+      transition: color 0.15s ease;
+    }
+
+    .eden-social-link.ig {
+      color: var(--rose);
+    }
+
+    /* ========================================================= */
+    /* STRANA 4 – SMETANITO | INFLUENCER, STORIES & PROFILE MGMT */
+    /* ========================================================= */
+    .smetanito-v4-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 3mm;
+      height: 100%;
+      width: 100%;
+    }
+
+    /* TOP ROW: 2 HERO CARDS (INFLUENCER 40% & STORIES 40%) */
+    .smetanito-top-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4.5mm;
+      height: 79mm;
+      min-height: 77mm;
+    }
+
+    .smetanito-hero-card {
+      background: var(--white);
+      border: 1px solid var(--card-border);
+      border-radius: 8px;
+      padding: 3mm 3.5mm;
+      display: flex;
+      gap: 4mm;
+      align-items: center;
+      box-shadow: 0 2px 10px rgba(18, 47, 73, 0.03);
+      box-sizing: border-box;
+      overflow: hidden;
+    }
+
+    /* COLLAGE BOX FOR INFLUENCER CARD (OVERLAPPING 2 SCREENSHOTS) */
+    .smetanito-collage-box {
+      position: relative;
+      width: 68mm;
+      height: 72mm;
+      flex-shrink: 0;
+    }
+
+    .smetanito-frame {
+      position: absolute;
+      border-radius: 7px;
+      overflow: hidden;
+      background: #FAF7F8;
+      border: 1.5px solid #DDD4DA;
+      box-shadow: 0 4px 14px rgba(18, 47, 73, 0.12);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .smetanito-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      display: block;
+    }
+
+    /* Back frame: Cover visual (Svačinky na výlety) */
+    .smetanito-frame.frame-back {
+      width: 42mm;
+      height: 57mm;
+      top: 3mm;
+      left: 1mm;
+      z-index: 1;
+      transform: rotate(-2.5deg);
+    }
+
+    .smetanito-frame.frame-back img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
+      display: block;
+    }
+
+    /* Front frame: Hana reel with stats */
+    .smetanito-frame.frame-front {
+      width: 36.5mm;
+      height: 66mm;
+      bottom: 1mm;
+      right: 1mm;
+      z-index: 2;
+      transform: rotate(1.5deg);
+      border-color: #CC6987;
+      box-shadow: 0 6px 18px rgba(18, 47, 73, 0.18);
+    }
+
+    .smetanito-frame.frame-front img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      display: block;
+    }
+
+    .smetanito-frame-tag {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(18, 47, 73, 0.90);
+      color: #FFFFFF;
+      font-size: 5.2pt;
+      padding: 0.8mm 1.2mm;
+      text-align: center;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
+
+    /* STORIES BOX (2 CLEAN 9:16 FRAMES SIDE BY SIDE, UNCLIPPED CONTENT) */
+    .smetanito-stories-box {
+      display: flex;
+      gap: 2.5mm;
+      width: 68mm;
+      height: 72mm;
+      flex-shrink: 0;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .smetanito-story-phone {
+      width: 32.5mm;
+      height: 58mm;
+      border-radius: 7px;
+      overflow: hidden;
+      background: #0D508D;
+      border: 1.5px solid #CC6987;
+      box-shadow: 0 4px 12px rgba(18, 47, 73, 0.12);
+      position: relative;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .smetanito-story-phone img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      display: block;
+    }
+
+    /* META SIDE FOR CARDS */
+    .smetanito-meta-side {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      min-width: 0;
+    }
+
+    .smetanito-card-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 10pt;
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1.15;
+      margin-bottom: 1.2mm;
+    }
+
+    .smetanito-card-sub {
+      font-size: 8.6pt;
+      color: #293447;
+      line-height: 1.35;
+      margin-bottom: 1.2mm;
+    }
+
+    .smetanito-metrics-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.4mm;
+      margin: 1mm 0 1.2mm 0;
+    }
+
+    .smetanito-metric-mini {
+      background: var(--bg-light);
+      border: 1px solid var(--card-border);
+      border-radius: 4px;
+      padding: 1.1mm 1.8mm;
+    }
+
+    .smetanito-metric-mini.highlight {
+      background: #FFF3F6;
+      border-color: #F0CFDA;
+    }
+
+    .smetanito-metric-mini-val {
+      font-family: 'Outfit', sans-serif;
+      font-size: 9.2pt;
+      font-weight: 800;
+      color: var(--navy);
+      line-height: 1.05;
+    }
+
+    .smetanito-metric-mini-val.rose {
+      color: var(--rose);
+    }
+
+    .smetanito-metric-mini-lbl {
+      font-size: 5.4pt;
+      font-weight: 700;
+      color: var(--text-dim);
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      margin-top: 0.2mm;
+    }
+
+    .smetanito-metric-mini-sub {
+      font-size: 5.2pt;
+      color: #293447;
+      margin-top: 0.2mm;
+    }
+
+    .smetanito-desc-text {
+      font-size: 8.6pt;
+      color: #293447;
+      line-height: 1.35;
+    }
+
+    .smetanito-collab-note {
+      font-size: 7.8pt;
+      color: #293447;
+      background: #F8F9FA;
+      border-left: 2.5px solid var(--navy);
+      padding: 0.9mm 1.6mm;
+      border-radius: 0 3px 3px 0;
+      margin-top: 1.2mm;
+      line-height: 1.30;
+    }
+
+    /* BOTTOM STRIP: INSTAGRAM & FACEBOOK MANAGEMENT (~20%) */
+    .smetanito-mgmt-strip {
+      background: var(--white);
+      border: 1px solid var(--card-border);
+      border-radius: 8px;
+      padding: 2.2mm 4mm 2.2mm 4mm;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 2px 8px rgba(18, 47, 73, 0.02);
+      box-sizing: border-box;
+      height: 50mm;
+    }
+
+    .smetanito-mgmt-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 1.4mm;
+      border-bottom: 1px solid #F3EDF1;
+      padding-bottom: 0.8mm;
+    }
+
+    .smetanito-mgmt-body {
+      display: flex;
+      gap: 7mm;
+      align-items: center;
+      flex: 1;
+    }
+
+    .smetanito-mgmt-thumbs {
+      display: flex;
+      gap: 3.2mm;
+      flex-shrink: 0;
+    }
+
+    .smetanito-mgmt-thumb-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 38mm;
+    }
+
+    .smetanito-mgmt-thumb-img {
+      width: 38mm;
+      height: 38mm;
+      border-radius: 6px;
+      overflow: hidden;
+      border: 1px solid var(--card-border);
+      background: #FAF7F8;
+      box-shadow: 0 2px 8px rgba(18, 47, 73, 0.06);
+    }
+
+    .smetanito-mgmt-thumb-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 20%;
+      display: block;
+    }
+
+    .smetanito-mgmt-thumb-lbl {
+      font-size: 5.8pt;
+      font-weight: 700;
+      color: var(--navy);
+      text-align: center;
+      margin-top: 0.9mm;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 100%;
+    }
+
+    .smetanito-mgmt-duties-wrapper {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 2mm;
+    }
+
+    .smetanito-mgmt-duty-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 2.2mm;
+      font-size: 8.6pt;
+      color: #293447;
+      line-height: 1.38;
+      background: #FAF7F8;
+      border: 1px solid #F0EAEF;
+      border-radius: 5px;
+      padding: 1.5mm 2.8mm;
+    }
+
+    .smetanito-mgmt-duty-bullet {
+      width: 4.5px;
+      height: 4.5px;
+      border-radius: 50%;
+      background: var(--rose);
+      margin-top: 4px;
+      flex-shrink: 0;
+    }
+
+    .smetanito-mgmt-duty-row strong {
+      color: var(--navy);
+      font-weight: 700;
+    }
+
+    .smetanito-mgmt-note {
+      font-size: 7.5pt;
+      color: #5C6B7E;
+      font-style: italic;
+      padding-left: 1mm;
+      margin-top: 0.5mm;
+    }
+
+    /* ========================================================= */
+    /* STRANA 5 – BIODERMA | REWORKED (2 CLEAN CARDS, 4 HERO POSTS) */
+    /* ========================================================= */
+    .bioderma-v5-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5.5mm;
+      height: 100%;
+      width: 100%;
+    }
+
+    .bioderma-hero-card {
+      background: var(--white);
+      border: 1px solid var(--card-border);
+      border-radius: 8px;
+      padding: 2.8mm 3.5mm 2.2mm 3.5mm;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: 0 2px 10px rgba(18, 47, 73, 0.03);
+      box-sizing: border-box;
+      height: 100%;
+    }
+
+    .bioderma-card-top {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 0.5mm;
+    }
+
+    .bioderma-card-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 13.5pt;
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1.18;
+      letter-spacing: -0.01em;
+    }
+
+    .bioderma-visual-row {
+      display: flex;
+      gap: 3.8mm;
+      justify-content: center;
+      align-items: center;
+      flex: 1;
+      padding: 0.8mm 0;
+    }
+
+    .bioderma-post-phone {
+      width: 52mm;
+      height: 92.4mm;
+      border-radius: 7px;
+      overflow: hidden;
+      background: #FAF7F8;
+      border: 1.5px solid #E2D9DF;
+      box-shadow: none;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .bioderma-post-phone img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
+      display: block;
+    }
+
+    .bioderma-card-bottom {
+      border-top: 1px solid #F3EDF1;
+      padding-top: 1.5mm;
+      margin-top: 0.4mm;
+      display: flex;
+      align-items: flex-start;
+      gap: 2.2mm;
+      font-size: 8.5pt;
+      font-weight: 500;
+      color: #293447;
+      line-height: 1.34;
+    }
+
+    .bioderma-bottom-bullet {
+      width: 4.5px;
+      height: 4.5px;
+      border-radius: 50%;
+      background: var(--rose);
+      flex-shrink: 0;
+      margin-top: 4px;
+    }
+
+    /* ========================================================= */
+    /* STRANA 6 – BISTRO BOULEVARD | VISUAL-FIRST (AIRY & CLEAN) */
+    /* ========================================================= */
+    .bistro-v6-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5mm;
+      height: 100%;
+      width: 100%;
+    }
+
+    .bistro-hero-card {
+      background: var(--white);
+      border: 1px solid var(--card-border);
+      border-radius: 8px;
+      padding: 3.5mm 4mm;
+      display: flex;
+      gap: 4mm;
+      align-items: center;
+      box-shadow: 0 2px 10px rgba(18, 47, 73, 0.03);
+      box-sizing: border-box;
+      overflow: hidden;
+      height: 100%;
+    }
+
+    /* Širší kolážový box s minimálním překryvem (~8mm) */
+    .bistro-collage-box {
+      width: 79mm;
+      height: 114mm;
+      position: relative;
+      flex-shrink: 0;
+    }
+
+    .bistro-frame {
+      position: absolute;
+      border-radius: 7px;
+      overflow: hidden;
+      background: #FFFFFF;
+      border: 1.5px solid #DDD4DA;
+      box-shadow: 0 4px 14px rgba(18, 47, 73, 0.10);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .bistro-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      display: block;
+    }
+
+    /* Jemné vrstvení s minimálním překryvem (~8mm) a mírným náklonem (-1.2° / +1.2°) */
+    .bistro-frame.reel-back {
+      width: 44mm;
+      height: 98mm;
+      top: 5mm;
+      left: 1mm;
+      z-index: 1;
+      transform: rotate(-1.2deg);
+    }
+
+    .bistro-frame.reel-front {
+      width: 45mm;
+      height: 101mm;
+      bottom: 5mm;
+      right: 1mm;
+      z-index: 2;
+      transform: rotate(1.2deg);
+      border-color: #CC6987;
+      box-shadow: 0 6px 20px rgba(18, 47, 73, 0.16);
+    }
+
+    .bistro-frame.carousel-back {
+      width: 44mm;
+      height: 98mm;
+      top: 5mm;
+      left: 1mm;
+      z-index: 1;
+      transform: rotate(-1.2deg);
+    }
+
+    .bistro-frame.carousel-front {
+      width: 45mm;
+      height: 101mm;
+      bottom: 5mm;
+      right: 1mm;
+      z-index: 2;
+      transform: rotate(1.2deg);
+      border-color: #CC6987;
+      box-shadow: 0 6px 20px rgba(18, 47, 73, 0.16);
+    }
+
+    .bistro-frame-tag {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(18, 47, 73, 0.88);
+      color: #FFFFFF;
+      font-size: 5.6pt;
+      padding: 0.8mm 1.6mm;
+      text-align: center;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
+
+    .bistro-frame.reel-back .bistro-frame-tag,
+    .bistro-frame.carousel-back .bistro-frame-tag {
+      right: auto;
+      border-radius: 0 4px 0 0;
+      padding: 0.8mm 2.4mm;
+      text-align: left;
+    }
+
+    /* Čistý, vzdušný textový sloupec bez duplicit */
+    .bistro-meta-side {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      min-width: 0;
+      padding-right: 1mm;
+    }
+
+    .bistro-card-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 11.2pt;
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1.18;
+      margin-bottom: 2.2mm;
+    }
+
+    .bistro-card-sub {
+      font-size: 8.8pt;
+      font-weight: 500;
+      color: #293447;
+      line-height: 1.4;
+      margin-bottom: 3.5mm;
+    }
+
+    .bistro-metrics-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 2mm;
+    }
+
+    .bistro-metric-item {
+      background: var(--bg-light);
+      border: 1px solid var(--card-border);
+      border-radius: 5px;
+      padding: 1.6mm 2.5mm;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      gap: 0.3mm;
+    }
+
+    .bistro-metric-item.highlight {
+      background: #FFF3F6;
+      border-color: #F0CFDA;
+    }
+
+    .bistro-metric-item-val {
+      font-family: 'Outfit', sans-serif;
+      font-size: 8.8pt;
+      font-weight: 800;
+      color: var(--navy);
+      line-height: 1.1;
+    }
+
+    .bistro-metric-item-val.rose {
+      color: var(--rose);
+    }
+
+    .bistro-metric-item-lbl {
+      font-size: 5.6pt;
+      font-weight: 700;
+      color: var(--text-dim);
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+      line-height: 1.1;
+    }
+
+    /* ========================================================= */
+
+    /* ========================================================= */
+    /* ========================================================= */
+    /* STRANA 7 – SOCIAL MEDIA REPORT AUTOMATION (CASE STUDY)     */
+    /* ========================================================= */
+    .report-v7-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.38fr;
+      gap: 5mm;
+      height: 100%;
+      width: 100%;
+    }
+
+    .report-hero-card {
+      background: var(--white);
+      border: 1px solid var(--card-border);
+      border-radius: 8px;
+      padding: 3.5mm 4.5mm;
+      display: flex;
+      flex-direction: column;
+      box-shadow: none;
+      box-sizing: border-box;
+      overflow: hidden;
+      height: 100%;
+    }
+
+    .report-card-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 11.5pt;
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1.18;
+      margin-bottom: 1.2mm;
+    }
+
+    .report-card-sub {
+      font-size: 8.8pt;
+      color: #293447;
+      line-height: 1.38;
+      margin-bottom: 2mm;
+    }
+
+    /* WORKFLOW BOX */
+    .report-workflow-box {
+      background: var(--bg-light);
+      border: 1px solid var(--card-border);
+      border-radius: 8px;
+      padding: 1.8mm 2.4mm;
+      margin-bottom: 2mm;
+    }
+
+    .report-workflow-title {
+      font-size: 7.2pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--navy);
+      margin-bottom: 1.3mm;
+    }
+
+    .report-workflow-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2mm;
+    }
+
+    .report-workflow-step {
+      display: flex;
+      gap: 2.5mm;
+      align-items: center;
+      background: #FFFFFF;
+      border: 1px solid var(--card-border);
+      border-radius: 8px;
+      padding: 1.2mm 2.2mm;
+    }
+
+    .report-workflow-step.highlight {
+      background: #FFF3F6;
+      border-color: #F0CFDA;
+    }
+
+    .report-step-num {
+      font-family: 'Outfit', sans-serif;
+      font-size: 7.6pt;
+      font-weight: 800;
+      color: var(--navy);
+      white-space: nowrap;
+      min-width: 25mm;
+      flex-shrink: 0;
+      letter-spacing: 0.02em;
+    }
+
+    .report-step-num.rose {
+      color: var(--rose);
+    }
+
+    .report-step-desc {
+      font-size: 8.5pt;
+      color: #293447;
+      line-height: 1.32;
+    }
+
+    /* DATA INTEGRITY BOX */
+    .report-integrity-box {
+      background: #F4F7FA;
+      border: 1px solid var(--card-border);
+      border-left: 3.5px solid var(--navy);
+      border-radius: 8px;
+      padding: 1.6mm 2.4mm;
+      margin-bottom: 0;
+    }
+
+    .report-integrity-badge {
+      display: flex;
+      align-items: center;
+      font-size: 7.6pt;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 0.6mm;
+    }
+
+    .report-integrity-text {
+      font-size: 8.5pt;
+      color: #293447;
+      line-height: 1.32;
+    }
+
+    /* RIGHT CARD: MAXIMAL REPORT PREVIEW */
+    .report-output-preview-box {
+      position: relative;
+      background: #FFFFFF;
+      border: 1px solid var(--card-border);
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: none;
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 0;
+      box-sizing: border-box;
+      padding: 1.5mm;
+    }
+
+    .report-output-preview-box img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: contain;
+      background: #FFFFFF;
+      border-radius: 6px;
+    }
+
+    .github-top-link {
+      display: inline-flex;
+      align-items: center;
+      text-decoration: none;
+      color: var(--navy);
+      font-size: 7pt;
+      font-weight: 600;
+      background: var(--white);
+      border: 1px solid var(--card-border);
+      padding: 0.8mm 2.2mm;
+      border-radius: 6px;
+      transition: all 0.15s ease;
+    }
+
+    .github-top-link:hover {
+      color: var(--rose);
+      border-color: var(--rose);
+    }
+
+    /* Vylepšená levá karta na Straně 7 (Výraznější, vzdušnější, vysoce čitelná, bez stínů, sjednocený radius) */
+    .report-hero-card.left-card {
+      padding: 3.8mm 4.8mm 4.2mm 4.8mm;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border-radius: 8px;
+      box-shadow: none;
+    }
+
+    .report-hero-card.left-card .report-card-title {
+      font-size: 13.5pt;
+      line-height: 1.18;
+      margin-bottom: 1.8mm;
+    }
+
+    .report-hero-card.left-card .report-card-sub {
+      font-size: 8.4pt;
+      line-height: 1.42;
+      margin-bottom: 2.6mm;
+      color: #384A5C;
+    }
+
+    .report-hero-card.left-card .report-workflow-box {
+      background: var(--bg-light);
+      border: 1px solid var(--card-border);
+      padding: 2.4mm 3.2mm;
+      border-radius: 8px;
+      margin-bottom: 2.6mm;
+    }
+
+    .report-workflow-title {
+      font-size: 7.2pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--navy);
+      margin-bottom: 1.6mm;
+    }
+
+    .report-hero-card.left-card .report-workflow-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 1.6mm;
+    }
+
+    .report-hero-card.left-card .report-workflow-step {
+      padding: 1.8mm 2.8mm;
+      border: 1px solid var(--card-border);
+      border-radius: 8px;
+      gap: 3.2mm;
+    }
+
+    .report-hero-card.left-card .report-workflow-step.highlight {
+      background: #FFF3F6;
+      border-color: #F0CFDA;
+      border-radius: 8px;
+    }
+
+    .report-hero-card.left-card .report-step-num {
+      font-size: 8pt;
+      min-width: 24mm;
+      flex-shrink: 0;
+    }
+
+    .report-hero-card.left-card .report-step-desc {
+      font-size: 7.8pt;
+      line-height: 1.3;
+      color: #384A5C;
+    }
+
+    .report-hero-card.left-card .report-integrity-box {
+      background: #F4F7FA;
+      border: 1px solid var(--card-border);
+      border-left: 3.5px solid var(--navy);
+      padding: 2.2mm 3.2mm;
+      border-radius: 8px;
+      margin-bottom: 0;
+    }
+
+    .report-hero-card.left-card .report-integrity-badge {
+      font-size: 8.2pt;
+      margin-bottom: 1mm;
+    }
+
+    .report-hero-card.left-card .report-integrity-badge svg {
+      width: 12px;
+      height: 12px;
+      margin-right: 5px;
+    }
+
+    .report-hero-card.left-card .report-integrity-text {
+      font-size: 7.8pt;
+      line-height: 1.34;
+      color: #384A5C;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- =================================================================== -->
+  <!-- SLIDE 1: MINIMALIST COVER PAGE                                      -->
+  <!-- =================================================================== -->
+  <div class="slide slide-cover" id="slide-1">
+    <div class="cover-hero">
+      <div class="cover-tag">Portfolio</div>
+      <h1 class="cover-name">Catherine Zoë Meijer</h1>
+      <div class="cover-role">Marketing & Social Media Specialist</div>
+      <div class="cover-accent-line"></div>
+    </div>
+
+    <div class="cover-projects-section">
+      <div class="cover-projects-label">Vybrané projekty</div>
+      <div class="cover-projects-grid">
+        <a href="#slide-2" class="cover-project-card">
+          <span class="cover-project-num">01</span>
+          <span class="cover-project-name">NC Eden</span>
+        </a>
+        <a href="#slide-4" class="cover-project-card">
+          <span class="cover-project-num">02</span>
+          <span class="cover-project-name">Smetanito</span>
+        </a>
+        <a href="#slide-5" class="cover-project-card">
+          <span class="cover-project-num">03</span>
+          <span class="cover-project-name">Bioderma</span>
+        </a>
+        <a href="#slide-6" class="cover-project-card">
+          <span class="cover-project-num">04</span>
+          <span class="cover-project-name">Bistro Boulevard</span>
+        </a>
+        <a href="#slide-7" class="cover-project-card">
+          <span class="cover-project-num">05</span>
+          <span class="cover-project-name">AI Reporting Skill</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="cover-footer">
+      <div class="cover-contact">
+        <span>Praha</span>
+        <span class="sep">·</span>
+        <span>+420 731 630 213</span>
+        <span class="sep">·</span>
+        <span>czoemeijer@gmail.com</span>
+      </div>
+      <div class="cover-num">01 / 07</div>
+    </div>
+  </div>
+
+
+  <!-- =================================================================== -->
+  <!-- SLIDE 2: NC EDEN – MARKETINGOVÉ KAMPANĚ & VÝSLEDKY                  -->
+  <!-- =================================================================== -->
+  <div class="slide" id="slide-2">
+    <div class="top-bar">
+      <div class="top-left">
+        <span class="badge-section">Case Study: Retail & Eventy</span>
+        <span class="section-title-tag">NC Eden · Marketingové kampaně & výsledky</span>
+      </div>
+      <div class="top-right">
+        <span>Agenturní spolupráce: oh my DOT</span>
+      </div>
+    </div>
+
+    <div class="content-area">
+      <div class="eden-campaigns-grid-v4">
+        
+        <!-- 1. VÁNOČNÍ KAMPAŇ 2025 -->
+        <div class="eden-hero-card-v4">
+          <!-- VRSTVENÉ SCREENSHOTY (LOSY, VLASTNÍ STORY STROM, SOUTĚŽ MEDVĚD) -->
+          <div class="eden-collage-box-v4">
+            <div class="eden-frame-v4 xmas-losy">
+              <img src="assets/eden_vanoce_losy_clean.jpg" alt="Vánoční losy – Ulovte si los!">
+            </div>
+            <div class="eden-frame-v4 xmas-strom">
+              <img src="assets/eden_vanoce_strom_story.jpg" alt="Strom splněných přání – Story z pasáže">
+              <div class="eden-pill-story">Story z pasáže</div>
+            </div>
+            <div class="eden-frame-v4 xmas-medved">
+              <img src="assets/eden_vanoce_medved_clean.jpg" alt="Soutěž Pojmenuj medvěda">
+            </div>
+          </div>
+
+          <!-- POPIS KAMPANĚ & VÝSLEDKY -->
+          <div class="eden-meta-side-v4">
+            <span class="role-badge" style="background: var(--rose); color: white; margin-bottom: 1.5mm; width: fit-content; font-size: 6.5pt; font-weight: 700; padding: 0.8mm 2mm; border-radius: 4px;">Offline & Online aktivace</span>
+            <div class="eden-card-title-v4">Vánoční kampaň 2025</div>
+            <div class="eden-card-sub-v4">Propojení nákupních a komunitních aktivit s online komunikací. Cílem byla podpora návštěvnosti centra, nákupů u nájemců a zapojení zákazníků do vánočního dění. Účast ve vybraných soutěžích byla podmíněna nákupem ve stanovené hodnotě.</div>
+
+            <!-- VÝSLEDKOVÉ BOXY (DOLOŽENÉ VÝSLEDKY) -->
+            <div class="eden-metrics-grid-v4">
+              <div class="eden-metric-mini-v4 highlight">
+                <div class="eden-metric-mini-val-v4 rose">1 000</div>
+                <div class="eden-metric-mini-lbl-v4">Adventní losy</div>
+                <div class="eden-metric-mini-sub-v4">losů za 2 soboty v pasáži</div>
+              </div>
+              <div class="eden-metric-mini-v4">
+                <div class="eden-metric-mini-val-v4">426</div>
+                <div class="eden-metric-mini-lbl-v4">Pojmenuj medvěda</div>
+                <div class="eden-metric-mini-sub-v4">soutěžících v komentářích</div>
+              </div>
+              <div class="eden-metric-mini-v4">
+                <div class="eden-metric-mini-val-v4">350–400</div>
+                <div class="eden-metric-mini-lbl-v4">Strom přání</div>
+                <div class="eden-metric-mini-sub-v4">vyplněných přání, 40 splněných přání</div>
+              </div>
+              <div class="eden-metric-mini-v4" style="display: flex; flex-direction: column; justify-content: center;">
+                <div class="eden-metric-mini-val-v4" style="font-size: 8.8pt; font-weight: 700; line-height: 1.2;">Zapojení nájemců</div>
+              </div>
+            </div>
+
+            <div class="eden-desc-v4" style="background: #FAF7F8; border-left: 2.5px solid var(--rose); padding: 1.2mm 2.2mm; border-radius: 0 4px 4px 0;">
+              <strong>Odpovědnost:</strong> Návrh soutěžních mechanik, natáčení Stories v pasáži a klientský reporting.
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. BACK TO SCHOOL 2025 -->
+        <div class="eden-hero-card-v4">
+          <!-- VRSTVENÉ SCREENSHOTY (KLÍČOVÝ VIZUÁL + AUTORSKÁ STORY MYSTERY BOX) -->
+          <div class="eden-collage-box-v4">
+            <div class="eden-frame-v4 bts-kv">
+              <img src="assets/eden_bts_kv_clean.png" alt="Back to School 2025 – Klíčový vizuál kampaně">
+            </div>
+            <div class="eden-frame-v4 bts-story">
+              <img src="assets/eden_bts_story.jpg" alt="Back to School – Story z Mystery Boxu">
+              <div class="eden-pill-story">Story z pasáže</div>
+            </div>
+          </div>
+
+          <!-- POPIS KAMPANĚ & VÝSLEDKY -->
+          <div class="eden-meta-side-v4">
+            <span class="role-badge author" style="margin-bottom: 1.5mm; width: fit-content; font-size: 6.5pt; font-weight: 700; padding: 0.8mm 2mm; border-radius: 4px;">Offline aktivace & Stories</span>
+            <div class="eden-card-title-v4">Back to School 2025 – Mystery obálky</div>
+            <div class="eden-card-sub-v4">Offline zákaznická aktivace s okamžitými výhrami pro návštěvníky NC Eden doplněná o social media komunikaci a Stories obsah.</div>
+
+            <!-- VÝSLEDKOVÉ BOXY (ZVÝRAZNĚNÁ HLAVNÍ METRIKA) -->
+            <div class="eden-metrics-grid-v4">
+              <div class="eden-metric-mini-v4 highlight" style="grid-column: span 2; padding: 1.8mm 2.2mm;">
+                <div class="eden-metric-mini-val-v4 rose" style="font-size: 13pt;">500+</div>
+                <div class="eden-metric-mini-lbl-v4">Rozdaných výher</div>
+                <div class="eden-metric-mini-sub-v4">Okamžité výhry pro zákazníky z Mystery Boxu</div>
+              </div>
+              <div class="eden-metric-mini-v4">
+                <div class="eden-metric-mini-val-v4" style="font-size: 8.8pt;">Mystery Box</div>
+                <div class="eden-metric-mini-lbl-v4">Herní mechanika</div>
+                <div class="eden-metric-mini-sub-v4">Okamžité výhry v pasáži</div>
+              </div>
+              <div class="eden-metric-mini-v4">
+                <div class="eden-metric-mini-val-v4" style="font-size: 7.6pt; line-height: 1.18;">Navázání 2026 – Loterie</div>
+                <div class="eden-metric-mini-lbl-v4">Rozšíření konceptu</div>
+                <div class="eden-metric-mini-sub-v4">Podobný princip, nově s losováním míčků</div>
+              </div>
+            </div>
+
+            <div class="eden-desc-v4" style="background: #FAF7F8; border-left: 2.5px solid var(--rose); padding: 1.2mm 2.2mm; border-radius: 0 4px 4px 0; margin-top: 1.4mm;">
+              <strong>Odpovědnost:</strong> Návrh mechaniky Mystery Boxu, realizace v pasáži a návaznost na koncept Loterie 2026.
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="bottom-bar">
+      <div class="bottom-contact">
+        <span class="eden-social-links">
+          Odkazy:
+          <a href="https://www.instagram.com/nakupni_centrum_eden/" target="_blank" class="eden-social-link ig">Instagram</a>
+          <span style="color: var(--text-dim); margin: 0 2px;">·</span>
+          <a href="https://www.facebook.com/NakupnicentrumEden" target="_blank" class="eden-social-link fb">Facebook</a>
+        </span>
+      </div>
+      <div class="cover-num">02 / 07</div>
+    </div>
+  </div>
+
+
+  <!-- =================================================================== -->
+  <!-- SLIDE 3: NC EDEN – SOCIAL MEDIA & CONTENT CREATION                  -->
+
+  <!-- =================================================================== -->
+  <div class="slide" id="slide-3">
+    <div class="top-bar">
+      <div class="top-left">
+        <span class="badge-section">Content Creation & Video</span>
+        <span class="section-title-tag">NC Eden · Video tvorba & Social Media</span>
+      </div>
+      <div class="top-right">
+        <span>Natáčení & dynamický střih videí</span>
+      </div>
+    </div>
+
+    <div class="content-area">
+      <div class="eden-v3-container">
+        <!-- HORNÍ ČÁST: 2 HLAVNÍ REELS KOLÁŽE (VRSTVENÉ SCREENSHOTY 9:16) -->
+        <div class="eden-reels-top-row">
+          <!-- 1. VELIKONOČNÍ REEL (VRSTVENÁ KOLÁŽ ZE 2 MOMENTŮ) -->
+          <div class="eden-reel-card-v3">
+            <div class="eden-reel-collage-box">
+              <div class="eden-collage-frame frame-back">
+                <img src="assets/eden_easter_reel_hook.png" alt="Velikonoční Reel – úvod videa">
+                <div class="eden-frame-tag">Úvod videa (hook)</div>
+              </div>
+              <div class="eden-collage-frame frame-front">
+                <img src="assets/eden_easter_reel_action.png" alt="Velikonoční Reel – hledání kraslic">
+                <div class="eden-frame-tag">Průběh akce v pasáži</div>
+              </div>
+            </div>
+            <div class="eden-reel-meta-side">
+              <span class="role-badge author" style="margin-bottom: 1.2mm; width: fit-content; font-size: 6.2pt; font-weight: 700; padding: 0.6mm 1.8mm; border-radius: 4px;">Video tvorba · Natáčení & střih</span>
+              <div class="eden-reel-title-v3">Velikonoční pátračka – Reel</div>
+              <div class="smetanito-card-sub" style="margin-bottom: 1mm;">Reportážní video z rodinné akce v pasáži obchodního centra.</div>
+
+              <div class="smetanito-metrics-grid" style="margin: 0.8mm 0 1.2mm 0;">
+                <div class="smetanito-metric-mini highlight">
+                  <div class="smetanito-metric-mini-val rose">~6,7 tis.</div>
+                  <div class="smetanito-metric-mini-lbl">Zhlédnutí (Views)</div>
+                </div>
+                <div class="smetanito-metric-mini">
+                  <div class="smetanito-metric-mini-val">438</div>
+                  <div class="smetanito-metric-mini-lbl">Lajků</div>
+                </div>
+              </div>
+
+              <div class="eden-reel-desc-v3">
+                Námět, natáčení v pasáži a dynamický střih reportážního videa s hudebním podkresem.
+              </div>
+            </div>
+          </div>
+
+          <!-- 2. UGO SALATERIE REEL (REÁLNÝ SNÍMEK Z OTEVŘENÍ) -->
+          <div class="eden-reel-card-v3">
+            <div class="eden-reel-collage-box">
+              <div class="eden-collage-frame frame-back">
+                <img src="assets/eden_ugo_reel_food.png" alt="UGO Salaterie – čerstvá nabídka salátů a drinků">
+                <div class="eden-frame-tag">Gastro nabídka v pasáži</div>
+              </div>
+              <div class="eden-collage-frame frame-front">
+                <img src="assets/eden_ugo_reel.png" alt="UGO Salaterie – slavnostní přestřižení pásky">
+                <div class="eden-frame-tag">UGO je v Edenu!</div>
+              </div>
+            </div>
+            <div class="eden-reel-meta-side">
+              <span class="role-badge author" style="margin-bottom: 1.2mm; width: fit-content; font-size: 6.2pt; font-weight: 700; padding: 0.6mm 1.8mm; border-radius: 4px;">Video tvorba · Natáčení & střih</span>
+              <div class="eden-reel-title-v3">UGO Salaterie – Představení nájemce</div>
+              <div class="smetanito-card-sub" style="margin-bottom: 1mm;">Dynamické promo video ze slavnostního otevření provozovny v Edenu.</div>
+
+              <div class="smetanito-metrics-grid" style="grid-template-columns: 1fr; margin: 0.8mm 0 1.2mm 0;">
+                <div class="smetanito-metric-mini highlight">
+                  <div class="smetanito-metric-mini-val rose">~100 tis.</div>
+                  <div class="smetanito-metric-mini-lbl">Zhlédnutí (Views)</div>
+                </div>
+              </div>
+
+              <div class="eden-reel-desc-v3">
+                Natáčení slavnostního otevření i gastro nabídky a dynamický střih Reels.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SPODNÍ ČÁST: CONTENT PLANNING & SOCIAL MEDIA MANAGEMENT -->
+        <div class="eden-mgmt-strip">
+          <div class="eden-mgmt-header">
+            <span class="eden-strip-title">Content Planning & Social Media Management</span>
+            <span class="eden-strip-hint">Pravidelná měsíční správa profilů · Realizace postplánů</span>
+          </div>
+
+          <div class="eden-mgmt-body">
+            <!-- 3 VĚTŠÍ, ČITELNÉ A RŮZNORODÉ UKÁZKY MĚSÍČNÍCH POSTPLANŮ -->
+            <div class="eden-mgmt-thumbs">
+              <!-- 1. SOUTĚŽNÍ KOMUNIKACE / ZAPOJENÍ NÁJEMCŮ -->
+              <div class="eden-mgmt-thumb-item">
+                <div class="eden-mgmt-thumb-img">
+                  <img src="assets/eden_post_soutez.jpg" alt="Soutěž propojující nájemce: Valentýnská soutěž">
+                </div>
+                <div class="eden-mgmt-thumb-lbl">Soutěž nájemců · Valentýn</div>
+              </div>
+
+              <!-- 2. GASTRO / RECEPTY / VIRÁLNÍ FORMÁT -->
+              <div class="eden-mgmt-thumb-item">
+                <div class="eden-mgmt-thumb-img">
+                  <img src="assets/eden_post_drinky.jpg" alt="Gastro inspirace: Letní drinky v Edenu">
+                </div>
+                <div class="eden-mgmt-thumb-lbl">Gastro obsah · Letní drinky</div>
+              </div>
+
+              <!-- 3. SEZÓNNÍ TÉMA / LIFESTYLE NÁKUPY -->
+              <div class="eden-mgmt-thumb-item">
+                <div class="eden-mgmt-thumb-img">
+                  <img src="assets/eden_post_grilovani.jpg" alt="Sezónní nákupy: Grilování jinak v Edenu">
+                </div>
+                <div class="eden-mgmt-thumb-lbl">Sezónní téma · Grilování</div>
+              </div>
+            </div>
+
+            <!-- PRAVÁ ČÁST: STRUČNÝ POPIS ROLE DLE ZADÁNÍ -->
+            <div class="eden-mgmt-content-side">
+              <div style="font-size: 8.8pt; font-weight: 500; color: #293447; line-height: 1.45; padding-left: 2mm;">
+                Měsíční postplány, kreativní zadání pro grafiky a copywriting pro online obsah.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bottom-bar">
+      <div class="bottom-contact">
+        <span class="eden-social-links">
+          Odkazy:
+          <a href="https://www.instagram.com/nakupni_centrum_eden/" target="_blank" class="eden-social-link ig">Instagram</a>
+          <span style="color: var(--text-dim); margin: 0 2px;">·</span>
+          <a href="https://www.facebook.com/NakupnicentrumEden" target="_blank" class="eden-social-link fb">Facebook</a>
+        </span>
+      </div>
+      <div class="cover-num">03 / 07</div>
+    </div>
+  </div>
+
+
+  <!-- =================================================================== -->
+  <!-- SLIDE 4: SMETANITO – INFLUENCER, STORIES & PROFILE MANAGEMENT       -->
+
+  <!-- =================================================================== -->
+  <div class="slide" id="slide-4">
+    <div class="top-bar">
+      <div class="top-left">
+        <span class="badge-section">Influencer Marketing & Social Media</span>
+        <span class="section-title-tag">Smetanito · Influencer spolupráce, Stories & správa profilu</span>
+      </div>
+      <div class="top-right">
+        <span>Klient: Bel Sýry / oh my DOT</span>
+      </div>
+    </div>
+
+    <div class="content-area">
+      <div class="smetanito-v4-container">
+        <!-- HORNÍ ČÁST: 2 HLAVNÍ KARTY (INFLUENCER MARKETING 40 % + INSTAGRAM STORIES 40 %) -->
+        <div class="smetanito-top-row">
+          
+          <!-- 1. INFLUENCER MARKETING (40 %) -->
+          <div class="smetanito-hero-card">
+            <!-- PŘEKRÝVAJÍCÍ SE SCREENSHOTY REELŮ -->
+            <div class="smetanito-collage-box">
+              <div class="smetanito-frame frame-back">
+                <img src="assets/smetanito_hana_cover.jpg" alt="Hana Zlatníková – Titulní vizuál Reel">
+                <div class="smetanito-frame-tag">Titulní vizuál Reel</div>
+              </div>
+              <div class="smetanito-frame frame-front">
+                <img src="assets/smetanito_hana_reel.jpg" alt="Hana Zlatníková – Reálný Reel výstup">
+              </div>
+            </div>
+
+            <!-- POPIS & DOLOŽENÉ VÝSLEDKY -->
+            <div class="smetanito-meta-side">
+              <span class="role-badge" style="background: var(--rose); color: white; margin-bottom: 1.2mm; width: fit-content; font-size: 6.5pt; font-weight: 700; padding: 0.8mm 2mm; border-radius: 4px;">Influencer spolupráce & zapojení</span>
+              <div class="smetanito-card-title">Influencer spolupráce: Hana Zlatníková</div>
+              <div class="smetanito-card-sub" style="font-weight: 600; color: var(--rose); margin-bottom: 0.6mm;">Vybraná spolupráce z kampaně</div>
+              <div class="smetanito-card-sub">Receptové video zaměřené na snadnou přípravu rodinných svačinek.</div>
+
+              <!-- VEŘEJNÉ ÚDAJE ZE ZDROJOVÝCH PODKLADŮ -->
+              <div class="smetanito-metrics-grid">
+                <div class="smetanito-metric-mini">
+                  <div class="smetanito-metric-mini-val">138 137</div>
+                  <div class="smetanito-metric-mini-lbl">Zobrazení (Views)</div>
+                </div>
+                <div class="smetanito-metric-mini highlight">
+                  <div class="smetanito-metric-mini-val rose">2 290</div>
+                  <div class="smetanito-metric-mini-lbl">Lajků</div>
+                </div>
+                <div class="smetanito-metric-mini">
+                  <div class="smetanito-metric-mini-val">722</div>
+                  <div class="smetanito-metric-mini-lbl">Sdílení</div>
+                </div>
+                <div class="smetanito-metric-mini">
+                  <div class="smetanito-metric-mini-val">33</div>
+                  <div class="smetanito-metric-mini-lbl">Komentářů</div>
+                </div>
+              </div>
+
+              <div class="smetanito-desc-text">
+                Výběr influencerky dle brand fitu, příprava zadání a koordinace komunikace.
+              </div>
+              <div class="smetanito-collab-note">
+                Další spolupráce: <strong><a href="https://www.instagram.com/vendulascook/" target="_blank" style="color: inherit; text-decoration: none;">@vendulascook</a></strong> (recept na sýrové krekry).
+              </div>
+            </div>
+          </div>
+
+          <!-- 2. INSTAGRAM STORIES (40 %) -->
+          <div class="smetanito-hero-card">
+            <!-- 2 REÁLNÉ STORIES 9:16 (NEPŘEKRYTÉ ZÁSADNÍ TEXTY ANI PRODUKTY) -->
+            <div class="smetanito-stories-box">
+              <div class="smetanito-story-phone">
+                <img src="assets/smetanito_story_gril.jpg" alt="Edukační kvíz – Smetanito na pánev a gril">
+                <div class="smetanito-frame-tag">1. díl: Edukační anketa</div>
+              </div>
+              <div class="smetanito-story-phone">
+                <img src="assets/smetanito_story_favorit.jpg" alt="Interaktivní slider – Které Smetanito je favorit?">
+                <div class="smetanito-frame-tag">2. díl: Interaktivní slider</div>
+              </div>
+            </div>
+
+            <!-- POPIS NÁVRHŮ STORIES -->
+            <div class="smetanito-meta-side">
+              <span class="role-badge author" style="margin-bottom: 1.2mm; width: fit-content; font-size: 6.5pt; font-weight: 700; padding: 0.8mm 2mm; border-radius: 4px;">Návrh obsahu & interaktivních formátů</span>
+              <div class="smetanito-card-title">Návrhy Instagram Stories</div>
+
+              <!-- VÝZNAMNÉ PRVKY FORMÁTU -->
+              <div class="smetanito-metrics-grid" style="grid-template-columns: 1fr;">
+                <div class="smetanito-metric-mini highlight">
+                  <div class="smetanito-metric-mini-val rose" style="font-size: 8.8pt;">Interaktivní sticker ankety & slider</div>
+                  <div class="smetanito-metric-mini-lbl">Formát zapojení publika v Stories</div>
+                </div>
+              </div>
+
+              <!-- HLAVNÍ POPIS -->
+              <div style="font-size: 8.8pt; font-weight: 500; color: #293447; line-height: 1.40; margin-top: 1.4mm;">
+                Obsahové koncepty, interaktivní mechaniky a copywriting pro řadu Na pánev a gril.
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- SPODNÍ ČÁST: INSTAGRAM & FACEBOOK MANAGEMENT (~20 %) -->
+        <div class="smetanito-mgmt-strip">
+          <div class="smetanito-mgmt-header">
+            <span class="eden-strip-title">Každodenní správa profilů značky (Instagram & Facebook Smetanito CZ)</span>
+            <span class="eden-strip-hint">Realizace klientských zadání · Publikování · Správa soutěží</span>
+          </div>
+          
+          <div class="smetanito-mgmt-body">
+            <!-- 3 VĚTŠÍ UKÁZKY STATICKÝCH POSTŮ Z KAŽDODENNÍ SPRÁVY -->
+            <div class="smetanito-mgmt-thumbs">
+              <div class="smetanito-mgmt-thumb-item">
+                <div class="smetanito-mgmt-thumb-img">
+                  <img src="assets/smetanito_post_tury.jpg" alt="Statický post: Svačinky na túry">
+                </div>
+                <div class="smetanito-mgmt-thumb-lbl">Svačinky na túry</div>
+              </div>
+              <div class="smetanito-mgmt-thumb-item">
+                <div class="smetanito-mgmt-thumb-img">
+                  <img src="assets/smetanito_post_recepty.jpg" alt="Statický post: Recepty jak z dovolené">
+                </div>
+                <div class="smetanito-mgmt-thumb-lbl">Recepty z dovolené</div>
+              </div>
+              <div class="smetanito-mgmt-thumb-item">
+                <div class="smetanito-mgmt-thumb-img">
+                  <img src="assets/smetanito_post_soutez.jpg" alt="Statický post: Porce proteinu">
+                </div>
+                <div class="smetanito-mgmt-thumb-lbl">Porce proteinu</div>
+              </div>
+            </div>
+
+            <!-- PRAVÁ STRANA: STRUČNÁ A MINIMALISTICKÁ -->
+            <div class="smetanito-mgmt-duties-wrapper">
+              <div class="smetanito-mgmt-duty-row">
+                <span class="smetanito-mgmt-duty-bullet"></span>
+                <span><strong>Publikace & správa:</strong> Plánování a nasazování obsahu na IG a FB dle postplánů.</span>
+              </div>
+              <div class="smetanito-mgmt-duty-row">
+                <span class="smetanito-mgmt-duty-bullet"></span>
+                <span><strong>Spotřebitelské soutěže:</strong> Administrace soutěžních mechanik a kontaktování výherců.</span>
+              </div>
+              <div class="smetanito-mgmt-note">
+                * Statické posty vycházely z klientských podkladů; moje role zahrnovala koordinaci a publikaci.
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="bottom-bar">
+      <div class="bottom-contact">
+        <span class="eden-social-links">
+          Odkazy:
+          <a href="https://www.instagram.com/smetanito_cz/" target="_blank" class="eden-social-link ig">Instagram</a>
+          <span style="color: var(--text-dim); margin: 0 2px;">·</span>
+          <a href="https://www.facebook.com/smetanito/" target="_blank" class="eden-social-link fb">Facebook</a>
+        </span>
+      </div>
+      <div class="cover-num">04 / 07</div>
+    </div>
+  </div>
+
+
+  <!-- =================================================================== -->
+  <!-- SLIDE 5: BIODERMA – CONTENT PLANNING & KOORDINACE                   -->
+
+  <!-- =================================================================== -->
+  <div class="slide" id="slide-5">
+    <div class="top-bar">
+      <div class="top-left">
+        <span class="badge-section">Content Planning & Coordination</span>
+        <span class="section-title-tag">BIODERMA Laboratoire Dermatologique</span>
+      </div>
+      <div class="top-right">
+        <span>CZ & SK trhy</span>
+      </div>
+    </div>
+
+    <div class="content-area">
+      <div class="bioderma-v5-container">
+
+        <!-- LEVÁ KARTA: INTERAKTIVNÍ FORMÁTY & SOUTĚŽE -->
+        <div class="bioderma-hero-card">
+          <!-- 1. NAHOŘE KRÁTKÝ A VÝRAZNÝ NADPIS -->
+          <div class="bioderma-card-top">
+            <div class="bioderma-card-title">Interaktivní formáty & soutěže</div>
+          </div>
+
+          <!-- 2. UPROSTŘED DVĚ VELKÉ AUTENTICKÉ UKÁZKY PŘÍSPĚVKŮ (9:16) -->
+          <div class="bioderma-visual-row">
+            <div class="bioderma-post-phone">
+              <img src="assets/bioderma_soutez1.jpg" alt="Sébium Kerato+ – interaktivní příspěvek Polož prsty sem">
+            </div>
+            <div class="bioderma-post-phone">
+              <img src="assets/bioderma_soutez_copy.jpg" alt="Hydrabio – soutěžní příspěvek">
+            </div>
+          </div>
+
+          <!-- 3. DOLE JEDNA STRUČNÁ VĚTA O KONKRÉTNÍ PRÁCI -->
+          <div class="bioderma-card-bottom">
+            <span class="bioderma-bottom-bullet"></span>
+            <span>Návrhy trendových a interaktivních formátů, soutěžních mechanik a copywriting pro značkovou komunikaci.</span>
+          </div>
+        </div>
+
+        <!-- PRAVÁ KARTA: BRAND VIDEO & SEZÓNNÍ KOMUNIKACE -->
+        <div class="bioderma-hero-card">
+          <!-- 1. NAHOŘE KRÁTKÝ A VÝRAZNÝ NADPIS -->
+          <div class="bioderma-card-top">
+            <div class="bioderma-card-title">Brand video & sezónní komunikace</div>
+          </div>
+
+          <!-- 2. UPROSTŘED DVĚ VELKÉ AUTENTICKÉ UKÁZKY PŘÍSPĚVKŮ (9:16) -->
+          <div class="bioderma-visual-row">
+            <div class="bioderma-post-phone">
+              <img src="assets/bioderma_vanoce.jpg" alt="Sezónní produktový vizuál Atoderm">
+            </div>
+            <div class="bioderma-post-phone">
+              <img src="assets/bioderma_soutez2_clean.png" alt="Brand video Co si bereš dnes na sebe?">
+            </div>
+          </div>
+
+          <!-- 3. DOLE JEDNA STRUČNÁ VĚTA O KONKRÉTNÍ PRÁCI -->
+          <div class="bioderma-card-bottom">
+            <span class="bioderma-bottom-bullet"></span>
+            <span>Náměty pro brandová videa a sezónní produktovou komunikaci. Kreativní zpracování vycházelo z aktuálních trendů a komunikovaných produktových řad. Vánoční koncept pracoval s motivem přání sestaveného z produktů komunikované řady.</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="bottom-bar">
+      <div class="bottom-contact">
+        <span class="eden-social-links">
+          Odkazy:
+          <a href="https://www.instagram.com/bioderma_czech/" target="_blank" class="eden-social-link ig">Instagram</a>
+          <span style="color: var(--text-dim); margin: 0 2px;">·</span>
+          <a href="https://www.facebook.com/BiodermaCR/" target="_blank" class="eden-social-link fb">Facebook</a>
+        </span>
+      </div>
+      <div class="cover-num">05 / 07</div>
+    </div>
+  </div>
+
+  <!-- =================================================================== -->
+  <!-- SLIDE 6: BISTRO BOULEVARD – CONTENT CREATION & SOCIAL MEDIA         -->
+  <!-- =================================================================== -->
+  <div class="slide" id="slide-6">
+    <div class="top-bar">
+      <div class="top-left">
+        <span class="badge-section">Content Creation</span>
+        <span class="section-title-tag">Bistro Boulevard · Václavské náměstí, Praha · tvorba obsahu při otevření provozovny · 03/2025 – 04/2025</span>
+      </div>
+      <div class="top-right">
+        <span>Gastro & Lifestyle</span>
+      </div>
+    </div>
+
+    <div class="content-area">
+      <div class="bistro-v6-container">
+
+        <!-- LEVÁ KARTA: TVORBA REELS & VIDEO -->
+        <div class="bistro-hero-card">
+          <!-- VRSTVENÉ SCREENSHOTY (KÁVA + FOŤÁK NA PLACE) -->
+          <div class="bistro-collage-box">
+            <div class="bistro-frame reel-back">
+              <img src="assets/bistro_reel_kava.jpg" alt="Příprava kávy – Reel video">
+              <div class="bistro-frame-tag">Příprava kávy</div>
+            </div>
+            <div class="bistro-frame reel-front">
+              <img src="assets/bistro_reel_fotak.jpg" alt="Behind the scenes – Tvorba na place">
+              <div class="bistro-frame-tag">Tvorba na place</div>
+            </div>
+          </div>
+
+          <!-- VZDUŠNÁ TEXTOVÁ SEKCE BEZ DUPLICIT -->
+          <div class="bistro-meta-side">
+            <span class="role-badge author" style="margin-bottom: 2mm; width: fit-content; font-size: 6.6pt; font-weight: 700; padding: 0.8mm 2.2mm; border-radius: 4px;">Video tvorba</span>
+            <div class="bistro-card-title">Tvorba Reels & Video</div>
+            <div class="bistro-card-sub">Natáčení a dynamický střih krátkých videí přímo v provozovně.</div>
+
+            <!-- DVA ČISTÉ ŠTÍTKY BEZ MARKETINGOVÉ VATY -->
+            <div class="bistro-metrics-stack">
+              <div class="bistro-metric-item highlight">
+                <div class="bistro-metric-item-val rose">Reels video</div>
+                <div class="bistro-metric-item-lbl">Dynamický střih & hudba</div>
+              </div>
+              <div class="bistro-metric-item">
+                <div class="bistro-metric-item-val">Natáčení na place</div>
+                <div class="bistro-metric-item-lbl">Video tvorba na place</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- PRAVÁ KARTA: CAROUSELY & GASTRO FOTOGRAFIE -->
+        <div class="bistro-hero-card">
+          <!-- VRSTVENÉ SCREENSHOTY (AVOCADO BREAD + CAROUSEL S COPY) -->
+          <div class="bistro-collage-box">
+            <div class="bistro-frame carousel-back">
+              <img src="assets/bistro_carousel1.jpg" alt="Signature menu – Avocado Bread">
+              <div class="bistro-frame-tag">Signature menu</div>
+            </div>
+            <div class="bistro-frame carousel-front">
+              <img src="assets/bistro_carousel_copy.jpg" alt="Carousel s copy – Představení nabídky">
+              <div class="bistro-frame-tag">Copywriting & nabídka</div>
+            </div>
+          </div>
+
+          <!-- VZDUŠNÁ TEXTOVÁ SEKCE BEZ DUPLICIT -->
+          <div class="bistro-meta-side">
+            <span class="role-badge" style="background: var(--navy); color: white; margin-bottom: 2mm; width: fit-content; font-size: 6.6pt; font-weight: 700; padding: 0.8mm 2.2mm; border-radius: 4px;">Carousely & Gastro foto</span>
+            <div class="bistro-card-title">Carousely & Gastro fotografie</div>
+            <div class="bistro-card-sub">Produktové fotografie, vícedílné carousely a copywriting.</div>
+
+            <!-- DVA ČISTÉ ŠTÍTKY BEZ MARKETINGOVÉ VATY -->
+            <div class="bistro-metrics-stack">
+              <div class="bistro-metric-item highlight">
+                <div class="bistro-metric-item-val rose">Gastro fotografie</div>
+                <div class="bistro-metric-item-lbl">Produktové focení menu</div>
+              </div>
+              <div class="bistro-metric-item">
+                <div class="bistro-metric-item-val">Carousely s copy</div>
+                <div class="bistro-metric-item-lbl">Představení nabídky</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="bottom-bar">
+      <div class="bottom-contact">
+        <span class="eden-social-links">
+          Odkazy:
+          <a href="https://www.instagram.com/bistroboulevard_prague/" target="_blank" class="eden-social-link ig">Instagram</a>
+          <span style="color: var(--text-dim); margin: 0 2px;">·</span>
+          <a href="https://www.facebook.com/bistroboulevardprague/" target="_blank" class="eden-social-link fb">Facebook</a>
+        </span>
+      </div>
+      <div class="cover-num">06 / 07</div>
+    </div>
+  </div>
+
+  <!-- =================================================================== -->
+  <!-- SLIDE 7: SOCIAL MEDIA REPORT AUTOMATION – AI REPORTING SKILL         -->
+  <!-- =================================================================== -->
+  <div class="slide" id="slide-7">
+    <div class="top-bar">
+      <div class="top-left">
+        <span class="badge-section">Vlastní projekt · AI & Marketing Automation</span>
+        <span class="section-title-tag">Social Media Report Automation · Vlastní reportingový nástroj</span>
+      </div>
+      <div class="top-right"></div>
+    </div>
+
+    <div class="content-area">
+      <div class="report-v7-grid">
+
+        <!-- LEVÁ KARTA: JAK NÁSTROJ FUNGUJE (VÝRAZNÉ, VZDUŠNÉ, MAXIMÁLNĚ ČITELNÉ) -->
+        <div class="report-hero-card left-card">
+          <div class="report-card-header">
+            <span class="role-badge author" style="margin-bottom: 2mm; width: fit-content; font-size: 7.2pt; font-weight: 700; padding: 0.9mm 2.5mm; border-radius: 4px;">Vlastní projekt · AI podpora</span>
+            <div class="report-card-title">Social Media<br>Report Automation</div>
+            <div class="report-card-sub">
+              Vlastní reportingový nástroj vytvořený s podporou AI agenta. Automatizuje extrakci, kontrolu a strukturování výkonnostních dat ze screenshotů pro přípravu marketingových reportů.
+            </div>
+          </div>
+
+          <!-- 2. WORKFLOW REPORTÍHO NÁSTROJE (3 STRUČNÉ KROKY) -->
+          <div class="report-workflow-box">
+            <div class="report-workflow-title">Workflow reportovacího nástroje</div>
+            <div class="report-workflow-steps">
+              <div class="report-workflow-step">
+                <div class="report-step-num">01 · VSTUP</div>
+                <div class="report-step-desc">Screenshoty statistik ze sociálních sítí a influencer spoluprací.</div>
+              </div>
+              <div class="report-workflow-step highlight">
+                <div class="report-step-num rose">02 · ZPRACOVÁNÍ</div>
+                <div class="report-step-desc">Extrakce metrik pomocí AI, jejich strukturování a kontrola podle pravidel.</div>
+              </div>
+              <div class="report-workflow-step">
+                <div class="report-step-num">03 · VÝSTUP</div>
+                <div class="report-step-desc">Přehledně zpracovaný marketingový report.</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 3. BOX O PŘESNOSTI METRIK -->
+          <div class="report-integrity-box">
+            <div class="report-integrity-badge">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 5px; vertical-align: -1px;">
+                <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/>
+              </svg>
+              Přesnost metrik
+            </div>
+            <div class="report-integrity-text">
+              Nástroj odlišuje přesné hodnoty, odhady (cca) a chybějící údaje, aby se do reportu nedostalo nic, co na screenshotu nebylo.
+            </div>
+          </div>
+        </div>
+
+        <!-- PRAVÁ KARTA: MAXIMÁLNĚ DOMINANTNÍ SCREENSHOT REPORTU -->
+        <div class="report-hero-card" style="padding: 3.5mm 4.5mm;">
+          <div class="report-card-header">
+            <span class="role-badge" style="background: var(--navy); color: white; margin-bottom: 1.5mm; width: fit-content; font-size: 6.6pt; font-weight: 700; padding: 0.8mm 2.2mm; border-radius: 4px;">Reálný výstup nástroje</span>
+            <div class="report-card-title">Strukturovaný kampaňový report</div>
+            <div class="report-card-sub" style="margin-bottom: 2mm;">
+              Ukázka automatizovaného vyhodnocení influencer spolupráce pro značku Smetanito.
+            </div>
+          </div>
+
+          <!-- MAXIMÁLNÍ SCREENSHOT REPORTU BEZ SPODNÍCH ŠTÍTKŮ A BOXŮ -->
+          <div class="report-output-preview-box">
+            <img src="assets/report_automation_output_anonymized.png" alt="Ukázka vygenerovaného kampaňového reportu – Vojta Kanta (Smetanito)">
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="bottom-bar">
+      <div class="bottom-contact">
+        <a href="https://github.com/czoemeijer/social-media-report-automation" target="_blank" class="github-top-link">
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 4px;">
+            <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+          </svg>
+          View Project on GitHub ↗
+        </a>
+      </div>
+      <div class="cover-num">07 / 07</div>
+    </div>
+  </div>
+
+</body>
+</html>
