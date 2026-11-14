@@ -1,6 +1,6 @@
 # Krunchies Official Website & Market Entry Strategy Log
 **Project**: Krunchies Market Entry & Official Web Platform  
-**Domain**: `krunchies.eu.org`  
+**Domain**: `krunchies.eurun.eu.org`  
 **Date**: August 2026  
 **Document Status**: Official Architecture & Design Specification (Local Log / 本地记录与设计留痕)
 
@@ -12,7 +12,7 @@
 - **Legacy Name**: *Berrie*  
   - *Analysis*: While clean, "Berrie" limited the brand perception strictly to berry fruits (strawberries, blueberries) and lacked high-energy snack appeal. It sounded like a standard frozen fruit label rather than a disruptive, craveable premium treat.
 - **New Brand Identity**: **Krunchies**  
-  - *Analysis*: "Krunchies" communicates texture immediately—the satisfying "crunch" of freeze-dried organic fruit enveloped in smooth Belgian dark chocolate. It appeals to modern snacks enthusiasts, Gen Z & Millennials, health-conscious impulse buyers, and specialty food shoppers.
+  - *Analysis*: "Krunchies" communicates texture immediately—the satisfying "crunch" of crisp premium chocolate shell surrounding real frozen fruit (eaten straight from the freezer, competitor to Franui). It appeals to modern treat enthusiasts, Gen Z & Millennials, health-conscious frozen dessert buyers, and impulse shoppers.
   - *Slogan / Taglines*: 
     - *"KRUNCHY OUTSIDE, YUMMY INSIDE!"*
     - *"Real Fruit. Rich Chocolate. Totally Krunchy."*
@@ -51,7 +51,7 @@ The packaging artwork (`krunchies-banana-bites.png`) introduces a unique 2D Pop-
 ## 3. Web Architecture & Module Blueprint (网站架构与模块图纸)
 
 ```
-[ Root: /website ]  (Deploying to Cloudflare Workers -> krunchies.eu.org)
+[ Root: /website ]  (Deploying to Cloudflare Workers -> krunchies.eurun.eu.org)
 │
 ├── index.html                     --> Krunchies Official Brand Landing Page
 ├── css/style.css                  --> Global Pop-Art Design Tokens & Styles
@@ -102,4 +102,4 @@ The survey module `/website/survey` serves as the primary data collection tool (
    npx wrangler d1 execute krunchies_survey_db --file=survey/deploy/cloudflare/schema.sql
    npx wrangler deploy
    ```
-3. **Custom Domain**: Point `krunchies.eu.org` to the deployed Cloudflare Worker route.
+3. **Custom Domain**: Point `krunchies.eurun.eu.org` to the deployed Cloudflare Worker route.

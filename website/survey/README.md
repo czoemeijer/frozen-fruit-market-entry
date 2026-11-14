@@ -1,6 +1,6 @@
 # Web Survey Module (Krunchies Market Entry)
 
-This module contains the multilingual CAWI survey frontend integrated into the **Krunchies** official platform (`krunchies.eu.org`), along with backend endpoints and Cloudflare Workers database connectors.
+This module contains the multilingual CAWI survey frontend integrated into the **Krunchies** official platform (`krunchies.eurun.eu.org`), along with backend endpoints and Cloudflare Workers database connectors.
 
 ## Directory Structure
 

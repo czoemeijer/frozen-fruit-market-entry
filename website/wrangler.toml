@@ -2,14 +2,14 @@ name = "frozen-fruit-market-entry"
 main = "worker.js"
 compatibility_date = "2024-04-01"
 
+# Custom Domain Configuration for Cloudflare
+routes = [
+  { pattern = "krunchies.eurun.eu.org", custom_domain = true }
+]
+
 [assets]
 directory = "."
 binding = "ASSETS"
-
-# Custom Domain Configuration for Cloudflare
-# routes = [
-#   { pattern = "krunchies.eu.org", custom_domain = true }
-# ]
 
 # D1 Database Binding for Market Survey Data
 [[d1_databases]]
