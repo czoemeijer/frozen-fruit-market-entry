@@ -16,3 +16,4 @@ dst/
 *.swp
 *~
 web-survey/survey_data.db
+*.mov

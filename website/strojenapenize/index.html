@@ -1,0 +1,925 @@
+<!DOCTYPE html>
+<html lang="cs" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Stroje na peníze | AI & Digitální nástroje v praxi</title>
+  <meta name="description" content="Učíme lidi využívat AI a digitální nástroje v praxi. Web přes noc za 4 900 Kč včetně doživotních licencí na prémiové pluginy, bez měsíčních poplatků.">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 44 44'%3E%3Cdefs%3E%3ClinearGradient id='bg' x1='0' y1='0' x2='44' y2='44'%3E%3Cstop offset='0%25' stop-color='%23131F33'/%3E%3Cstop offset='100%25' stop-color='%23080E18'/%3E%3C/linearGradient%3E%3ClinearGradient id='g' x1='0' y1='0' x2='44' y2='44'%3E%3Cstop offset='0%25' stop-color='%2334D399'/%3E%3Cstop offset='50%25' stop-color='%2310B981'/%3E%3Cstop offset='100%25' stop-color='%23059669'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect x='1' y='1' width='42' height='42' rx='11' fill='url(%23bg)' stroke='%2310B981' stroke-width='2'/%3E%3Cpath d='M22 9L33 16V28L22 35L11 28V16L22 9Z' fill='none' stroke='url(%23g)' stroke-width='2.5' stroke-linejoin='round'/%3E%3Cpath d='M22 15L28 19V25L22 29L16 25V19L22 15Z' fill='url(%23g)' fill-opacity='0.25' stroke='%2334D399' stroke-width='1.5'/%3E%3Ccircle cx='22' cy='22' r='3.5' fill='%23F59E0B'/%3E%3C/svg%3E">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts: Plus Jakarta Sans & Space Grotesk -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@600;700;800&display=swap" rel="stylesheet">
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            display: ['"Space Grotesk"', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              50: '#ecfdf5',
+              100: '#d1fae5',
+              400: '#34d399',
+              500: '#10b981',
+              600: '#059669',
+              accent: '#f59e0b',
+              dark: '#080C14',
+              card: '#0F1626',
+              border: '#1E293B'
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      background-color: #080C14;
+      color: #E2E8F0;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    .gradient-text {
+      background: linear-gradient(135deg, #34D399 0%, #10B981 50%, #60A5FA 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .badge-gradient {
+      background: linear-gradient(90deg, rgba(16, 185, 129, 0.15) 0%, rgba(96, 165, 250, 0.15) 100%);
+      border: 1px solid rgba(16, 185, 129, 0.35);
+    }
+    .card-glow {
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .card-glow:hover {
+      box-shadow: 0 12px 35px -5px rgba(16, 185, 129, 0.22);
+      border-color: rgba(16, 185, 129, 0.45);
+      transform: translateY(-2px);
+    }
+    /* Touch Target & Accessibility */
+    .touch-target {
+      min-height: 44px;
+      min-width: 44px;
+    }
+    /* Accordion animation */
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease-out, opacity 0.3s ease-out;
+      opacity: 0;
+    }
+    .faq-answer.open {
+      max-height: 350px;
+      opacity: 1;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+<body class="selection:bg-emerald-500 selection:text-black pb-20 md:pb-0">
+
+  <!-- TOP ANNOUNCEMENT BAR -->
+  <div class="bg-gradient-to-r from-emerald-950 via-slate-900 to-emerald-950 border-b border-emerald-500/20 py-2.5 px-4 text-center text-xs sm:text-sm">
+    <div class="max-w-7xl mx-auto flex items-center justify-center gap-2 font-medium text-emerald-300">
+      <span class="flex h-2 w-2 rounded-full bg-emerald-400 animate-ping" aria-hidden="true"></span>
+      <span>Zaváděcí kapacita: Zbývají <strong>3 volné sloty</strong> na „Web přes noc“ za 4 900 Kč</span>
+    </div>
+  </div>
+
+  <!-- NAVIGATION -->
+  <nav class="sticky top-0 z-50 bg-[#080C14]/90 backdrop-blur-md border-b border-slate-800/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <!-- Logo -->
+      <a href="#" class="flex items-center gap-3 group focus:outline-none focus:ring-2 focus:ring-emerald-500 rounded-xl" aria-label="Stroje na peníze domovská stránka">
+        <div class="relative w-11 h-11 shrink-0 flex items-center justify-center">
+          <div class="absolute inset-0 bg-emerald-500/25 rounded-2xl blur-md group-hover:bg-emerald-400/40 transition-all duration-300"></div>
+          <svg class="relative w-11 h-11" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <defs>
+              <linearGradient id="nav-logo-bg" x1="0" y1="0" x2="44" y2="44" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#142136" />
+                <stop offset="100%" stop-color="#090E17" />
+              </linearGradient>
+              <linearGradient id="nav-logo-stroke" x1="0" y1="0" x2="44" y2="44" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#34D399" />
+                <stop offset="50%" stop-color="#10B981" />
+                <stop offset="100%" stop-color="#047857" />
+              </linearGradient>
+              <linearGradient id="nav-logo-bolt" x1="12" y1="10" x2="32" y2="34" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#6EE7B7" />
+                <stop offset="60%" stop-color="#10B981" />
+                <stop offset="100%" stop-color="#059669" />
+              </linearGradient>
+              <linearGradient id="nav-logo-coin" x1="16" y1="16" x2="28" y2="28" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#FDE68A" />
+                <stop offset="50%" stop-color="#F59E0B" />
+                <stop offset="100%" stop-color="#D97706" />
+              </linearGradient>
+            </defs>
+            <rect x="1.5" y="1.5" width="41" height="41" rx="12" fill="url(#nav-logo-bg)" stroke="url(#nav-logo-stroke)" stroke-width="1.5" />
+            <path d="M22 8L34 15V29L22 36L10 29V15L22 8Z" stroke="#10B981" stroke-opacity="0.4" stroke-width="1.2" stroke-linejoin="round" stroke-dasharray="2 3" />
+            <path d="M22 11L31 16.2V27.8L22 33L13 27.8V16.2L22 11Z" fill="#10B981" fill-opacity="0.12" stroke="url(#nav-logo-bolt)" stroke-width="2" stroke-linejoin="round" />
+            <path d="M18 25L23 15L21.5 21H26L21 29L22.5 23H18Z" fill="url(#nav-logo-coin)" />
+          </svg>
+        </div>
+        <div class="flex flex-col">
+          <div class="flex items-center gap-1.5">
+            <span class="font-display font-extrabold text-[18px] sm:text-[19px] tracking-tight text-white leading-none group-hover:text-emerald-300 transition-colors">STROJE</span>
+            <span class="font-display font-extrabold text-[18px] sm:text-[19px] tracking-tight text-emerald-400 leading-none">NA PENÍZE</span>
+          </div>
+          <span class="text-[9px] sm:text-[9.5px] font-semibold tracking-[0.22em] uppercase text-slate-400 mt-1 leading-none">AI & Digitální Systémy</span>
+        </div>
+      </a>
+
+      <!-- Desktop Links -->
+      <div class="hidden lg:flex items-center gap-7 text-sm font-medium text-slate-300">
+        <a href="#problem" class="hover:text-emerald-400 transition-colors py-2">Problém & Řešení</a>
+        <a href="#web-pres-noc" class="hover:text-emerald-400 transition-colors py-2">Web přes noc</a>
+        <a href="#kalkulacka" class="hover:text-emerald-400 transition-colors py-2">Kalkulačka úspory</a>
+        <a href="#hodnota" class="hover:text-emerald-400 transition-colors py-2">Pluginy v ceně</a>
+        <a href="#autorita" class="hover:text-emerald-400 transition-colors py-2">Tým & Know-how</a>
+        <a href="#faq" class="hover:text-emerald-400 transition-colors py-2">FAQ</a>
+      </div>
+
+      <!-- Desktop CTA & Mobile Hamburger -->
+      <div class="flex items-center gap-3">
+        <a href="#objednavka" class="hidden sm:inline-flex relative group overflow-hidden rounded-xl p-[1px] focus:outline-none focus:ring-2 focus:ring-emerald-500">
+          <span class="absolute inset-0 bg-gradient-to-r from-emerald-500 to-teal-400 rounded-xl"></span>
+          <span class="relative block px-5 py-2.5 bg-[#080C14] rounded-[11px] text-sm font-semibold text-white group-hover:bg-opacity-0 group-hover:text-black transition-all duration-300">
+            Objednat web (4 900 Kč)
+          </span>
+        </a>
+
+        <!-- Mobile Menu Toggle Button (48x48 touch target) -->
+        <button id="mobile-menu-btn" class="lg:hidden w-12 h-12 rounded-xl bg-slate-900 border border-slate-700/80 text-slate-200 flex items-center justify-center hover:text-emerald-400 hover:border-emerald-500/50 transition-colors focus:outline-none focus:ring-2 focus:ring-emerald-500" aria-label="Otevřít hlavní menu" aria-expanded="false">
+          <i id="menu-icon-open" data-lucide="menu" class="w-6 h-6"></i>
+          <i id="menu-icon-close" data-lucide="x" class="w-6 h-6 hidden"></i>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Mobile Drawer / Menu -->
+    <div id="mobile-menu" class="hidden lg:hidden bg-[#080C14]/98 border-b border-slate-800 px-5 pt-3 pb-6 transition-all duration-300">
+      <div class="flex flex-col space-y-3 text-base font-semibold text-slate-200">
+        <a href="#problem" class="mobile-nav-link py-3 px-3 rounded-lg hover:bg-slate-900 hover:text-emerald-400 flex items-center justify-between">
+          <span>Problém & Řešení</span>
+          <i data-lucide="chevron-right" class="w-4 h-4 text-slate-500"></i>
+        </a>
+        <a href="#web-pres-noc" class="mobile-nav-link py-3 px-3 rounded-lg hover:bg-slate-900 hover:text-emerald-400 flex items-center justify-between">
+          <span>Web přes noc (4 900 Kč)</span>
+          <i data-lucide="chevron-right" class="w-4 h-4 text-slate-500"></i>
+        </a>
+        <a href="#kalkulacka" class="mobile-nav-link py-3 px-3 rounded-lg hover:bg-slate-900 hover:text-emerald-400 flex items-center justify-between">
+          <span>Kalkulačka úspory</span>
+          <i data-lucide="chevron-right" class="w-4 h-4 text-slate-500"></i>
+        </a>
+        <a href="#hodnota" class="mobile-nav-link py-3 px-3 rounded-lg hover:bg-slate-900 hover:text-emerald-400 flex items-center justify-between">
+          <span>Prémiové pluginy v ceně</span>
+          <i data-lucide="chevron-right" class="w-4 h-4 text-slate-500"></i>
+        </a>
+        <a href="#autorita" class="mobile-nav-link py-3 px-3 rounded-lg hover:bg-slate-900 hover:text-emerald-400 flex items-center justify-between">
+          <span>Tým & Know-how</span>
+          <i data-lucide="chevron-right" class="w-4 h-4 text-slate-500"></i>
+        </a>
+        <a href="#faq" class="mobile-nav-link py-3 px-3 rounded-lg hover:bg-slate-900 hover:text-emerald-400 flex items-center justify-between">
+          <span>Často kladené otázky (FAQ)</span>
+          <i data-lucide="chevron-right" class="w-4 h-4 text-slate-500"></i>
+        </a>
+      </div>
+      <div class="pt-4 mt-2 border-t border-slate-800 flex flex-col gap-2.5">
+        <a href="#objednavka" class="mobile-nav-link w-full py-3.5 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold rounded-xl text-center shadow-lg shadow-emerald-500/20">
+          Objednat Web přes noc (4 900 Kč)
+        </a>
+        <a href="#checklist" class="mobile-nav-link w-full py-3 bg-slate-800 text-slate-300 font-semibold rounded-xl text-center border border-slate-700">
+          Stáhnout checklist zdarma
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <header class="relative pt-12 pb-20 md:pt-24 md:pb-32 overflow-hidden">
+    <div class="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(16,185,129,0.18),rgba(255,255,255,0))] pointer-events-none"></div>
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative text-center">
+      
+      <!-- Pill Badge -->
+      <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full badge-gradient text-emerald-400 text-xs sm:text-sm font-semibold mb-6 shadow-sm">
+        <i data-lucide="zap" class="w-4 h-4 text-emerald-400" aria-hidden="true"></i>
+        <span>AI technologie + WordPress bez měsíčního nájmu</span>
+      </div>
+
+      <!-- Main Headline -->
+      <h1 class="text-3xl sm:text-5xl lg:text-7xl font-extrabold text-white tracking-tight leading-[1.15] mb-6 font-display max-w-5xl mx-auto">
+        Přestaňte platit agenturám 50 000 Kč.<br class="hidden sm:inline">
+        Získejte <span class="gradient-text">stroj na klienty</span> do 48 hodin.
+      </h1>
+
+      <p class="max-w-2xl sm:max-w-3xl mx-auto text-base sm:text-xl text-slate-300 mb-10 leading-relaxed font-normal">
+        Učíme lidi využívat <strong>AI a digitální nástroje v praxi</strong>. Pro podnikatele a freelancery stavíme prodejní weby bez kódování a s doživotními licencemi prémiových pluginů v ceně.
+      </p>
+
+      <!-- CTA Buttons -->
+      <div class="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3.5 max-w-md mx-auto mb-14">
+        <a href="#web-pres-noc" class="px-8 py-4 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold rounded-xl shadow-xl shadow-emerald-500/25 transition-all duration-200 flex items-center justify-center gap-2 text-base text-center">
+          <span>Chci Web přes noc (4 900 Kč)</span>
+          <i data-lucide="arrow-right" class="w-5 h-5" aria-hidden="true"></i>
+        </a>
+        <a href="#checklist" class="px-6 py-4 bg-slate-900/90 hover:bg-slate-800 text-slate-200 font-semibold rounded-xl border border-slate-700 transition-all flex items-center justify-center gap-2 text-base text-center">
+          <i data-lucide="download" class="w-4 h-4 text-emerald-400" aria-hidden="true"></i>
+          <span>Checklist zdarma</span>
+        </a>
+      </div>
+
+      <!-- Trust Bar Metrics (Responsive Grid) -->
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 pt-10 border-t border-slate-800/80 text-left">
+        <div class="bg-slate-900/40 p-4 rounded-xl border border-slate-800 flex items-center gap-3.5">
+          <div class="w-10 h-10 rounded-lg bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 shrink-0">
+            <i data-lucide="clock" class="w-5 h-5" aria-hidden="true"></i>
+          </div>
+          <div>
+            <div class="text-white font-bold text-sm sm:text-base">Do 48 hodin</div>
+            <div class="text-slate-400 text-xs">Žádné měsíce čekání</div>
+          </div>
+        </div>
+        <div class="bg-slate-900/40 p-4 rounded-xl border border-slate-800 flex items-center gap-3.5">
+          <div class="w-10 h-10 rounded-lg bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 shrink-0">
+            <i data-lucide="gift" class="w-5 h-5" aria-hidden="true"></i>
+          </div>
+          <div>
+            <div class="text-white font-bold text-sm sm:text-base">Pluginy v ceně</div>
+            <div class="text-slate-400 text-xs">Celoživotní licence v ceně</div>
+          </div>
+        </div>
+        <div class="bg-slate-900/40 p-4 rounded-xl border border-slate-800 flex items-center gap-3.5">
+          <div class="w-10 h-10 rounded-lg bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 shrink-0">
+            <i data-lucide="shield-check" class="w-5 h-5" aria-hidden="true"></i>
+          </div>
+          <div>
+            <div class="text-white font-bold text-sm sm:text-base">100% Váš web</div>
+            <div class="text-slate-400 text-xs">Nulové měsíční nájmy za systém</div>
+          </div>
+        </div>
+        <div class="bg-slate-900/40 p-4 rounded-xl border border-slate-800 flex items-center gap-3.5">
+          <div class="w-10 h-10 rounded-lg bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 shrink-0">
+            <i data-lucide="brain" class="w-5 h-5" aria-hidden="true"></i>
+          </div>
+          <div>
+            <div class="text-white font-bold text-sm sm:text-base">AI Textace</div>
+            <div class="text-slate-400 text-xs">Psychologie, která prodává</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- PŘED A PO: SROVNÁNÍ -->
+  <section id="problem" class="py-16 sm:py-20 bg-slate-950/70 border-y border-slate-800/80">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
+        <span class="text-emerald-400 font-bold uppercase tracking-widest text-xs">Bariéry & Řešení</span>
+        <h2 class="text-2xl sm:text-4xl font-extrabold text-white mt-2 font-display">Proč se starý způsob tvorby webů zhroutil?</h2>
+        <p class="text-slate-400 mt-3 text-sm sm:text-base">Většina lidí odkládá spuštění svého nápadu kvůli těmto třem obavám. Takhle jsme je vyřešili.</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6 sm:gap-8">
+        <!-- STARÝ SVĚT -->
+        <div class="bg-rose-950/10 border border-rose-900/40 rounded-2xl p-6 sm:p-8 relative">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-900/30 text-rose-400 text-xs font-bold uppercase mb-6">
+            <i data-lucide="x-circle" class="w-4 h-4" aria-hidden="true"></i>
+            <span>Starý agenturní svět</span>
+          </div>
+          <ul class="space-y-4 text-slate-300 text-sm">
+            <li class="flex items-start gap-3">
+              <i data-lucide="x" class="w-5 h-5 text-rose-400 shrink-0 mt-0.5" aria-hidden="true"></i>
+              <div><strong>35 000 – 60 000 Kč</strong> za jednoduchou vizitku nebo základní one-page.</div>
+            </li>
+            <li class="flex items-start gap-3">
+              <i data-lucide="x" class="w-5 h-5 text-rose-400 shrink-0 mt-0.5" aria-hidden="true"></i>
+              <div><strong>Dodání za 6 až 10 týdnů.</strong> Než web vyjde, vaše motivace i tržní příležitost ochladne.</div>
+            </li>
+            <li class="flex items-start gap-3">
+              <i data-lucide="x" class="w-5 h-5 text-rose-400 shrink-0 mt-0.5" aria-hidden="true"></i>
+              <div><strong>Závislost na vývojáři.</strong> Za výměnu telefonního čísla nebo ceníku platíte 1 500 Kč za hodinu.</div>
+            </li>
+            <li class="flex items-start gap-3">
+              <i data-lucide="x" class="w-5 h-5 text-rose-400 shrink-0 mt-0.5" aria-hidden="true"></i>
+              <div><strong>Záludné předplatné.</strong> Pronájmy SaaS systémů, kde web nikdy skutečně nevlastníte.</div>
+            </li>
+          </ul>
+        </div>
+
+        <!-- NOVÝ SVĚT -->
+        <div class="bg-emerald-950/15 border border-emerald-500/40 rounded-2xl p-6 sm:p-8 relative card-glow">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-900/30 text-emerald-400 text-xs font-bold uppercase mb-6">
+            <i data-lucide="check-circle-2" class="w-4 h-4" aria-hidden="true"></i>
+            <span>Stroje na peníze</span>
+          </div>
+          <ul class="space-y-4 text-slate-200 text-sm">
+            <li class="flex items-start gap-3">
+              <i data-lucide="check" class="w-5 h-5 text-emerald-400 shrink-0 mt-0.5" aria-hidden="true"></i>
+              <div><strong>Fixních 4 900 Kč.</strong> Transparentní cena bez skrytých poplatků a bez překvapení.</div>
+            </li>
+            <li class="flex items-start gap-3">
+              <i data-lucide="check" class="w-5 h-5 text-emerald-400 shrink-0 mt-0.5" aria-hidden="true"></i>
+              <div><strong>Hotovo do 48 hodin od dodání podkladů.</strong> Otestujte svůj nápad okamžitě na živém trhu.</div>
+            </li>
+            <li class="flex items-start gap-3">
+              <i data-lucide="check" class="w-5 h-5 text-emerald-400 shrink-0 mt-0.5" aria-hidden="true"></i>
+              <div><strong>Plná samostatnost s AI.</strong> Dodáme vám krátký video návod – jakýkoliv text či fotku si změníte za 60 vteřin.</div>
+            </li>
+            <li class="flex items-start gap-3">
+              <i data-lucide="check" class="w-5 h-5 text-emerald-400 shrink-0 mt-0.5" aria-hidden="true"></i>
+              <div><strong>Prémiové pluginy v ceně.</strong> Nainstalované celoživotní licence v tržní hodnotě 15 000+ Kč bez ročních plateb.</div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- JÁDRO NABÍDKY: WEB PŘES NOC (4 900 KČ) -->
+  <section id="web-pres-noc" class="py-16 sm:py-24 relative">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
+        <span class="text-emerald-400 font-bold uppercase tracking-widest text-xs">Vlajková služba</span>
+        <h2 class="text-3xl sm:text-5xl font-extrabold text-white mt-2 font-display">Web přes noc</h2>
+        <p class="text-slate-400 mt-3 text-sm sm:text-base">Kompletní balíček pro freelancery, živnostníky a začínající projekty. Žádné teoretizování – hotové funkční aktivum.</p>
+      </div>
+
+      <div class="bg-gradient-to-b from-[#0F1626] to-[#0A0E1A] border-2 border-emerald-500/50 rounded-3xl p-6 sm:p-12 shadow-2xl relative overflow-hidden">
+        
+        <div class="absolute -right-16 -top-16 w-64 h-64 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none" aria-hidden="true"></div>
+
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 pb-8 border-b border-slate-800">
+          <div>
+            <div class="inline-block px-3 py-1 bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 rounded-lg text-xs font-semibold uppercase tracking-wider mb-2">
+              All-Inclusive Balíček
+            </div>
+            <h3 class="text-2xl sm:text-3xl font-bold text-white font-display">Kompletní prodejní web na míru</h3>
+            <p class="text-slate-400 text-sm mt-1">Dodáte nám odpovědi v krátkém dotazníku, my do 48 hodin předáme klíče.</p>
+          </div>
+          <div class="text-left md:text-right shrink-0">
+            <div class="text-slate-400 line-through text-sm">Běžná tržní hodnota 32 000 Kč</div>
+            <div class="text-4xl sm:text-5xl font-extrabold text-white font-display">4 900 Kč</div>
+            <div class="text-emerald-400 text-xs font-semibold">Jednorázově • Bez dalších závazků</div>
+          </div>
+        </div>
+
+        <!-- Co všechno dostanete -->
+        <div class="grid sm:grid-cols-2 gap-5 sm:gap-6 my-8 sm:my-10">
+          
+          <div class="flex items-start gap-3">
+            <div class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0 mt-0.5">
+              <i data-lucide="check" class="w-4 h-4" aria-hidden="true"></i>
+            </div>
+            <div>
+              <div class="text-white font-semibold text-sm">Responzivní struktura pro mobil i PC</div>
+              <div class="text-slate-400 text-xs mt-0.5">Rychlé načítání, moderní čistý vzhled optimalizovaný na konverze.</div>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-3">
+            <div class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0 mt-0.5">
+              <i data-lucide="check" class="w-4 h-4" aria-hidden="true"></i>
+            </div>
+            <div>
+              <div class="text-white font-semibold text-sm">Prémiové pluginy s licencí v ceně</div>
+              <div class="text-slate-400 text-xs mt-0.5">Celoživotní licence na profi builder, zrychlení a zabezpečení (hodnota 15k+ Kč).</div>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-3">
+            <div class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0 mt-0.5">
+              <i data-lucide="check" class="w-4 h-4" aria-hidden="true"></i>
+            </div>
+            <div>
+              <div class="text-white font-semibold text-sm">AI prodejní textace a psychologie háčků</div>
+              <div class="text-slate-400 text-xs mt-0.5">Texty upravené podle ověřených struktur z vítězných digitálních kampaní.</div>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-3">
+            <div class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0 mt-0.5">
+              <i data-lucide="check" class="w-4 h-4" aria-hidden="true"></i>
+            </div>
+            <div>
+              <div class="text-white font-semibold text-sm">Kontaktní formulář & rezervační systém</div>
+              <div class="text-slate-400 text-xs mt-0.5">Poptávky chodí přímo do vašeho e-mailu nebo kalendáře, žádné složitosti.</div>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-3">
+            <div class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0 mt-0.5">
+              <i data-lucide="check" class="w-4 h-4" aria-hidden="true"></i>
+            </div>
+            <div>
+              <div class="text-white font-semibold text-sm">Napojení měření (GA4 / Meta Pixel)</div>
+              <div class="text-slate-400 text-xs mt-0.5">Okamžitě víte, odkud lidé přicházejí a které kampaně vydělávají.</div>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-3">
+            <div class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0 mt-0.5">
+              <i data-lucide="check" class="w-4 h-4" aria-hidden="true"></i>
+            </div>
+            <div>
+              <div class="text-white font-semibold text-sm">Video manuál pro vlastní úpravy</div>
+              <div class="text-slate-400 text-xs mt-0.5">Jak si kdykoliv sami vyměníte ceník, fotku nebo text bez pomoci programátora.</div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="p-5 sm:p-6 bg-slate-900/80 rounded-2xl border border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-5">
+          <div class="flex items-center gap-3">
+            <i data-lucide="shield-alert" class="w-6 h-6 text-emerald-400 shrink-0" aria-hidden="true"></i>
+            <span class="text-xs sm:text-sm text-slate-300">
+              <strong>Záruka transparentnosti:</strong> Pokud po předání první verze nebudete spokojeni, upravíme web podle vašich připomínek zdarma.
+            </span>
+          </div>
+          <a href="#objednavka" class="shrink-0 w-full sm:w-auto px-8 py-3.5 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold rounded-xl transition-all text-center">
+            Objednat slot za 4 900 Kč
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- INTERAKTIVNÍ KALKULAČKA ÚSPORY (NOVÉ) -->
+  <section id="kalkulacka" class="py-16 sm:py-20 bg-slate-950/90 border-t border-slate-800/80">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-2xl mx-auto mb-10">
+        <span class="text-emerald-400 font-bold uppercase tracking-widest text-xs">Interaktivní kalkulačka</span>
+        <h2 class="text-2xl sm:text-4xl font-extrabold text-white mt-2 font-display">Spočítejte si, kolik ušetříte</h2>
+        <p class="text-slate-400 mt-2 text-sm sm:text-base">Zvolte typ vašeho projektu a porovnejte náklady s tradiční agenturou nebo SaaS pronájmem.</p>
+      </div>
+
+      <div class="bg-slate-900/70 border border-slate-800 rounded-3xl p-6 sm:p-10">
+        <!-- Option Tabs -->
+        <div class="grid grid-cols-3 gap-2 p-1.5 bg-slate-950 rounded-2xl border border-slate-800 mb-8" role="tablist">
+          <button class="calc-tab active py-2.5 px-2 rounded-xl text-xs sm:text-sm font-semibold transition-all bg-emerald-500 text-slate-950" data-type="basic" role="tab" aria-selected="true">
+            Základní web
+          </button>
+          <button class="calc-tab py-2.5 px-2 rounded-xl text-xs sm:text-sm font-semibold transition-all text-slate-400 hover:text-white" data-type="pro" role="tab" aria-selected="false">
+            Prodejní web + rezervace
+          </button>
+          <button class="calc-tab py-2.5 px-2 rounded-xl text-xs sm:text-sm font-semibold transition-all text-slate-400 hover:text-white" data-type="corp" role="tab" aria-selected="false">
+            Kompletní web + CRM
+          </button>
+        </div>
+
+        <!-- Comparison Breakdown -->
+        <div class="grid sm:grid-cols-3 gap-4 mb-8">
+          <div class="p-4 rounded-2xl bg-slate-950/60 border border-slate-800">
+            <div class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-1">Tradiční agentura</div>
+            <div id="calc-agency-price" class="text-2xl sm:text-3xl font-extrabold text-rose-400 font-display">42 000 Kč</div>
+            <div class="text-xs text-slate-500 mt-1">+ měsíční servis & licence</div>
+          </div>
+          <div class="p-4 rounded-2xl bg-slate-950/60 border border-slate-800">
+            <div class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-1">SaaS nájem (2 roky)</div>
+            <div id="calc-saas-price" class="text-2xl sm:text-3xl font-extrabold text-amber-400 font-display">19 200 Kč</div>
+            <div class="text-xs text-slate-500 mt-1">Web nikdy nevlastníte</div>
+          </div>
+          <div class="p-4 rounded-2xl bg-emerald-950/30 border border-emerald-500/50 relative overflow-hidden">
+            <div class="text-xs font-semibold text-emerald-400 uppercase tracking-wider mb-1">Stroje na peníze</div>
+            <div class="text-2xl sm:text-3xl font-extrabold text-emerald-300 font-display">4 900 Kč</div>
+            <div class="text-xs text-emerald-400/80 mt-1">Jednorázově vč. licencí</div>
+          </div>
+        </div>
+
+        <!-- Calculated Summary Banner -->
+        <div class="p-5 rounded-2xl bg-gradient-to-r from-emerald-950/70 to-slate-900 border border-emerald-500/30 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0">
+              <i data-lucide="trending-up" class="w-5 h-5" aria-hidden="true"></i>
+            </div>
+            <div>
+              <div class="text-xs text-slate-400 font-medium">Vaše čistá finanční úspora:</div>
+              <div id="calc-savings" class="text-xl sm:text-2xl font-extrabold text-white font-display">Ušetříte 37 100 Kč a 6 týdnů čekání</div>
+            </div>
+          </div>
+          <a href="#objednavka" class="w-full sm:w-auto px-6 py-3 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold rounded-xl text-sm text-center shrink-0 transition-colors">
+            Využít tuto nabídku
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- HODNOTOVÝ STACK: PLUGINY ZDARMA -->
+  <section id="hodnota" class="py-16 sm:py-20 bg-slate-950/40 border-t border-slate-800/60">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
+        <span class="text-emerald-400 font-bold uppercase tracking-widest text-xs">Unikátní bonus</span>
+        <h2 class="text-2xl sm:text-4xl font-extrabold text-white mt-2 font-display">Proč náš WordPress poráží běžné weby?</h2>
+        <p class="text-slate-400 mt-2 text-sm sm:text-base">Máme zakoupené celoživotní licence na špičkové světové nástroje. Nemusíte platit roční poplatky – dostanete je v ceně.</p>
+      </div>
+
+      <div class="grid sm:grid-cols-3 gap-5 sm:gap-6">
+        <div class="bg-slate-900/60 border border-slate-800 rounded-2xl p-6">
+          <div class="w-12 h-12 rounded-xl bg-blue-500/10 border border-blue-500/20 text-blue-400 flex items-center justify-center mb-4">
+            <i data-lucide="layout" class="w-6 h-6" aria-hidden="true"></i>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-1">Prémiový Vizuální Builder</h3>
+          <p class="text-slate-400 text-xs mb-3">Klikací rozhraní bez nutnosti znát kód. Úprava textu i designu jako ve Wordu.</p>
+          <div class="text-emerald-400 text-xs font-semibold">Běžná cena: 1 900 Kč / rok (Vy máte v ceně)</div>
+        </div>
+
+        <div class="bg-slate-900/60 border border-slate-800 rounded-2xl p-6">
+          <div class="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/20 text-amber-400 flex items-center justify-center mb-4">
+            <i data-lucide="gauge" class="w-6 h-6" aria-hidden="true"></i>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-1">Profi Akcelerace & Caching</h3>
+          <p class="text-slate-400 text-xs mb-3">Bleskurychlé načítání stránek. Klienti neodejdou a Google vás upřednostní.</p>
+          <div class="text-emerald-400 text-xs font-semibold">Běžná cena: 1 400 Kč / rok (Vy máte v ceně)</div>
+        </div>
+
+        <div class="bg-slate-900/60 border border-slate-800 rounded-2xl p-6">
+          <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 flex items-center justify-center mb-4">
+            <i data-lucide="lock" class="w-6 h-6" aria-hidden="true"></i>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-1">Bezpečnost & SEO balík</h3>
+          <p class="text-slate-400 text-xs mb-3">Ochrana proti spamu, automatické zálohy a optimalizace pro vyhledávače.</p>
+          <div class="text-emerald-400 text-xs font-semibold">Běžná cena: 2 200 Kč / rok (Vy máte v ceně)</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- KDO ZA TÍM STOJÍ (AUTORITA & KNOW-HOW) -->
+  <section id="autorita" class="py-16 sm:py-24 relative overflow-hidden">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="bg-gradient-to-r from-slate-900 via-slate-900/90 to-emerald-950/40 border border-slate-800 rounded-3xl p-6 sm:p-12">
+        <div class="max-w-3xl">
+          <span class="text-emerald-400 font-bold uppercase tracking-widest text-xs">Know-how & Tým</span>
+          <h2 class="text-2xl sm:text-4xl font-extrabold text-white mt-2 mb-6 font-display">
+            Principy z největších digitálních kampaní v Česku
+          </h2>
+          <p class="text-slate-300 text-sm sm:text-base leading-relaxed mb-6">
+            Za projektem <strong>Stroje na peníze</strong> stojí stratégové a tvůrci z kampaní, které dokázaly oslovit miliony lidí a přinést drtivé volební i byznysové výsledky (spolupráce s předními experty politického a digitálního marketingu v ČR).
+          </p>
+          <div class="p-4 sm:p-5 bg-black/40 border-l-4 border-emerald-500 rounded-r-xl mb-6">
+            <p class="text-xs sm:text-sm italic text-slate-300 leading-relaxed">
+              „Nezajímá nás politika – zajímá nás psychologie pozornosti, data, konverzní trychtýře a rychlost. Principy, které přesvědčily miliony voličů, fungují naprosto stejně na to, aby si u vás zákazník koupil masáž, kurz nebo digitální službu.“
+            </p>
+          </div>
+          <div class="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-6 text-xs text-slate-400 font-medium">
+            <span class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400" aria-hidden="true"></i> Otestováno na masovém publiku</span>
+            <span class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400" aria-hidden="true"></i> 100% orientace na konverze a prodej</span>
+            <span class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400" aria-hidden="true"></i> AI nástroje pro okamžitou úsporu času</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- LEAD MAGNET: CHECKLIST ZDARMA -->
+  <section id="checklist" class="py-16 sm:py-20 bg-slate-950 border-y border-slate-800">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      
+      <div class="w-16 h-16 rounded-2xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 flex items-center justify-center mx-auto mb-6">
+        <i data-lucide="file-text" class="w-8 h-8" aria-hidden="true"></i>
+      </div>
+
+      <span class="text-emerald-400 font-bold uppercase tracking-widest text-xs">Dárek ke stažení zdarma</span>
+      <h2 class="text-2xl sm:text-4xl font-extrabold text-white mt-2 mb-4 font-display">
+        The 5-Second Hook Formula & Blueprint pro web
+      </h2>
+      <p class="text-slate-400 max-w-xl mx-auto text-sm sm:text-base mb-8">
+        Zjistěte, jak zaujmout návštěvníka během prvních 5 vteřin a jak sestavit prodejní stránku, která nenechá potenciálního klienta odejít ke konkurenci.
+      </p>
+
+      <form id="lead-form" class="max-w-md mx-auto flex flex-col sm:flex-row gap-3">
+        <label for="lead-email" class="sr-only">Váš e-mail pro zaslání checklistu</label>
+        <input id="lead-email" type="email" required placeholder="Váš nejlepší e-mail..." class="w-full px-5 py-3.5 bg-slate-900 border border-slate-700 rounded-xl text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-emerald-500 text-base">
+        <button type="submit" class="touch-target px-6 py-3.5 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold rounded-xl transition-all shrink-0 text-sm">
+          Stáhnout zdarma
+        </button>
+      </form>
+      <div id="lead-feedback" class="hidden text-emerald-400 text-xs font-semibold mt-3">✅ Děkujeme! Váš checklist byl odeslán na zadaný e-mail.</div>
+      <div class="text-slate-500 text-xs mt-3">Žádný spam. Pouze praktické návody a tipy ze zákulisí.</div>
+
+    </div>
+  </section>
+
+  <!-- FAQ (INTERAKTIVNÍ AKORDION) -->
+  <section id="faq" class="py-16 sm:py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center mb-12 sm:mb-16">
+        <span class="text-emerald-400 font-bold uppercase tracking-widest text-xs">Odpovědi na otázky</span>
+        <h2 class="text-2xl sm:text-4xl font-extrabold text-white mt-2 font-display">Často kladené dotazy</h2>
+      </div>
+
+      <div class="space-y-3.5">
+        
+        <!-- Accordion Item 1 (Default Open) -->
+        <div class="faq-item bg-slate-900/70 border border-slate-800 rounded-2xl overflow-hidden transition-all">
+          <button class="faq-toggle w-full px-6 py-5 text-left flex items-center justify-between gap-4 focus:outline-none focus:ring-2 focus:ring-emerald-500" aria-expanded="true">
+            <span class="text-sm sm:text-base font-bold text-white">Zvládnu web upravovat sám, i když nejsem technický typ?</span>
+            <i data-lucide="chevron-down" class="faq-chevron w-5 h-5 text-emerald-400 shrink-0 transition-transform duration-300 rotate-180" aria-hidden="true"></i>
+          </button>
+          <div class="faq-answer open px-6 pb-5 text-slate-400 text-xs sm:text-sm leading-relaxed border-t border-slate-800/60 pt-3">
+            Ano, přesně pro vás to stavíme. Web dostanete s vizuálním klikacím editorem. K webu vám natočíme 5minutové video přímo na vaší stránce: ukážeme vám, jak vyměnit fotku, přepsat cenu nebo přidat nový řádek. Žádné kódování.
+          </div>
+        </div>
+
+        <!-- Accordion Item 2 -->
+        <div class="faq-item bg-slate-900/70 border border-slate-800 rounded-2xl overflow-hidden transition-all">
+          <button class="faq-toggle w-full px-6 py-5 text-left flex items-center justify-between gap-4 focus:outline-none focus:ring-2 focus:ring-emerald-500" aria-expanded="false">
+            <span class="text-sm sm:text-base font-bold text-white">Jak je možné, že jsou prémiové licence v ceně 4 900 Kč?</span>
+            <i data-lucide="chevron-down" class="faq-chevron w-5 h-5 text-slate-400 shrink-0 transition-transform duration-300" aria-hidden="true"></i>
+          </button>
+          <div class="faq-answer px-6 pb-5 text-slate-400 text-xs sm:text-sm leading-relaxed border-t border-slate-800/60 pt-3">
+            Jako studio vlastníme celoživotní vývojářské licence na klíčové nástroje WordPressu. Tyto licence aktivujeme přímo na vaší instalaci – pro vás to znamená profesionální výbavu bez nutnosti platit roční poplatky.
+          </div>
+        </div>
+
+        <!-- Accordion Item 3 -->
+        <div class="faq-item bg-slate-900/70 border border-slate-800 rounded-2xl overflow-hidden transition-all">
+          <button class="faq-toggle w-full px-6 py-5 text-left flex items-center justify-between gap-4 focus:outline-none focus:ring-2 focus:ring-emerald-500" aria-expanded="false">
+            <span class="text-sm sm:text-base font-bold text-white">Co přesně musím dodat, aby byl web do 48 hodin hotový?</span>
+            <i data-lucide="chevron-down" class="faq-chevron w-5 h-5 text-slate-400 shrink-0 transition-transform duration-300" aria-hidden="true"></i>
+          </button>
+          <div class="faq-answer px-6 pb-5 text-slate-400 text-xs sm:text-sm leading-relaxed border-t border-slate-800/60 pt-3">
+            Po objednání vám pošleme jednoduchý dotazník: popíšete v něm, co děláte, pro koho, nahrajete logo/fotky (pokud máte) a kontaktní údaje. O zbytek textů a strukturu se postaráme s pomocí našeho AI workflow.
+          </div>
+        </div>
+
+        <!-- Accordion Item 4 -->
+        <div class="faq-item bg-slate-900/70 border border-slate-800 rounded-2xl overflow-hidden transition-all">
+          <button class="faq-toggle w-full px-6 py-5 text-left flex items-center justify-between gap-4 focus:outline-none focus:ring-2 focus:ring-emerald-500" aria-expanded="false">
+            <span class="text-sm sm:text-base font-bold text-white">Kolik mě bude stát provoz webu po spuštění?</span>
+            <i data-lucide="chevron-down" class="faq-chevron w-5 h-5 text-slate-400 shrink-0 transition-transform duration-300" aria-hidden="true"></i>
+          </button>
+          <div class="faq-answer px-6 pb-5 text-slate-400 text-xs sm:text-sm leading-relaxed border-t border-slate-800/60 pt-3">
+            Nám už neplatíte ani korunu. Jediný náklad je vaše vlastní doména a hosting (např. u Wedosu, Forpsi nebo Endory), což vychází na přibližně 50 až 100 Kč měsíčně. Na rozdíl od systémů typu Shopify či Wix neplatíte žádný měsíční nájem za platformu.
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- OBJEDNÁVKOVÝ FORMULÁŘ / KONTAKT -->
+  <section id="objednavka" class="py-16 sm:py-20 bg-slate-950 border-t border-slate-800">
+    <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="bg-slate-900 border border-emerald-500/35 rounded-3xl p-6 sm:p-10 shadow-2xl">
+        <div class="text-center mb-8">
+          <span class="inline-block px-3 py-1 bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 rounded-lg text-xs font-semibold uppercase tracking-wider mb-2">
+            Nezávazná poptávka / Rezervace
+          </span>
+          <h2 class="text-2xl sm:text-3xl font-bold text-white font-display">Zarezervujte si Web přes noc</h2>
+          <p class="text-slate-400 text-xs sm:text-sm mt-2">Zaváděcí cena 4 900 Kč. Vyplňte formulář a my se vám do 24 hodin ozveme s dalšími kroky.</p>
+        </div>
+
+        <form id="order-form" class="space-y-4">
+          <div>
+            <label for="order-name" class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5">Vaše jméno a příjmení</label>
+            <input id="order-name" type="text" required placeholder="Jan Novák" autocomplete="name" class="w-full px-4 py-3 bg-slate-950 border border-slate-700 rounded-xl text-white text-base focus:outline-none focus:ring-2 focus:ring-emerald-500">
+          </div>
+
+          <div>
+            <label for="order-email" class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5">E-mail</label>
+            <input id="order-email" type="email" required placeholder="jan@novak.cz" autocomplete="email" class="w-full px-4 py-3 bg-slate-950 border border-slate-700 rounded-xl text-white text-base focus:outline-none focus:ring-2 focus:ring-emerald-500">
+          </div>
+
+          <div>
+            <label for="order-phone" class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5">Telefonní číslo</label>
+            <input id="order-phone" type="tel" required placeholder="+420 777 000 000" inputmode="tel" autocomplete="tel" class="w-full px-4 py-3 bg-slate-950 border border-slate-700 rounded-xl text-white text-base focus:outline-none focus:ring-2 focus:ring-emerald-500">
+          </div>
+
+          <div>
+            <label for="order-desc" class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5">Čemu se věnujete / Jaký web potřebujete?</label>
+            <textarea id="order-desc" rows="3" required placeholder="Např. jsem masér v Praze a potřebuji jednoduchý web s ceníkem a rezervačním formulářem..." class="w-full px-4 py-3 bg-slate-950 border border-slate-700 rounded-xl text-white text-base focus:outline-none focus:ring-2 focus:ring-emerald-500"></textarea>
+          </div>
+
+          <div id="order-success-msg" class="hidden p-4 bg-emerald-950/80 border border-emerald-500 rounded-xl text-emerald-300 text-sm text-center font-medium">
+            ✅ Skvělé! Poptávka byla přijata. Ozveme se vám do 24 hodin na e-mail.
+          </div>
+
+          <button type="submit" class="w-full py-4 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold rounded-xl transition-all shadow-lg shadow-emerald-500/20 text-base flex items-center justify-center gap-2">
+            <span>Odeslat nezávaznou poptávku (4 900 Kč)</span>
+            <i data-lucide="send" class="w-4 h-4" aria-hidden="true"></i>
+          </button>
+          
+          <div class="text-center text-[11px] text-slate-500">
+            Odesláním souhlasíte se zpracováním osobních údajů pro účely vyřízení poptávky.
+          </div>
+        </form>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="py-12 bg-[#060910] border-t border-slate-900 text-slate-500 text-xs pb-24 md:pb-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-6">
+      
+      <div class="flex items-center gap-3">
+        <div class="w-8 h-8 rounded-lg bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center">
+          <svg class="w-5 h-5" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M22 10L32 16V28L22 34L12 28V16L22 10Z" stroke="#10B981" stroke-width="3" stroke-linejoin="round" />
+            <path d="M19 25L23 16L21.5 21H25.5L21 28L22.5 23H19Z" fill="#F59E0B" />
+          </svg>
+        </div>
+        <div>
+          <span class="font-display font-bold text-white text-sm tracking-tight">STROJE <span class="text-emerald-400">NA PENÍZE</span></span>
+          <span class="text-slate-600 mx-2">•</span>
+          <span class="text-slate-400">www.strojenapenize.cz</span>
+        </div>
+      </div>
+
+      <div>
+        © 2026 Stroje na peníze. Všechna práva vyhrazena.
+      </div>
+
+      <div class="flex gap-6">
+        <a href="#problem" class="hover:text-slate-400 py-1">O projektu</a>
+        <a href="#web-pres-noc" class="hover:text-slate-400 py-1">Web přes noc</a>
+        <a href="#faq" class="hover:text-slate-400 py-1">FAQ</a>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- MOBILE STICKY FLOATING CTA BAR (Pouze na mobilních zařízeních) -->
+  <div class="fixed bottom-0 inset-x-0 z-40 p-3 bg-[#080C14]/95 backdrop-blur-lg border-t border-slate-800 md:hidden flex items-center justify-between gap-3 shadow-2xl">
+    <div>
+      <div class="text-[10px] text-slate-400 font-medium">Zaváděcí slot:</div>
+      <div class="text-sm font-extrabold text-white font-display">
+        4 900 Kč <span class="text-[10px] text-emerald-400 font-semibold">vč. licencí</span>
+      </div>
+    </div>
+    <a href="#objednavka" class="px-5 py-2.5 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold rounded-xl text-xs shadow-lg shadow-emerald-500/20 shrink-0 flex items-center gap-1.5">
+      <span>Objednat web</span>
+      <i data-lucide="arrow-right" class="w-3.5 h-3.5" aria-hidden="true"></i>
+    </a>
+  </div>
+
+  <!-- SCRIPT LOGIC: MOBILE MENU, FAQ ACCORDION, CALCULATOR -->
+  <script>
+    // 1. Initialize Lucide icons
+    lucide.createIcons();
+
+    // 2. Mobile Drawer Navigation Toggle
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIconOpen = document.getElementById('menu-icon-open');
+    const menuIconClose = document.getElementById('menu-icon-close');
+    const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+    if (mobileMenuBtn) {
+      mobileMenuBtn.addEventListener('click', () => {
+        const isHidden = mobileMenu.classList.contains('hidden');
+        if (isHidden) {
+          mobileMenu.classList.remove('hidden');
+          menuIconOpen.classList.add('hidden');
+          menuIconClose.classList.remove('hidden');
+          mobileMenuBtn.setAttribute('aria-expanded', 'true');
+        } else {
+          mobileMenu.classList.add('hidden');
+          menuIconOpen.classList.remove('hidden');
+          menuIconClose.classList.add('hidden');
+          mobileMenuBtn.setAttribute('aria-expanded', 'false');
+        }
+      });
+    }
+
+    mobileNavLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+        menuIconOpen.classList.remove('hidden');
+        menuIconClose.classList.add('hidden');
+        mobileMenuBtn.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    // 3. Interactive FAQ Accordion
+    const faqToggles = document.querySelectorAll('.faq-toggle');
+    faqToggles.forEach(toggle => {
+      toggle.addEventListener('click', () => {
+        const item = toggle.closest('.faq-item');
+        const answer = item.querySelector('.faq-answer');
+        const chevron = toggle.querySelector('.faq-chevron');
+        const isOpen = answer.classList.contains('open');
+
+        // Close all others
+        document.querySelectorAll('.faq-answer').forEach(ans => {
+          ans.classList.remove('open');
+        });
+        document.querySelectorAll('.faq-chevron').forEach(chev => {
+          chev.classList.remove('rotate-180');
+          chev.classList.add('text-slate-400');
+          chev.classList.remove('text-emerald-400');
+        });
+        document.querySelectorAll('.faq-toggle').forEach(btn => {
+          btn.setAttribute('aria-expanded', 'false');
+        });
+
+        // Toggle current
+        if (!isOpen) {
+          answer.classList.add('open');
+          chevron.classList.add('rotate-180');
+          chevron.classList.remove('text-slate-400');
+          chevron.classList.add('text-emerald-400');
+          toggle.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+
+    // 4. Interactive Savings Calculator
+    const calcTabs = document.querySelectorAll('.calc-tab');
+    const agencyPriceEl = document.getElementById('calc-agency-price');
+    const saasPriceEl = document.getElementById('calc-saas-price');
+    const savingsEl = document.getElementById('calc-savings');
+
+    const calcData = {
+      basic: {
+        agency: '42 000 Kč',
+        saas: '19 200 Kč',
+        savings: 'Ušetříte 37 100 Kč a 6 týdnů čekání'
+      },
+      pro: {
+        agency: '65 000 Kč',
+        saas: '28 800 Kč',
+        savings: 'Ušetříte 60 100 Kč a 8 týdnů čekání'
+      },
+      corp: {
+        agency: '95 000 Kč',
+        saas: '43 200 Kč',
+        savings: 'Ušetříte 90 100 Kč a 10 týdnů čekání'
+      }
+    };
+
+    calcTabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        calcTabs.forEach(t => {
+          t.classList.remove('bg-emerald-500', 'text-slate-950');
+          t.classList.add('text-slate-400');
+          t.setAttribute('aria-selected', 'false');
+        });
+        tab.classList.add('bg-emerald-500', 'text-slate-950');
+        tab.classList.remove('text-slate-400');
+        tab.setAttribute('aria-selected', 'true');
+
+        const type = tab.getAttribute('data-type');
+        const selected = calcData[type];
+        if (selected) {
+          agencyPriceEl.textContent = selected.agency;
+          saasPriceEl.textContent = selected.saas;
+          savingsEl.textContent = selected.savings;
+        }
+      });
+    });
+
+    // 5. Form Submissions
+    const orderForm = document.getElementById('order-form');
+    if (orderForm) {
+      orderForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        document.getElementById('order-success-msg').classList.remove('hidden');
+        orderForm.reset();
+      });
+    }
+
+    const leadForm = document.getElementById('lead-form');
+    if (leadForm) {
+      leadForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        document.getElementById('lead-feedback').classList.remove('hidden');
+        leadForm.reset();
+      });
+    }
+  </script>
+</body>
+</html>
